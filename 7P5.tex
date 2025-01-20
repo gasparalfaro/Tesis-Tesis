@@ -1,0 +1,158 @@
+\chapter{Two-Player Yorke's Game of Survival in Chaotic Transients} %7P5
+\label{chap:PartialControlGame}
+
+In the previous chapter we developed a method of partial control that followed the line of work initiated in \cite{Yorke} followed by papers on the issue \cite{DynamicsPartialControl,PartialControlBeyond,PartialControlFunctions} among others. The study led to the publication of \cite{PartialControlEscape}. 
+
+The problem introduced in \cite{Yorke} was devised as a kind of game where one player is at a huge disadvantage but, nonetheless, can achieve its goal. From there on the studies derived in a control method that did not force a single trajectory as the solution, but provided a set of points where the controller was safe, therefore the name partial control.
+
+Since this thesis is oriented towards game dynamics, the opportunity to rejoin this two branches of the problem led to the publication of \cite{PartialControlGame}. In this paper we present a two-player game of control where each player has conflicting objectives. One player wants to control the trajectory of a given dynamical system towards one region and the opponent towards a different one. Through the analysis of the game with the partial control tools we achieve the solution of the game through all initial conditions.
+
+
+To illustrate the game we studied a paradigmatic dynamical system, the logistic map ${f(x) = \mu x_n(1-x_n)}$. The system presents transient chaotic dynamics for $\mu>4$ where all orbits starting at the region $Q=[0,1]$ eventually leave the region in a finite time. When one player aims to stay at the region $Q$ indefinitely and the other aims to drive the trajectory off, the game gets very interesting. In one hand, the game is asymmetric since the player who wants to leave region $Q$ is in advantage. On the other hand, we found that there are initial conditions where the player that aims to conserve the trajectory in the transient region can do so even when its control is lesser than the opponent's control.
+
+
+%TODO
+
+The players may or may not know the actions of their rival. Knowing where the opponent is going to push the trajectory to will affect the decision of control.
+
+
+
+We devised three scenarios. In the first game the player that aims to keep the trajectory in the region $Q$ knows the action of the rival. In the second one, the informed player is the one who intends to expel the trajectory form the region. Finally, in the third game, no player knows the rival's action. The lack of knowledge in this last game will translate in the unsettled solution of the game. Regions where no player has the victory assured appear as a consequence of these lack of knowledge.
+
+\section{The game}
+
+\section{Solving the game: The winning sets}
+
+\section{Game of survival in the logistic map}
+
+\section{Conclusions}
+
+We proposed a two-player game where two players were confronted against each other to control the trajectory of a chaotic dynamical system. The players had opposing goals, each one aiming to get the trajectory to different regions. Through the partial control method we got the set of initial points that guaranteed the victory for each player.
+
+We applied the game to the logistic map, in which one player aims to stay at the transient chaotic region and the rival wants to drive the trajectory out of there. This system unveils an interesting aspect about the complexity of the dynamical system. Because even when the dynamical system plays against the conservative player, and its opponent has greater control capabilities, the player can thrive and achieve its objective.
+
+We also found that the information each player has plays a substantial role in the game. The player that plays first, and therefore knows the action of the rival, will undoubtedly be at an advantage. Therefore, this knowledge was crucial to victory at some cases, but at some other cases, surprisingly, the information was of little use to the informed player.
+
+Finally another interesting result is that when no player knows the action of their rival, regions appear where victory is uncertain. The game is unresolved there and the outcome will depend on the sequence of actions of the players.
+
+
+
+\begin{thebibliography}{04}
+
+
+
+
+
+\bibitem{Yorke}
+J. Aguirre, F. d’Ovidio, and M. A. F. Sanjuán,
+Controlling chaotic transients: Yorke’s game of survival.
+Phys. Rev. E 69:016203
+(2004)
+
+\bibitem{DynamicsPartialControl}
+Juan Sabuco,1 Miguel A. F. Sanjuan,  1 and James A. Yorke
+Dynamics of partial control
+Chaos 22:047507
+(2012)
+
+\bibitem{PartialControlBeyond}
+R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
+Beyond partial control: controlling chaotic transients
+with the safety function.
+Nonlinear Dyn. 107:2903–2910
+(2022)
+
+
+\bibitem{PartialControlFunctions}
+R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
+A new approach of the partial control method in chaotic systems.
+Nonlinear Dyn. 98:873--887
+(2019)
+
+
+\bibitem{PartialControlEscape}
+G. Alfaro, R.~Cape{\'a}ns, and M.~A.~F. Sanju{\'a}n, 
+Forcing the escape: Partial control of escaping orbits from a
+transient chaotic region.
+Nonlinear Dyn. 104:1603–1612
+(2021) 
+
+
+
+
+
+
+\bibitem{Social}
+P. Kollock,
+Social dilemmas: the anatomy of cooperation.
+Annu. Rev. Sociol. 24:183-214
+(1998)
+
+\bibitem{EconomyGames}
+Y. Xiao, Y. Peng, Q. Lu, and X. Wua,
+Chaotic dynamics in nonlinear duopoly Stackelberg game
+with heterogeneous players.
+Physica A 492:1980--1987
+(2018)
+
+\bibitem{GamesComplex}
+W. Hu, G. Zang, H. Tian. and Z. Wang,
+Chaotic dynamics in asymmetric rock-paper-scissors games.
+IEEE Access 7:175614--175621
+(2019)
+
+
+\bibitem{AkiyamaKaneko1}
+E. Akiyamaa and K. Kaneko,
+Dynamical systems game theory and dynamics of games,
+Physica D 147:221--258
+(2000)
+
+\bibitem{AkiyamaKaneko2}
+E. Akiyamaa and K. Kaneko,
+Dynamical systems game theory II
+A new approach to the problem of the social dilemma
+Physica D 167:36--71
+(2002)
+
+
+\bibitem{GamesControl}
+J. R. Marden and J. S. Shamma,
+Game Theory and Control.
+ Annu. Rev. Control. Robotics Auton. Syst. 1:105--134
+(2018)
+
+
+
+
+
+
+\bibitem{UnderstandTransient1}
+O. E. Omel'chenko and T. Tél,
+Focusing on transient chaos.
+J. Phys.: Complex. 3:010201
+(2022) 
+
+
+\bibitem{UnderstandTransient2}
+T. Lilienkamp and U. Parlitz,
+Terminal Transient Phase of Chaotic Transients.
+Phys. Rev. Lett. 120:094101
+(2018)
+
+
+\bibitem{AvoidTransient1}
+V.A. Bazhenov, O. S. Pogorelova, and T.G. Postnikova,
+Transient chaos in platform-vibrator with shock.
+Strength Mater. Theory Struct. 106:22-40
+(2021)
+
+
+\bibitem{MaintainTransient1}
+L. F. R. Turci, E. E. N. Macau, and T. Yoneyama,
+Chaotic transient and the improvement of system flexibility.
+Phys. Lett. A 365:328–334
+(2007)
+
+
+\end{thebibliography}
