@@ -51,14 +51,11 @@ In many games the order of play is important. This game is no exception, here th
 
 
 
+Consider two individuals pulling an object. Player A aims to pull the object to their side, while Player B pulls it toward their own. In the absence of any other factors, the stronger player will prevail by exerting more force. However, the game becomes much more interesting when the movement of the object is influenced by a natural dynamic governed by a rule defined by a function $f$. In this case, the players must not only consider their opponent's force but also account for the inherent motion of the object. This becomes more challenging when the movement that describes $f$ is chaotic. In such scenarios, even slight variations in how the players pull can result in entirely different and unpredictable outcomes, as illustrated in Fig.~\ref{fig:drawing}.  
 
 
-Considers two persons pulling an object. Player A wants to pull it to their side, while Player B
-pulls toward their own. With no other factor present, the stronger player will
-win by pulling harder. However, the game becomes much more interesting when the object naturally moves
-described by a rule given by a function $f$. Now, the players have to consider the force of the rival at the same time than the object's natural movement. This becomes especially difficult when the object's movement described by $f$ is chaotic, meaning that even tiny changes in how they pull can lead to completely different and unpredictable results, as is illustrated in Fig.~\ref{fig:drawing}.
 
-Formally, we describe the game as follows. Consider a region $Q$ of the phase space where a map $f$ acts on the state space $X$. The initial state $x$ of the game starts in $Q$. Player $B$'s objective is to keep the trajectory within $Q$, while player $A$ aims to drive the trajectory outside of $Q$. Each iteration of the game consists of players $A$ and $B$ choosing their respective bounded controls $u_n^A$ and $u_n^B$.  At each discrete time step $n$, the state $x_n$ evolves according to this dynamics
+With this in consideration, we formulate our game. Let $Q$ represent a region in the phase space, with a map $f$ acting on the state space $X$. The initial state $x$ of the game begins within $Q$. Player $B$'s objective is to keep the trajectory within $Q$, while player $A$'s goal is to drive the trajectory outside of $Q$. Each iteration of the game involves players $A$ and $B$ selecting their respective bounded controls, $u_n^A$ and $u_n^B$. At each discrete time step $n$, the state $x_n$ evolves according to this dynamics
 \begin{equation}
     x_{n+1} = f(x_n) + u_n^A + u_n^B,
 \end{equation}
@@ -68,9 +65,12 @@ where $u_n^A $ and $u_n^B $ represent the control actions of players $A$ and $B$
 \end{equation}
 
 
-Player $B$ needs to maintain the trajectory inside $Q$ forever to win, while $A$ only needs to drive the trajectory outside $Q$ once to achieve victory.
+Player $B$ wins if the trajectory remains inside $Q$ indefinitely, whereas player $A$ wins if the trajectory exits $Q$. Once the trajectory has left $Q$, player $B$ has no chance of returning it to the region.
 
-A critical aspect to solve this game is the order of play. For this reason, we consider three different scenarios:
+A crucial factor in solving this game is the order of play. To address this, we consider three distinct scenarios summarized in Table~\ref{tab:games}. In game $A^{-}B^{+}$, player B has the advantage of knowing the actions of player $A$ before making their move. This sequential structure allows player $B$ to respond optimally to the choices of their rival. In game $A^{+}B^{-}$, player $A$ has the advantage, with complete knowledge of moves by player $B$ before acting. Finally, in game $A^{-}B^{-}$, both players make their decisions simultaneously, without any knowledge of the opponent actions.  
+
+
+
 \begin{table}[h!]
 \centering
 \begin{tabular}{|p{3cm}|p{4cm}|p{7.3cm}|}
@@ -88,9 +88,6 @@ Game $A^{-}B^{-}$ & Simultaneous play & Both ignore the opponent's action  \\
 \label{tab:games}
 \end{table}
 
-
-
-In game $A^{-}B^{+}$, player $B$ has the advantage of knowing player $A$'s action before making their move. This sequential play allows $B$ to react optimally to $A$'s choice. In game $A^{+}B^{-}$, the roles are reversed, with $A$ having complete information about $B$'s move before acting. Finally, in game $A^{-}B^{-}$, both players must make their decisions simultaneously, where both players ignore the action of their opponent.
 
 
 
@@ -125,16 +122,15 @@ In game $A^{-}B^{+}$, player $B$ has the advantage of knowing player $A$'s actio
 
 
 
+Given the opposing objectives described in the previous section, we define a region $R$, containing $Q$, where the winning sets $W$ are determined for both players. These sets represent whether a given initial condition guarantees victory (value $1$) or not (value $0$). For Player $B$, the initial condition is $W^B(x) = 1$ for $x \in Q$ and $0$ otherwise. Conversely, for Player $A$, the initial condition is $W^A(x) = 0$ for $x \in Q$ and $1$ otherwise.  
 
-
-
-Given the opposing objectives where player $A$ aims to drive trajectories outside $Q$ while player $B$ seeks to keep them within $Q$, we establish a region $R$ containing $Q$ where the winning sets $W$ are defined for both players. These sets have binary values representing whether that initial condition guarantees victory, $1$, or does not, $0$. For player $B$, initially $W^B(x)=1$ for $x \in Q$ and $0$ otherwise. For player $A$, initially $W^A(x)=0$ for $x \in Q$ and $1$ otherwise. The computation procedure for each winning set is described next, which is also summarized in Table~\ref{tab:morphological_operations}. Each set for an ignorant or informed player $A$ or $B$ can be computed independently.
+The computation process for each winning set depends on whether the player is informed by knowing the opponent's move, or ignorant. This procedure is summarized in Table~\ref{tab:morphological_operations}. Each set can be computed independently, as outlined below:  
 
 \begin{itemize}
 \item {\bf Player $A^-$ (ignorant player $A$):}
 To compute the set of $W^{A^-}$, we have to evaluate for each $x \in Q$ the image $f(x)+u^A+u_0^B$ for all possible controls $u^A \in [-u_0^A,u_0^A]$ and $u^B \in [-u_0^B,u_0^B]$. We select only those $u^A$ where all possible images $f(x)+u^A+[-u_0^B,u_0^B]$ fall within $W^{A^-}$. Points $x \in Q$ satisfying this condition update $W^{A^-}(x)=1$. All these initial conditions are able to be controlled to escape after one iteration of the map. But there will be other points that, after more than one iterations of the map and control, will be able to escape. To find this points we must repeat the algorithm, thus updating $W^{A^-}$ until it converges.
 
-This process is equivalent to iteratively performing the following morphological operations: first shrinking $W^{A^-}$ by $u_0^B$, then dilating by $u_0^A$. For any $x \in Q$ whose $f(x)$ falls within the shrunk set, we set $W^{A^-}(x)=1$. The process is repeated with this new $W^{A^-}$ until it converges.
+This process is equivalent to performing the following morphological operations: first shrinking $W^{A^-}$ by $u_0^B$, then dilating by $u_0^A$. For any $x \in Q$ whose $f(x)$ falls within the shrunk set, we set $W^{A^-}(x)=1$. The process is repeated with this new $W^{A^-}$ until it converges.
 
 \item {\bf Player $A^+$ (informed player $A$):}
 To compute the set of $W^{A^+}$, we analyze $f(x)+u^B+u^A$ for all possible controls. For each $x \in Q$, we evaluate $f(x)+[-u_0^B,u_0^B]+u^A$ and determine if there exists some $u^A \in [-u_0^A,u_0^A]$ capable of forcing escape for all possible images. If such $u^A$ exists, then $W^{A^+}(x)=1$. This process is performed for all $x \in Q$, updating the set $W^{A^+}$. The algorithm is repeated until $W^{A^+}$ converges.
@@ -213,7 +209,7 @@ W^{B^+}_{\text{new}}=W^{B^+}
 
 
 
-
+%TODO Rewrite
 
 
 

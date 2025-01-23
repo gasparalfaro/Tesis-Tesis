@@ -1,4 +1,4 @@
-\chapter{Time-dependent effects on the public goods game} %2P2
+\chapter{Time-dependent effects on the public goods game} %3P2
 \label{chap:TimeEffects}
 
 
@@ -43,12 +43,10 @@ Moreover, real-world actions rarely have immediate consequences, yet most studie
 
 Our research reveals two key findings. First, large amplitudes of oscillation in the enhancement factor make it harder for cooperation to persist. Second, delays in punishment also hinder cooperation. We also noticed that rapid fluctuations, similar to random noise, don't significantly affect outcomes.
 
-This manuscript explores these findings in detail: Section \ref{model} explains how we model strategy evolution and our simulation methods. Section \ref{punish} describes how we calculate individual payoffs and compares different punishment approaches. Sections \ref{oscillating} and \ref{delay} present our findings about oscillating enhancement factors and delayed punishment. Finally, Section \ref{Conclusions} discusses the broader implications of our results.
-
 
 
 \section{Model of the simulation}
-\label{model}
+\label{3model}
 
 
 
@@ -73,7 +71,7 @@ The starting configuration of individual's strategies can change the outcome of 
 
 
 \section{The punishment methods: pool and peer punishment}
-\label{punish}
+\label{3punish}
 
 
 
@@ -134,7 +132,7 @@ Comparing the two punishment systems under the same fine $\beta$ and cost $\gamm
 
 
 \section{Varying the enhancement factor as oscillations on time}
-\label{oscillating}
+\label{3oscillating}
 
 
 \begin{figure}
@@ -148,7 +146,7 @@ Comparing the two punishment systems under the same fine $\beta$ and cost $\gamm
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth]{grafica_r1_w0_T0_Pool.eps}
+	\includegraphics[width=1\linewidth]{Images/P2/grafica_r1_w0_T0_Pool.eps}
 	\caption{The figure represents the amplitude $r_1$ of the oscillation $r=r_0+r_1\sin(\frac{2\pi\omega}{L^2}t+\delta)$ for different values of $r_0$, that limits the phase of only defectors (greater amplitudes) and defectors plus punishers (lower amplitudes) in the strict pool punishment regime with a punisher threshold $T=0$. The limiting amplitude $r_1$ grows as $r_0$ raises and, at low oscillation frequencies, when $\omega$ raises. The lines are used to guide the eye, and its width is comparable to the corresponding error. We have used the parameters: $\delta=0$, $\beta=0.125$, $\gamma=0.0125$}
 	\label{r1_w0}
 \end{figure}
@@ -161,7 +159,7 @@ In real societies, the benefits of cooperation rarely remain constant. Consider 
 
 We model these changing investment returns by making the enhancement factor r oscillate over time. While real-world fluctuations can be complex, we start with a simple sinusoidal pattern that captures the essential behavior of periodic changes, a sinusoidal oscillation: $r=r_0+r_1\sin(\frac{2\pi\omega}{L^2}t)$
 
-The frequency ω, measured in inverse Monte Carlo Steps ($MCS^-1$), lets us explore different types of real-world fluctuations. Low frequencies might represent long-term economic cycles, while high frequencies could model rapid fluctuations like daily market volatility or random noise in the system.
+The frequency $\omega$, measured in inverse Monte Carlo Steps ($MCS^-1$), lets us explore different types of real-world fluctuations. Low frequencies might represent long-term economic cycles, while high frequencies could model rapid fluctuations like daily market volatility or random noise in the system.
 
 When we examine how populations evolve under these oscillating conditions (shown in Figure \ref{oscila}), we discover that larger oscillations make it harder for cooperation to survive. When we increase the amplitude $r$, defectors gain an advantage, sometimes even taking over the entire population, as shown in Figure \ref{oscila}(c). This suggests that stability, in the sense of predictable returns on cooperation – plays a crucial role in maintaining cooperative behavior.
 
@@ -169,26 +167,26 @@ The frequency of oscillations also matters. When oscillations happen very quickl
 
 These findings hold true regardless of whether we use pool or peer punishment, and they persist across different levels of decision-making noise ($K$). The fundamental relationship between instability and reduced cooperation appears to be a robust feature of the system.
 
-To understand exactly when defection becomes dominant, we created Figure \ref{r1_w0}. This figure shows the critical amplitude $r$₁ that separates regions where punishers can survive from regions where defectors completely take over, plotted against the oscillation frequency $\omega$ for different values $r_0$. The resulting curve reveals several key insights:
+To understand exactly when defection becomes dominant, we created Figure \ref{r1_w0}. This figure shows the critical amplitude $r_1$ that separates regions where punishers can survive from regions where defectors completely take over, plotted against the oscillation frequency $\omega$ for different values $r_0$. The resulting curve reveals several key insights:
 
 First, the critical amplitude increases with frequency until reaching a plateau. This means that faster oscillations need larger amplitudes to disrupt cooperation completely. At low frequencies, even small oscillations can lead to defector dominance because there are long periods when $r$ dips low enough for defectors to multiply significantly. As frequency increases, the system has less time to respond to each low-$r$ period, requiring larger amplitudes to achieve the same effect.
 
 Second, higher baseline values of $r_0$ push the critical amplitude higher. This makes sense since when cooperation is more profitable on average, it takes larger disruptions to make defection the winning strategy.
 
-We observed these patterns starting from $ω = 0.00001$, our lowest tested frequency. Interestingly, at even lower frequencies, punishers dominate the system. This occurs because we start our simulations with $\delta = 0$, meaning $r$ initially increases, giving cooperation an early advantage that becomes decisive over very long oscillation periods.
+We observed these patterns starting from $\omega = 0.00001$, our lowest tested frequency. Interestingly, at even lower frequencies, punishers dominate the system. This occurs because we start our simulations with $\delta = 0$, meaning $r$ initially increases, giving cooperation an early advantage that becomes decisive over very long oscillation periods.
 
 This analysis reveals that cooperation is most vulnerable to slow, large-amplitude changes in the benefits of cooperation. Fast changes, even of large amplitude, have less impact because populations adapt to average conditions. These findings suggest that societies are more resilient to rapid fluctuations in cooperative benefits than to long-term cycles of boom and bust.
 
 
 
 \section{Having a delay in punishment}
-\label{delay}
+\label{3delay}
 
 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth]{densidad_retardo_tau5.0_L100_T0_t5000_Pool.eps}
+	\includegraphics[width=1\linewidth]{Images/P2/densidad_retardo_tau5.0_L100_T0_t5000_Pool.eps}
 	
 	\caption{
 	Frequency of each strategy averaged on the last iterations of a PGG simulation with a delay $\tau=5$ MCS when the defectors are charged with the fine as a function of $r$ in the pool punishment regime. Cooperators in blue, defectors in red and punishers in green. Punishers almost do not appear and defectors are more abundant than on Fig.~\ref{densidad}(c). The lines are used to guide the eye, and its width is larger than the corresponding error. We have used the parameters: $\beta=0.125$, $\gamma=0.0125$, $L=100$. }
@@ -197,7 +195,7 @@ This analysis reveals that cooperation is most vulnerable to slow, large-amplitu
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.6\linewidth]{freq_tiempo_retardoYsin_T0_r04.0_r10.5_tau50000_L100K0.5_t10000.eps}
+	\includegraphics[width=0.6\linewidth]{Images/P2/freq_tiempo_retardoYsin_T0_r04.0_r10.5_tau50000_L100K0.5_t10000.eps}
 	\caption{Frequency of each strategy as time passes of a PGG simulation with a delay $\tau=5$ MCS when the defectors are charged with the fine for different oscillation frequencies $\omega$ in the pool punishment regime. (a) No oscillation on the factor $r$. The oscillation of the frequency is due to the delay. With oscillation in the factor $r$, the (b-e) graphics look similar. There is no apparent difference in (d) although $w=0.2=1/\tau$ is the frequency we expected for a resonant behaviour. Cooperators in blue, defectors in red and punishers in green. We have used the parameters: $r_0=4.0$, $r_1=0.5$, $\beta=0.125$, $\gamma=0.0125$}
 	\label{tiempo_retardo_oscilacion}
 \end{figure}
@@ -212,7 +210,7 @@ To explore how such delays influence cooperation, we modified our model to inclu
 
 The added complexity of tracking delayed punishments significantly increased computational demands, so we reduced our population size to L=100 to keep simulation times manageable. Even with this smaller population, the results proved illuminating.
 
-Looking at Figure \ref{freq_retardo}, which shows the long-term frequency of each strategy with a delay of $τ=5$ MCS, we see a dramatic shift from our previous results. Comparing this to Figure \ref{densidad}(c) (the no-delay case), we observe two significant changes: (1) Punishers have almost completely disappeared across most values of the enhancement factor $r$ (2) While normal cooperators appear at lower $r$ values than before, defectors maintain a much stronger presence
+Looking at Figure \ref{freq_retardo}, which shows the long-term frequency of each strategy with a delay of $\tau=5$ MCS, we see a dramatic shift from our previous results. Comparing this to Figure \ref{densidad}(c) (the no-delay case), we observe two significant changes: (1) Punishers have almost completely disappeared across most values of the enhancement factor $r$ (2) While normal cooperators appear at lower $r$ values than before, defectors maintain a much stronger presence
 
 This weakening of cooperation makes intuitive sense when we consider how people learn and adapt their behavior. Just as children need to connect punishment directly with their actions to understand consequences, our simulated individuals become less likely to change their behavior when punishment is delayed. The longer the gap between action and consequence, the weaker the learning effect becomes. A principle that holds true whether we use peer punishment or vary the noise in decision-making.
 
@@ -220,11 +218,22 @@ To further understand these delay effects, we investigated whether they might in
 
 Nonetheless we found no evidence of such resonance. The population dynamics looked similar across different frequencies, even near the theoretical resonance point as seen in Fig.~\ref{tiempo_retardo_oscilacion}(d). Even more unexpectedly, we didn't observe the periodic oscillations we might have expected given our sinusoidal variation in returns.
 
-What explains this lack of periodicity? Our first thought was that random noise in decision-making might be masking any periodic patterns. However, when we ran simulations in the noiseless regime ($K \to 0$), we still saw no periodic behavior. Then, another account for stocahasticity is the randomness of our Monte Carlo simulation. Specifically, in how we randomly choose which individuals get to update their strategies. This inherent randomness in the update process appears to overwhelm any periodic forcing from our oscillating enhancement factor. Another fact that restrains the observation of oscilation and resonance is the large value of $\omega$, as high-frequency oscillations do not provide with sufficient time for population to adapt.
+What explains this lack of periodicity? Our first thought was that random noise in decision-making might be masking any periodic patterns. However, when we ran simulations in the noiseless regime ($K \to 0$), we still saw no periodic behavior. Then, another account for stocahasticity is the randomness of our Monte Carlo simulation. Specifically, in how we randomly choose which individuals get to update their strategies. This inherent randomness in the update process appears to overwhelm any periodic forcing from our oscillating enhancement factor. Another fact that restrains the observation of oscillation and resonance is the large value of $\omega$, as high-frequency oscillations do not provide with sufficient time for population to adapt. 
 
-This finding highlights an important principle: while both delayed punishment and oscillating returns can independently weaken cooperation, their combined effects don't produce simple, predictable patterns. Instead, the randomness inherent in how individuals learn and adapt their strategies plays a crucial role in shaping population dynamics. This suggests that in real-world situations, the unpredictability of human behavior might be more important than the precise timing of enforcement mechanisms in determining whether cooperation persists.
+This finding highlights an important principle: while both delayed punishment and oscillating returns can independently weaken cooperation, their combined effects don't produce simple, predictable patterns, at least for the parameters studied. A further study with increased range of parameters for larger $\tau$ and smaller $\omega$ values is necessary.
 
 
+
+
+\section{Conclusions }
+\label{3Conclusions}
+
+
+In this chapter, we examined time-dependent effects in the public goods game by adding an additional strategy, the punisher, among cooperators and defectors. Two forms of punishment, peer and pool punishment, were analyzed. While both punishment strategies yielded similar outcomes, peer punishment promoted cooperation more effectively. This greater efficacy comes from the fact that defectors are penalized multiple times for the same infraction, leading to a cumulative punishment effect.
+
+To explore the dynamical nature of the game, we introduced a time-dependent enhancement factor $r$ and a time delay $\tau$ in the application of punishment to defectors. Both mechanisms were found to have a negative effect in cooperation. Large oscillation amplitudes led to an increase in the population of defectors, as oscillations in productivity disrupted the stability of cooperative behavior. For high oscillation frequencies, the system's behavior resembled that of a non-oscillatory scenario, suggesting that rapid oscillations, similar to noise, have minimal impact.
+
+When a time delay in punishment was introduced, the effectiveness of punishment diminished, resulting in higher levels of defection. Thus, delayed punishment also impairs cooperation. 
 
 
 
@@ -265,9 +274,6 @@ T. Sasaki and S. Uchida, The Evolution of Cooperation by Social Exclusion, Proc.
 
 \bibitem{Punish2} 
 A. Szolnoki, G. Szabó, and M. Perc, Phase Diagrams for the Spatial Public Goods Game with Pool Punishment, Phys. Rev. E \textbf{83}, 036101 (2011). \url{https://doi.org/10.1103/PhysRevE.83.036101}.
-
-\bibitem{Delay} 
-A. K. Dal Bosco, D. Wolfersberger, and M. Sciamanna, EPL \textbf{101}, 24001 (2013). \url{https://doi.org/10.1209/0295-5075/101/24001}.
 
 \bibitem{Late} 
 I. Waichman and L. Stenzel, When Punishment Strikes Late: The Effect of a Delay in Punishment and Punishment Feedback on Cooperation and Efficiency, J. Neurosci. Psychol. Econ. \textbf{12}, 1 (2019). \url{https://doi.org/10.1037/npe0000099}.

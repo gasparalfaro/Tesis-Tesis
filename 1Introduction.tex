@@ -21,42 +21,27 @@
 
 
 
+This thesis explores three interconnected branches of game theory and complex systems: evolutionary game theory, complexity analysis, and strategic control. 
 
-Understanding how cooperation emerges and evolves in complex social systems remains one of the most fascinating challenges across multiple disciplines. This thesis explores this challenge through three interconnected perspectives: evolutionary game theory, complexity analysis, and strategic control.
+Game theory studies how individuals make strategic decisions. This helps understand better behaviors present in diverse fields, from social sciences to economics and physics \cite{Social,EconomyGames,GamesComplex}. A powerful way to study this interactions is through evolutionary game theory, which utilizes dynamical evolving populations to model the behavior of real-world communities. 
 
+Through the study of evolutionary games, we focus on understanding how cooperation emerges and evolves in complex social systems. This remains one of the most fascinating challenges across multiple disciplines \cite{SocialPhy}. We begin by examining how cooperation can emerge in a social game when faced with temporal variations.  While previous research has typically assumed static conditions, we investigate how time dependence of the enhancement factors, representing the productivity of the returns of a economical activity, and delayed punishment affect the evolution of cooperative behavior. This approach provides novel insights into more realistic scenarios where the benefits of cooperation and the consequences of actions fluctuate over time collected in Chapter~\ref{chap:TimeEffects}. In particular, we obtain that a loss of stability in the productivity of returns diminishes cooperation between individuals, as so does delays in the punishment to defectors.
 
+This evolutionary models are thoroughly studied by physicist because of their complex dynamics \cite{GamesComplex}. Complex systems theory studies nonlinear and emergent process. When studying big populations, the principal and more interesting aspect is that the increasing population manifest in process that can not be explained through the study of individuals alone. Much like one can not explain the sound of clapping hands when only one hand is clapping.
 
-We begin by examining how cooperation can emerge in the public goods game when faced with temporal variations.
-%TODO Explain a little
+Studies like \cite{SpatialChaos} suggest the complex formation of patterns in spatial games like the ones we studied. Traditionally, one can quantify the complexity of a dynamical system by calculating the Lyapunov exponents. This could help us determine the complexity of the dynamic fluctuations of the strategy frequencies. This analysis would yield negative, or null values for the Lyapunov exponents since the system is at Nash equilibrium. But what we want to analyze is the complexity of this spatial patterns through the local interactions between agents in the evolutionary dynamical system, and this cannot be done throug the analysisi of the Lyapunov exponents or other similar complexity measures. 
 
- While previous research has typically assumed static conditions, we investigate how oscillating enhancement factors and delayed punishment affect the evolution of cooperative behavior. This approach provides novel insights into more realistic scenarios where the benefits of cooperation and the consequences of actions fluctuate over time.
+However, an analysis of complexity similar to the one we intend was done in \cite{HammingChaos1,HammingChaos2} This study analyses the Hamming distance of configurations that differ initially by a small number of agents in a complex biological system and in rock-paper-scissors models. By applying the Hamming distance metric to both the prisoner's dilemma and public goods games, we can quantify and characterize the complexity of a system. This analysis reveals how minimal variations, through local interactions can lead to enormous global changes and helps identify parameter regions where complex dynamics emerge. With the study collected in Chapter~\ref{chap:HammingGames} we found out that the pattern formation studied in \cite{SpatialChaos} is indeed chaotic. 
 
-%TODO Main results
+Then, we shift our attention to cellular automata, as a more simple case of evolutionary game. This study, collected in Chapter~\ref{chap:HammingECA} provides another perspective on pattern formation. Through a systematic analysis of elementary cellular automata, we explore how simple local rules can generate complex global behaviors. Furthermore we establish a new classification of the elementary cellular automata that helps understand better the fundamental classification of Wolfram for cellular automata \cite{WolframClass}.
 
-Our investigation then shifts to analyzing the complexity of spatial patterns in evolutionary games. By applying the Hamming distance metric to both the prisoner's dilemma and public goods games, we develop new methods for quantifying and characterizing the complexity of a system. This analysis reveals how minimal variations, through local interactions can lead to enormous global changes and helps identify parameter regions where complex dynamics emerge.
+The most important breakthrough in the study was the observance of transient chaotic dynamics present in Wolfram class $4$, underlying the phenomenon of edge of chaos \cite{EdgeChaos}. 
 
-Traditionally, %TODO Lyapunov exponents
+Finally, we extend the concept of partial control \cite{Yorke,Dynamics,PartialControl,PartialControlBeyond,PartialControlFunctions} to competitive scenarios, developing a novel framework for analyzing strategic interactions in chaotic systems. 
 
+Partial control is a method of chaos control. Instead of forcing a single controlled trajectory, the method tries to evade some unwanted regions in the dynamics by strategically controlling the trajectory to a range of \textit{safe} points, traditionally called \textit{safe sets}. In the study of Chapter~\ref{chap:ForcingEscape} we extend the study of partial control to a case in which the controller aims to expell the trajectory as quickly as possible, or instead, in an orderly manner, from a chaotic region.
 
-%TODO Main results
-
-Then, we shift our attention to cellular automata, as a more simple case of evolutionary game. This study provides another perspective on pattern formation. Through a systematic analysis of elementary cellular automata, we explore how simple local rules can generate complex global behaviors. Furthermore we establish a new classification of the elementary cellular automata that helps understand better the fundamental classification of Wolfram for cellular automata \cite{WolframClass}.
-
-%TODO Main results
-
-
-
-
-Finally, we extend the concept of partial control to competitive scenarios, developing a novel framework for analyzing strategic interactions in chaotic systems. 
-
-%TODO Partial Control
-
-In the study of Chapter~\ref{chap:ForcingEscape} we begin by extending the study of partial control to a case in which the controller aims to expell the trajectory from the chaotic region, instead of remaining there. %TODO
-
-The study culminates in Chapter~\ref{chap:PartialControlGame} with a two-player game where participants compete for control over a chaotic trajectory, revealing how information asymmetry and timing of actions influence strategic outcomes.
-
-%TODO Main results
-
+The study culminates in Chapter~\ref{chap:PartialControlGame} with a two-player game where participants compete for control over a chaotic trajectory, revealing how information asymmetry and timing of actions influence strategic outcomes. The study analyses the importance of player's information, which can alter the solution to the game.
 
 Our findings contribute to a deeper understanding of how game theory, complexity, and control interplay in social and dynamical systems, with potential applications ranging from social physics to game theory and chaos control.
 
@@ -70,6 +55,90 @@ Our findings contribute to a deeper understanding of how game theory, complexity
 
 
 \begin{thebibliography}{01}
+
+
+\bibitem{Social}
+P. Kollock, Social dilemmas: the anatomy of cooperation,
+Annu. Rev. Sociol. \textbf{24}, 183-214 (1998)
+
+\bibitem{EconomyGames}
+Y. Xiao, Y. Peng, Q. Lu, and X. Wua, Chaotic dynamics in nonlinear duopoly Stackelberg game with heterogeneous players,
+Physica A \textbf{492}, 1980--1987 (2018)
+
+\bibitem{GamesComplex}
+W. Hu, G. Zang, H. Tian. and Z. Wang, Chaotic dynamics in asymmetric rock-paper-scissors games, IEEE Access \textbf{7}, 175614--175621 (2019)
+
+
+\bibitem{SocialPhy}
+\raggedright
+M. Jusup, P. Holme, K. Kanazawa,  M. Takayasu, B. Podobnik, L. Wang,  W. Luo, T. Klanjšček, J. Fan,  S. Boccaletti, and M. Perc,
+Social physics.
+Phys. Rep. \textbf{948}, 1--148 (2022). 
+\url{https://doi.org/10.1016/j.physrep.2021.10.005}
+
+\bibitem{SpatialChaos}
+\raggedright
+M. A. Nowak and R. M. May,
+Evolutionary games and spatial chaos. 
+Nature \textbf{359}, 826--829 (1992).
+\url{https://doi.org/10.1038/359826a0}
+
+
+
+\bibitem{HammingChaos1}
+\raggedright
+D. Bazeia, M. B. P. N. Pereira, A. V. Brito, B. F. Oliveira, and J. G. G. S. Ramos,
+A novel procedure for the identification of chaos in complex biological systems.
+Sci. Rep. \textbf{7}, 44900 (2017)
+
+\bibitem{HammingChaos2}
+\raggedright
+D. Bazeia, J. Menezes, B. F. De Oliveira, and J. G. G. S. Ramos,
+Hamming distance and mobility behavior in generalized rock-paper-scissors models.
+EPL \textbf{119}, 58003 (2017)
+
+
+
+\bibitem{Yorke}
+J. Aguirre, F. d’Ovidio, and M. A. F. Sanjuán,
+Controlling chaotic transients: Yorke’s game of survival,
+Phys. Rev. E \textbf{69}, 016203
+(2004)
+
+\bibitem{DynamicsPartialControl}
+Juan Sabuco, Miguel A. F. Sanjuán,  and James A. Yorke,
+Dynamics of partial control,
+Chaos \textbf{22}, 047507
+(2012)
+
+\bibitem{PartialControlBeyond}
+R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
+Beyond partial control: controlling chaotic transients
+with the safety function,
+Nonlinear Dyn. \textbf{107}, 2903--2910
+(2022)
+
+
+\bibitem{PartialControlFunctions}
+R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
+A new approach of the partial control method in chaotic systems,
+Nonlinear Dyn. \textbf{98}, 873--887
+(2019)
+
+
+\bibitem{PartialControlEscape}
+G. Alfaro, R.~Cape{\'a}ns, and M.~A.~F. Sanju{\'a}n, 
+Forcing the escape: Partial control of escaping orbits from a
+transient chaotic region,
+Nonlinear Dyn. \textbf{104}, 1603--1612
+(2021) 
+
+
+\bibitem{EdgeChaos}
+N. H. Packard,
+Adaptation toward the edge of chaos,
+Dynamic patterns in complex systems \textbf{212} 293--301
+(1988)
 
 
 
