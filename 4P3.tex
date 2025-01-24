@@ -123,8 +123,17 @@ Each player is put in a square grid with periodic boundaries, and plays eight ga
 
 
 
-We plot cooperators in blue and defectors in red in Fig.\ref{fig:Sequencia}. These plots show spatio-temporal chaotic patterns that evolve quickly. In \cite{SpatialChaos} the authors claimed them to be fractal-like structures. However, as we can see on Fig.\ref{fig:GranPlot}, when we augment the population size $N$, the patterns do not scale, and instead the clusters all size similarly.
+We plot cooperators in blue and defectors in red in Fig.\ref{fig:PD_Sequencia}. These plots show spatio-temporal chaotic patterns that evolve quickly. In \cite{SpatialChaos} the authors claimed them to be fractal-like structures. However, as we can see on Fig.\ref{fig:GranPlot}, when we augment the population size $N$, the patterns do not scale, and instead the clusters all size similarly.
 
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/P3/PD_Secuencia.png}
+    \caption{Snapshots of the public goods game at $4$ different times of cooperators in blue, defectors in red, and agents that have changed from the previous configuration in yellow. The snapshots are taken at instants $t1 = 1000$, $t2 = 1002$, t3 = $1004$ and $t4 = 1006$ after one defector is introduced at the center in a sea of cooperators in a grid of $101\times101$ agents with periodic boundaries.}
+    \label{fig:PD_Sequencia}
+\end{figure}
 
 
 \begin{figure}
@@ -134,17 +143,6 @@ We plot cooperators in blue and defectors in red in Fig.\ref{fig:Sequencia}. The
     \label{fig:GranPlot}
 \end{figure}
 
-
-\begin{comment}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{Images/P3/PD_Secuencia.png}
-    \caption{Snapshots at $4$ different times of both configurations (original, and copy with altered agent at $t = 0$) of the public goods game. Cooperators are plotted in blue, defectors in red. Both configurations are plotted one on top of the other with a transparent effect. Since both configurations are the same, only those cells that differ change with time. Thanks to this we can see that the mismatches propagate at average constant velocity and expand radially.}
-    \label{fig:PD_Sequencia}
-\end{figure}
-
-\end{comment}
 
 
 
