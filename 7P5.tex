@@ -1,4 +1,4 @@
-\chapter{Two-Player Yorke's Game of Survival in Chaotic Transients} %7P5
+\chapter{Two-player Yorke's game of survival in chaotic transients} %7P5
 \label{chap:PartialControlGame}
 
 
@@ -215,28 +215,22 @@ W^{B^+}_{\text{new}}=W^{B^+}
 
 \section{Game of survival in the logistic map}
 
+To demonstrate our method, we explore a game based on the logistic map, \linebreak ${f(x) = \mu x_n(1-x_n)}$ with $\mu=4.5$ and $Q=[0,1]$. This map provides an ideal scenario due to its transient chaotic behavior within $Q$: the trajectories exhibit chaotic dynamics before eventually leaving the region. This creates an asymmetric situation where Player $B$, aiming to keep the trajectory inside the region, must contend with both the natural behavior of the system and the opposing player’s objective of pushing the trajectory out. While this example is specific, our approach can be generalized to other maps $f$ and regions $Q$ in the phase space.
 
-
-To illustrate our approach, we study a game based on the logistic map ${f(x) = \mu x_n(1-x_n)}$ where $\mu=4.5$ and $Q=[0,1]$. This map serves as an excellent test case since it exhibits transient chaos in $Q$: trajectories display chaotic behavior before naturally escaping the region. This creates an asymmetric scenario where the player $B$, who wants to stay in the region, must work against both the natural dynamics and their opponent's actions, who has an opposite objective, i.e., to expel the trajectory from the region. While this specific example is used, our methodology can be applied to others maps $f$ and defined regions $Q$ in phase space.
-
-In this context, both players can apply control at each iteration to influence the trajectory, but they are limited by their respective control bounds $u_0^A$ and $u_0^B$. The state of the system at each iteration is determined by
+In this setup, both players are allowed to apply control at each step to influence the trajectory. However, the control actions of both players are constrained by their respective limits, $u_0^A$ and $u_0^B$. The state of the system after each iteration is given by
 \begin{equation}
 x_{k+1} = f(x_k) + u^A + u^B,
 \end{equation}
-where $f(x) = \mu x(1-x)$ is the logistic map, and $u^A$ and $u^B$ represent the control inputs applied at each iteration according to each player's strategy.
+where $u^A$ and $u^B$ denote the control that the players exert.
 
+We present a specific example of the game with control bounds $u_0^A = 0.016$ and $u_0^B = 0.038$. In Fig.~\ref{fig:tray}, we illustrate how the winning sets are formed. As the process progresses, the winning sets evolve with each iteration: player $A$’s set grows, while player $B$’s set shrinks. Additionally, two controlled trajectories are shown. The first one, in Fig.~\ref{fig:tray}(b), starting in player $A$’s winning set, where the controller successfully pushes the trajectory out of region $Q$. For the second one, in Fig.~\ref{fig:tray}(c), the trajectory starts in player $B$’s winning set, so they can keep the trajectory within the region.
 
+Figure~\ref{fig::sets} displays the outcomes of three different examples of games, depending on whether each player has knowledge of the other’s actions. In Fig.~\ref{fig::sets}(a), player $A$ moves first, followed by player $B$, therefore player $A$ has advantage by knowing player $B$'s actions. Figure~\ref{fig::sets}(b) reverses the order, with Player $B$ moving first and Player $A$ second. Finally, Fig.~\ref{fig::sets}(c) shows the case where both players are unaware of each other’s moves, representing a simultaneous play situation.
 
+This last game is noteworthy. In this case, regions in the state space appear that do not belong to any winning set. These areas arise because neither player can secure a win without considering the opponent’s strategy. This uncertainty stems from the fact that each player is unaware of the other’s choice when making their decision. As a result, the outcome depends on the specific combination of moves made by both players, and the players may not always respond optimally to the opponent's move.
 
+This uncertainty stands in contrast to the games in Fig.~\ref{fig::sets}(a) and (b), where the presence of informed players leads to clear winning sets, leaving little ambiguity about the game’s outcome for all initial conditions.
 
-
-We compute an example for this game with specific control bounds $u_0^A = 0.016$ and $u_0^B = 0.038$. In Fig.~\ref{fig:tray}, we show how the winning sets are constructed. Each iteration of the process brings the winning sets closer to their final version by cutting down player's $B$ set and expanding that of player $A$. Additionally, we show two controlled trajectories with initial conditions belonging to the winning set of player $A$ in Fig.~\ref{fig:tray}(b), successfully expelling the trajectory from region $Q$; and of player $B$ in Fig.~\ref{fig:tray}(c), keeping the orbit in the region. 
-
-Figure~\ref{fig::sets} shows three games whether each player is informed or ignorant, showing the winning sets of each player. In Fig.~\ref{fig::sets}(a), we analyze the case where $A$ plays first and $B$ second. In Fig.~\ref{fig::sets}(b), the roles are reversed: $B$ plays and $A$ plays second. Finally, Fig.~\ref{fig::sets}(c) shows the scenario where both players are ignorant, which could represent a simultaneous play situation.
-
-Particularly interesting is the case shown in Fig.~\ref{fig::sets}(c), where both players play simultaneously and therefore they are ignorant to each other actions. Here, we observe regions in the state space that do not belong to any winning set. These regions emerge because no player can guarantee victory without considering the strategy of the rival. The existence of such regions is a direct consequence of both players being ignorant, no one knows the other player's move when making their decision. Therefore, players may or may not choose the best response to the opponent's move so the outcome depends on the specific combination of controls chosen by both players
-
-This uncertainty contrasts sharply with the scenarios where at least one player is informed, as shown in Fig.~\ref{fig::sets}(a-b), where the winning sets completely determine the game's outcome for all initial conditions.
 
 
 \subsection{Exploring possible games in the $(u_0^B,u_0^A)$ space}
@@ -257,15 +251,27 @@ This uncertainty contrasts sharply with the scenarios where at least one player 
     \label{fig:fraccion}
 \end{figure}
 
-The outcome of these games strongly depends on the control bounds available to each player. Figure~\ref{fig:franjas} presents a comprehensive analysis of possible game scenarios in the $(u_0^B,u_0^A) \in [0,0.2]\times[0,0.1]$ parameter space. It shows three different game types: $A$ ignorant vs $B$ informed, $A$ informed vs $B$ ignorant, and both players ignorant.
 
-In these diagrams, there are regions where one player wins for all initial conditions and other regions in which the winner depends on the initial conditions. Among this last category, in the case where both players are ignorant in Fig.~\ref{fig:franjas}(c), some are marked as $NW$ (no winning) where victory is uncertain for some initial conditions. Five different regions can be seen in Fig.~\ref{fig:franjas}(c). This variety of outcomes illustrates the complexity that emerges when both players must act without knowledge of their opponent's moves.
 
-The bottom Figs.~\ref{fig:franjas}(d-f) illustrate specific examples of winning sets for five different parameter combinations, labeled as games $P1$ to $P5$. These examples demonstrate how the winning sets change as we move through different regions in the parameter space.
 
-Figure~\ref{fig:fraccion} quantifies these results by showing the percentage of region $Q$ occupied by each player's winning set. Particularly interesting is Fig.~\ref{fig:fraccion}(c), which shows the percentage of initial conditions where no player can guarantee victory in the case where both players are ignorant. The color gradients reveal a continuous transition between different game outcomes as the control bounds change.
 
-These results demonstrate how the relative strength of the players' control bounds determines not just who wins, but whether victory can be guaranteed at all. When the bounds are comparable, we often find situations where the outcome depends on initial conditions or remains uncertain.
+
+
+
+
+
+
+
+
+The results of these games are heavily influenced by the range of control available to each player. Figure~\ref{fig:franjas} offers a detailed exploration of potential game scenarios within the parameter space $(u_0^B, u_0^A) \in [0,0.2] \times [0,0.1]$. It distinguishes between three types of games:  $A$ ignorant vs $B$ informed, $A$ informed vs $B$ ignorant, and both players ignorant.
+
+In these diagrams, certain regions represent scenarios where one player is guaranteed to win regardless of the starting conditions, while other regions show outcomes that depend on the initial setup. In particular, when both players lack information (Fig.~\ref{fig:franjas}(c)), there are regions labeled as $NW$ (no winner) that represent cases where the outcome is indeterminate for certain starting conditions.
+
+The lower panels (Figs.~\ref{fig:franjas}(d-f)) provide concrete examples of winning sets for five different parameter combinations, referred to as games $P1$ through $P5$. These examples illustrate how winning sets change as the parameters vary across the identified regions of the parameter space.
+
+Figure~\ref{fig:fraccion} further analyzes these findings by showing the proportion of region $Q$ occupied by each player's winning set. Notably, Fig.~\ref{fig:fraccion}(c) highlights the percentage of initial conditions where neither player can secure a guaranteed win when both are unaware. The color gradients in this figure depict a gradual shift in game outcomes as control bounds change.
+
+These findings emphasize how the relative strength of the players' control bounds shapes not only who emerges victorious but also whether a definitive victory is possible. When the control bounds are closely matched, the results often depend on initial conditions or remain uncertain.
 
 
 \subsection{Boundary games}
@@ -277,9 +283,28 @@ These results demonstrate how the relative strength of the players' control boun
     \label{fig:bifurcation}
 \end{figure}
 
-The dynamics of the game favors player $A$, who wants to leave region $Q$ and this occurs spontaneously due to the transient nature of the system. Nonetheless all is not lost for player $B$. Given sufficient control this player can achieve their goal. The boundary games illustrated in Fig.~\ref{fig:bifurcation} explore the limits of control when player $B$'s  victories first appear. This boundary, shown in Figs.~\ref{fig:bifurcation}(a) and~\ref{fig:bifurcation}(c) in the $(u_0^B,u_0^A)$ parameter space, represents a critical transition: for slightly larger values of $u_0^A$ or smaller values of $u_0^B$, player $B$ cannot win under any circumstances. However, crossing this boundary leads to the emergence of initial conditions where $B$ can achieve victory.
 
-Of particular interest is the structure revealed in Figs.~\ref{fig:bifurcation}(b) and~\ref{fig:bifurcation}(d), which show the winning sets along these boundaries for two different game scenarios. In the case of $A$ ignorant vs $B$ informed, Fig.~\ref{fig:bifurcation}(b), we observe an intricate pattern of $B$'s victories appearing as blue regions within $A$'s domain, showing increasing detail at smaller scales and suggesting a self-similar structure. In contrast, when $A$ is informed and $B$ ignorant, Fig.~\ref{fig:bifurcation}(d), we see a different pattern where $B$'s victory regions (purple) alternate with $A$'s (green) in a complex but distinct arrangement.
+
+
+
+
+
+The dynamics of the game inherently favor player $A$, whose objective is to exit region $Q$, a process that occurs naturally due to the transient nature of the system. However, this does not mean player $B$ is without hope. With sufficient control, player $B$ can still achieve their goal. The boundary games depicted in Fig.~\ref{fig:bifurcation} examine the critical limits of control at which player $B$’s victories begin to emerge. This boundary, illustrated in Figs.~\ref{fig:bifurcation}(a) and~\ref{fig:bifurcation}(c) within the $(u_0^B, u_0^A)$ parameter space, marks a pivotal transition: slightly increasing $u_0^A$ or reducing $u_0^B$ results in a scenario where player $B$ cannot win under any conditions. Conversely, crossing this boundary creates initial conditions where $B$’s victory becomes possible.
+
+The structure of these boundaries is particularly noteworthy, as shown in Figs.~\ref{fig:bifurcation}(b) and~\ref{fig:bifurcation}(d), which present the winning sets along these transitions for two distinct game types. In the case of $A$ ignorant vs $B$ informed (Fig.~\ref{fig:bifurcation}(b)), we see a highly intricate pattern of $B$’s victories, represented as blue regions within $A$’s domain. These patterns exhibit increasing detail at finer scales, hinting at a self-similar structure. By contrast, in the scenario where $A$ is informed and $B$ ignorant (Fig.~\ref{fig:bifurcation}(d)), the arrangement takes on a different form, with $B$’s victory regions (purple) interspersed with $A$’s (green) in a complex but distinct alternating pattern.
+
+
+
+
+
+
+The dynamics of the game inherently favor player $A$, whose objective is to exit region $Q$, a process that occurs naturally due to the transient nature of the system. However, this does not mean player $B$ is without hope. With sufficient control, at some cases even with control lower than that of player $A$, player $B$ can still achieve their goal. The boundary games depicted in Fig.~\ref{fig:bifurcation} examine the critical limits of control at which player $B$’s victories begin to emerge. This boundary, illustrated in Figs.~\ref{fig:bifurcation}(a) and~\ref{fig:bifurcation}(c) within the $(u_0^B, u_0^A)$ parameter space, marks a pivotal transition, crossing this boundary creates initial conditions where $B$’s victory becomes possible. 
+
+
+
+
+The structures shown in Figs.~\ref{fig:bifurcation}(b) and~\ref{fig:bifurcation}(d), which present the winning sets along these transitions for two distinct game types, are of great interest. In the case of $A$ ignorant vs $B$ informed (Fig.~\ref{fig:bifurcation}(b)), we see a highly intricate pattern of $B$’s victories, represented as blue regions within player $A$’s domain, depicted in yellow. These patterns exhibit increasing detail at finer scales, hinting at a self-similar structure. By contrast, in the scenario where player $A$ is informed and player $B$ is ignorant (Fig.~\ref{fig:bifurcation}(d)), the arrangement takes on a different form, with player $B$’s victory regions (purple) alternating with player $A$’s (green) in a complex but distinct pattern.
+
 
 
 
@@ -295,7 +320,8 @@ Of particular interest is the structure revealed in Figs.~\ref{fig:bifurcation}(
     \label{fig:diferencia}
 \end{figure}
 
-It is clear that the second player has advantage in this game if they have the knowledge of the opponent's actions. This way they can counteract any action of the rival. Consequently, the ignorant sets are a subset of the informed ones. Surprisingly, by plotting the difference between the proportion of each player informed and ignorant sets, Fig.~\ref{fig:diferencia}, we can see that there is a major area where the difference is null. This figure is the same as the percentage in which no player guarantees its victory of Fig.~\ref{fig:fraccion}. This is easily demonstrated with the following equations:
+
+The advantage of playing second in this game is evident because they have the knowledge of the opponent's actions, as this allows them to counteract any move the rival makes. Consequently, the ignorant sets are strictly contained within the informed sets. Interestingly, when plotting the difference between the proportions of each player's informed and ignorant sets (Fig.~\ref{fig:diferencia}), we observe a large region where this difference is zero. Notably, this region corresponds to the same area in Fig.~\ref{fig:fraccion} where no player can guarantee victory. This relationship is clearly demonstrated by the following equations:
 \begin{equation}
    \left. \begin{array}{lll}
         &A^{+} + B^{-} = 1 \\
@@ -304,12 +330,11 @@ It is clear that the second player has advantage in this game if they have the k
     \end{array}
     \right\} \Rightarrow NW = A^{+} - A^{-} = B^{+} - B^{-}.
 \end{equation}
-Here $P^{+}$ represents the proportion of the region $Q$ that is occupied by the informed Player $P$'s winning set while $P^{-}$ the same for the ignorant one. $ NW$ (no winning) is the proportion of blank space when both Player $A$ and Player $B$ are ignorant.
-
-In the case that players could fight for turn order, it is reasonable to assume that there would be a cost associated to being informed. If that is the case, then it may not be worth paying that cost, because the result is the same for a large proportion of cases. However, if one cares to minimize the average control made, being informed is surely beneficial in almost all cases.
+Here, $P^{+}$ represents the proportion of region $Q$ occupied by the winning set of the informed player $P$, while $P^{-}$ denotes the same proportion for the ignorant player. The term $NW$ (no winning) corresponds to the proportion of blank space when both players are ignorant.
 
 
 
+If players could compete for the right to act as the informed player, it is reasonable to assume that there would be a cost associated with gaining this advantage. In such a scenario, it may not always be worthwhile to incur the cost of being informed, because in a significant portion of cases, the outcome remain unchanged. However, if minimizing the average control effort is a priority, being informed offers a substantial advantage in nearly all situations. We have checked that the minimal control required to obtain the same results is lower for informed players.
 
 
 

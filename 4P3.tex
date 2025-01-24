@@ -129,7 +129,7 @@ We plot cooperators in blue and defectors in red in Fig.\ref{fig:Sequencia}. The
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{Images/P3/PGG_Proportion.eps}
+    \includegraphics[width=1\linewidth]{Images/P3/PD_GranPlot.eps}
     \caption{Cooperators and defectors in blue and red, respectively.}
     \label{fig:GranPlot}
 \end{figure}
@@ -139,12 +139,17 @@ We plot cooperators in blue and defectors in red in Fig.\ref{fig:Sequencia}. The
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{Images/P3/Sequencia.eps}
-    \caption{}
-    \label{fig:Sequencia}
+    \includegraphics[width=0.8\linewidth]{Images/P3/PD_Secuencia.png}
+    \caption{Snapshots at $4$ different times of both configurations (original, and copy with altered agent at $t = 0$) of the public goods game. Cooperators are plotted in blue, defectors in red. Both configurations are plotted one on top of the other with a transparent effect. Since both configurations are the same, only those cells that differ change with time. Thanks to this we can see that the mismatches propagate at average constant velocity and expand radially.}
+    \label{fig:PD_Sequencia}
 \end{figure}
 
 \end{comment}
+
+
+
+
+
 
 
 
@@ -303,6 +308,19 @@ In the PGG cooperation is a Nash equilibrium for $r\geq5$. At the Nash equilibri
 To asses the complexity of our PGG we measured the Hamming distance of two initially close configurations differing of only one agent. Because the election of the agent that adopt a new strategy in the evolutionary model is chosen at random, we have to make sure every random interaction is chosen the same through both simulations.
 
 
+We can see how mismatches propagate in Fig.~\ref{fig:SequenciaHamming}. For each snapshot both configuration, the original and the copy with a different agent at the center, are plotted on the same space in two layers with one layer being slightly transparent. The defectors in one configuration are ploted red and in the other, green. This allows us to watch how the mismatches propagate. They do so radially and at constant velocity on average, but following the branches of defectors when watched closely.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/P3/PGG_SecuenciaHamming.png}
+    \caption{Snapshots at $4$ different times of both configurations (original, and copy with altered agent at $t = 0$ at the center) of the public goods game. Cooperators are plotted in blue, defectors in red for one configuration and in green for the other. Both configurations are plotted one on top of the other with a transparent effect. Thanks to this we can see that the mismatches propagate at average constant velocity and expand radially.}
+    \label{fig:PGG_SequenciaHamming}
+\end{figure}
+
+
+
+
 
 \begin{figure}
 	\centering
@@ -321,7 +339,7 @@ To asses the complexity of our PGG we measured the Hamming distance of two initi
 \end{figure}
 
 
-The result was, as seen in Fig.\ref{fig:NormalHammingTimePopulation_r} that the Normalized Hamming distance grew as a sigmoid like in the previous section for values of the parameter $r$ between $25/7\approx3.57$ and $8.\hat3$. These are all the values where there are present cooperators and defectors . We cannot say that this is an indicator of chaos this time, because probably, what the algorithm is assessing is the randomness in the election of agent to change its strategy. Nonetheless, when we fit the curves to the Weibull ``stretched exponential" function in Fig.\ref{fig:NormalHammingTimePopulation_2r}, we get lower values of $a$ for curves in the first regime, $25/7\leq r<25/6$. This means that the system is more susceptible to changes in the initial conditions.   For values of $5>r>8.\hat3.$ we get a very large value of $a = 3685$.
+The result was, as seen in Fig.\ref{fig:NormalHammingTimePopulation_r} that the Normalized Hamming distance grew as a sigmoid like in the previous section for values of the parameter $r$ between $25/7\approx3.57$ and $8.\hat3$. These are all the values where there are present cooperators and defectors . We cannot say that this is an indicator of chaos this time, because probably, what the algorithm is assessing is the randomness in the election of agent to change its strategy. Nonetheless, when we fit the curves to the Weibull ``stretched exponential" function in Fig.\ref{fig:NormalHammingTimePopulation_2r}, we get lower values of $a$ for curves in the first regime, $25/7\leq r<25/6$. This means that the system is more susceptible to changes in the initial conditions. For values of $5>r>8.\hat3.$ we get a very large value of $a = 3685$.
 
 
 \section{Conclusions}
