@@ -31,7 +31,7 @@ by Richard Hamming in 1950 in \cite{HammingOrigins}. Since then it has been very
 
 Moreover in \cite{HammingChaos1,HammingChaos2}, the Hamming distance is used to asses complexity on social games. The authors measure the difference between two close configurations of rock-paper-scissors models that describe stochastic network simulations of the May and Leonard type. The Hamming distance converged to a certain value. But the distance oscillated increasing amplitude towards zero or the population size when shifting a parameter that represents the mobility beyond a critical point. For these parameter regime one strategy will end up being the only one present, and by varying just one individual's strategy at the beginning, the outcome can change completely, changing which strategy ends up winning.  This shows that the susceptibility to  initial perturbations of the system. 
 
-In this chapter we summarize the results of a study where we measured the complexity of the patterns observed by May and Nowak in \cite{SpatialChaos} through this same method, by analyzing the Hamming distance between two initially close configurations of players. We found that for the parameter region where May and Nowak found the complex patterns, the Hamming distance grew in time as a sigmoid until it reached a convergence value; and for the rest of values, the distance quickly decreased to zero. This shows that the divergence of the Hamming distance could be an indicator of complex behavior. 
+In this chapter we summarize the results of a study \cite{Alfaro2024} where we measured the complexity of the patterns observed by May and Nowak in \cite{SpatialChaos} through this same method, by analyzing the Hamming distance between two initially close configurations of players. We found that for the parameter region where May and Nowak found the complex patterns, the Hamming distance grew in time as a sigmoid until it reached a convergence value; and for the rest of values, the distance quickly decreased to zero. This shows that the divergence of the Hamming distance could be an indicator of complex behavior. 
 
 We also studied the divergence of the Hamming distance in a different game, the public goods game. This time there was a certain degree of stochasticity in the game, which led to the growth of the Hamming distance for all cases. This means that our algorithm does not distinguish random processes from chaotic ones. However the growth was more rapid for some values which may indicate a higher complexity for those cases.
 
@@ -358,11 +358,18 @@ Even though our studied was focused on two particular cases, we are sure the alg
 
 \begin{thebibliography}{04}
 
+\bibitem{Alfaro2024}
+G. Alfaro and M. A. F. Sanjuán,
+Hamming distance as a measure of spatial chaos in evolutionary games,
+Phys. Rev. E \textbf{109}, 014203 (2024)
+\url{10.1103/PhysRevE.109.014203}
+
+
 \bibitem{SpatialChaos}
 M. A. Nowak and R. M. May,
 Evolutionary games and spatial chaos. 
 Nature \textbf{359}, 826--829 (1992).
-%https://doi.org/10.1038/359826a0
+\url{https://doi.org/10.1038/359826a0}
 
 \bibitem{HammingOrigins}
 \raggedright
@@ -370,7 +377,7 @@ R.Hamming,
 Error detecting and error correcting codes.
 Bell Syst. Tech. J. \textbf{29}, 147--160 
 (1950)
-%https://doi.org/10.1002/j.1538-7305.1950.tb00463.x
+\url{https://doi.org/10.1002/j.1538-7305.1950.tb00463.x}
 
 
 \bibitem{HammingSocial1}
@@ -378,40 +385,41 @@ Bell Syst. Tech. J. \textbf{29}, 147--160
 R. D'hulst and G. J. Rodgers,
 The hamming distance in the minority game.
 Physica A \textbf{270}, 514--525 (1999) 
-
+\url{https://doi.org/10.1016/S0378-4371(99)00211-3}
 
 \bibitem{HammingSocial2}
 \raggedright
 J.-W. Kim,
 A tag-based evolutionary prisoner's dilemma game on networks with different topologies.
 JASSS, \textbf{13}, 2 (2010)
-
+\url{https://doi.org/10.18564/jasss.1584}
 
 \bibitem{HammingChaos1}
 \raggedright
 D. Bazeia, M. B. P. N. Pereira, A. V. Brito, B. F. Oliveira, and J. G. G. S. Ramos,
 A novel procedure for the identification of chaos in complex biological systems.
 Sci. Rep. \textbf{7}, 44900 (2017)
+\url{https://doi.org/10.1038/srep44900}
 
 \bibitem{HammingChaos2}
 \raggedright
 D. Bazeia, J. Menezes, B. F. De Oliveira, and J. G. G. S. Ramos,
 Hamming distance and mobility behavior in generalized rock-paper-scissors models.
 EPL \textbf{119}, 58003 (2017)
-
+\url{https://doi.org/10.1209/0295-5075/119/58003}
 
 \bibitem{TragedyCommons}
 \raggedright
 G. Hardin,
 The tragedy of the commons: the population problem has no technical solution; it requires a fundamental extension in morality.
-Science \textbf{162} 1243--1248 (1968)
-
+Science \textbf{162}, 1243--1248 (1968)
+\url{https://doi.org/10.1126/science.162.3859.1243}
 
 
 \bibitem{Weibull}
 \raggedright
 W. Weibull, A statistical distribution function of wide applicability.
-J. Appl. Mech. \textbf{18} 293--297 (1951).
-
+J. Appl. Mech. \textbf{18}, 293--297 (1951).
+\url{https://hal.science/hal-03112318v1}
 
 \end{thebibliography}
