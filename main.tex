@@ -13,8 +13,11 @@
 \usepackage{algpseudocode}
 \usepackage{algorithm}
 \usepackage{comment}
-\usepackage{array} % para usar >{\raggedright}p{...}
-\usepackage{ragged2e} % si necesitas raggedright
+
+\usepackage{array} % para usar >{\raggedright}p{...}     % para una tabla
+\usepackage{ragged2e} 
+
+\usepackage{multicol} % para las firmas
 
 
 % TABLES
@@ -75,7 +78,8 @@ depth .25\baselineskip height #1\baselineskip\relax}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ESTILO PROPIO DEL TEXTO
 
 \usepackage[a4paper, total={15cm, 22cm}]{geometry}
-%\usepackage[margin=1.77in]{geometry}
+
+
 \voffset=2cm
 
 \renewcommand{\labelenumi}{\roman{enumi}} % bulletpoints for enumerate
@@ -112,12 +116,24 @@ depth .25\baselineskip height #1\baselineskip\relax}
 %\addbibresource{ref_thesis.bib}
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \begin{document}
 
 
 
 
+%%%%%%%%% margin equal of odd and even
 
+%\setlength{\evensidemargin}{0cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\marginparwidth}{0cm}
+
+%%%%%%%%%
 
 
 \begin{center}
@@ -152,9 +168,7 @@ depth .25\baselineskip height #1\baselineskip\relax}
 \vspace*{1.4cm}
 
 \begin{center}                                                     %% titulo
-	{\LARGE {\bf Further Advancements and Developments}} \\
-			\vspace*{0.25cm}
-	{\LARGE {\bf in Game Theory, Complexity and Control}}
+	{\LARGE {\bf Game Theory, Complexity and Control}}
 \end{center}
 
 \vspace*{1.2cm}
@@ -191,7 +205,7 @@ depth .25\baselineskip height #1\baselineskip\relax}
 \vspace*{0.5cm}
 
 \begin{center}
-	{\bf \Large 2024}
+	{\bf \Large 2025}
 \end{center}                         %% fecha
 
 \end{center}
@@ -205,8 +219,57 @@ depth .25\baselineskip height #1\baselineskip\relax}
 \thispagestyle{empty}
 
 
-\include{agradecimientos} \clearemptydoublepage
 
+
+
+
+\clearemptydoublepage
+
+
+\noindent
+\textbf{Miguel Ángel Fernández Sanjuán}, Catedrático de Física de la Universidad Rey Juan Carlos. 
+
+\vspace*{0.5cm}
+
+\noindent
+\textbf{Rubén Capeáns Rivas}, CARGO DE RUBÉN de la Universidad Rey Juan Carlos.
+%TODO
+
+\vspace*{1.5cm}
+
+\textbf{CERTIFICAN:}
+
+\vspace*{1.5cm}
+
+Que la presente memoria de tesis doctoral, titulada “Game Theory, Complexity and Control”, ha sido realizada bajo nuestra dirección por Gaspar Alfaro García para optar al grado de Doctor por la Universidad Rey Juan Carlos. 
+
+Y para que conste que la citada tesis reúne todos los requisitos necesarios para su defensa y aprobación, firmamos el presente certificado en Móstoles a FECHA (en palabras)
+%TODO
+
+\vspace*{1cm}
+
+\raggedleft
+Móstoles, FECHA. (números y mes en palabra)
+
+\centering
+
+
+\vspace*{3.5cm}
+
+
+\begin{multicols}{2}
+Fdo. Miguel Ángel Fernández Sanjuán \\ Catedrático de Física \\ Universidad Rey Juan Carlos 
+\columnbreak
+Fdo. Rubén Capeáns Rivas \\ CARGO RUBÉN \\ Universidad Rey Juan Carlos
+\end{multicols}
+%TODO
+
+
+\justifying
+
+\clearemptydoublepage
+
+\thispagestyle{empty}
 
 \begin{flushright}
 
@@ -221,6 +284,12 @@ depth .25\baselineskip height #1\baselineskip\relax}
 
 \clearemptydoublepage
 
+
+
+\include{agradecimientos} 
+
+
+\clearemptydoublepage
 
 
 
@@ -273,16 +342,19 @@ depth .25\baselineskip height #1\baselineskip\relax}
 \clearemptydoublepage
 
 
-\include{8Conclusions}
+\include{8Discussion}
 \clearemptydoublepage
 
+
+\include{9Conclusion}
+\clearemptydoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CV Y RESUMEN %%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %\include{curriculum}
 
-\include{9ResumenCast}
+\include{10ResumenCast}
 \clearemptydoublepage
 
 
