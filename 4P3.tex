@@ -20,25 +20,29 @@
     \vspace{0.5cm}
 \end{quotation}
 
-%TODO sequencia
+
+%\bibitem{Alfaro2024}
+G. Alfaro and M. A. F. Sanjuán,
+Hamming distance as a measure of spatial chaos in evolutionary games,
+Phys. Rev. E \textbf{109}, 014203 (2024)
+\url{10.1103/PhysRevE.109.014203}
 
 
-
-Physicist have studied evolutionary game dynamics for their complex dynamics. From simple rules, complex behavior can be observed emerging from population size. Here we are interested in the complex pattern formation first discovered by May and Nowak in 1992 \cite{SpatialChaos}. They studied the prisoner's dilemma where players were organized in a square grid and each round played games with their immediate neighbors. Each player was set to be either a cooperator or a defector, which determined the payoff they got each game. Then the payoff was summed through every game they played that round. After each round, the players adapted the strategy of the individual with better payoff. For a parameter region they observed complex patterns when plotting in different colors cooperators and defectors.
+Physicists have studied evolutionary game dynamics for their complex dynamics. From simple rules, complex behavior can be observed emerging from population size. Here, we are interested in the complex pattern formation first discovered by May and Nowak in 1992~\cite{SpatialChaos}. They investigated the prisoner's dilemma where players were organized in a square grid and each round played games with their immediate neighbors. Each player was set to be either a cooperator or a defector, which determined the payoff they got each game. Then, the payoff was summed through every game they played that round. After each round, the players adapted the strategy of the individual with better payoff. They observed complex patterns when plotting in different colors cooperators and defectors when considering a specific parameter region t.
 
 One can easily see the difference between two configurations of cooperators and defectors by measuring the Hamming Distance. This measures the number of different elements between two groups of elements of same size. It was introduced
-by Richard Hamming in 1950 in \cite{HammingOrigins}. Since then it has been very helpful for computer science and cryptography, but its uses are broader. In the context of social games the Hamming distance has also been used, \cite{HammingSocial1, HammingSocial2}.
+by Richard Hamming in 1950 in~\cite{HammingOrigins}. Since then it has been very helpful for computer science and cryptography, but its uses are broader. The Hamming distance has also been used in the context of social games~\cite{HammingSocial1, HammingSocial2}.
 
-Moreover in \cite{HammingChaos1,HammingChaos2}, the Hamming distance is used to asses complexity on social games. The authors measure the difference between two close configurations of rock-paper-scissors models that describe stochastic network simulations of the May and Leonard type. The Hamming distance converged to a certain value. But the distance oscillated increasing amplitude towards zero or the population size when shifting a parameter that represents the mobility beyond a critical point. For these parameter regime one strategy will end up being the only one present, and by varying just one individual's strategy at the beginning, the outcome can change completely, changing which strategy ends up winning.  This shows that the susceptibility to  initial perturbations of the system. 
+Moreover in~\cite{HammingChaos1,HammingChaos2}, the Hamming distance is used to asses complexity on social games. The authors measure the difference between two close configurations of rock-paper-scissors models. The Hamming distance converged to a certain value. But the distance oscillated increasing amplitude towards zero or the population size when shifting a parameter that represents the mobility beyond a critical point. For this parameter regime one strategy will end up being the only one present, and by varying just one individual's strategy at the beginning, the outcome can change completely, changing which strategy ends up winning.  This shows that the susceptibility to  initial perturbations of the system. 
 
-In this chapter we summarize the results of a study \cite{Alfaro2024} where we measured the complexity of the patterns observed by May and Nowak in \cite{SpatialChaos} through this same method, by analyzing the Hamming distance between two initially close configurations of players. We found that for the parameter region where May and Nowak found the complex patterns, the Hamming distance grew in time as a sigmoid until it reached a convergence value; and for the rest of values, the distance quickly decreased to zero. This shows that the divergence of the Hamming distance could be an indicator of complex behavior. 
+Through this novel research, we measured the complexity of the patterns observed by May and Nowak in~\cite{SpatialChaos} through this same method, by analyzing the Hamming distance between two initially close configurations of players. We found that for the parameter region where May and Nowak found the complex patterns, the Hamming distance grew in time as a sigmoid until it reached a convergence value; and for the rest of values, the distance quickly decreased to zero. This shows that the divergence of the Hamming distance could be an indicator of complex behavior. 
 
-We also studied the divergence of the Hamming distance in a different game, the public goods game. This time there was a certain degree of stochasticity in the game, which led to the growth of the Hamming distance for all cases. This means that our algorithm does not distinguish random processes from chaotic ones. However the growth was more rapid for some values which may indicate a higher complexity for those cases.
+We also analyzed the divergence of the Hamming distance in a different game, the public goods game. Now, the Hamming distance grew until saturation for all cases. This may not indicate that all cases were complex, but instead be related to the fact that the evolutionary drive had random factors. The growth of the Hamming distance may be accounting for that randomness, even though we made sure to make all random decisions the same for both configurations. This means that our algorithm does not distinguish random processes from chaotic ones. However the growth was more rapid for some values which may indicate a higher complexity for those cases.
 
 
 \section{Prisoner's Dilemma}
 
-We developed a tool to asses the complexity of dynamic social games. The first thing to do is to check its validity with a game we know, presents complex behavior. This is the case for the game studied by May and Nowak in \cite{SpatialChaos}, the prisoner's dilemma, PD. 
+We developed a tool to asses the complexity of dynamic social games. The first thing to do is to check its validity with a game we know, presents complex behavior. This is the case for the game studied by May and Nowak in~\cite{SpatialChaos}, the prisoner's dilemma, PD. 
 
 \subsection{Model}
 
@@ -60,7 +64,7 @@ The first game studied was the prisoner's dilemma. This is a game between two pl
 
 
 
- We have set $R = 1$, the payoff if both players cooperate; $P = 0$, the payoff if both defect; $T > 1$,  the payoff for a defector playing against a cooperator, which gains $S = 0$. Because the risk-averting dilemma strength results in $D_r= P - S = 0$ this setup is a boundary game, not fully representing the PD. We have chosen this setup to reproduce the exact conditions observed by May and Nowak in \cite{SpatialChaos}.
+ We have set $R = 1$, the payoff if both players cooperate; $P = 0$, the payoff if both defect; $T > 1$,  the payoff for a defector playing against a cooperator, which gains $S = 0$. Because the risk-averting dilemma strength results in $D_r= P - S = 0$ this setup is a boundary game, not fully representing the PD. We have chosen this setup to reproduce the exact conditions observed by May and Nowak in~\cite{SpatialChaos}.
 
 
 \begin{figure}
@@ -92,9 +96,9 @@ The first game studied was the prisoner's dilemma. This is a game between two pl
 \end{figure}
 
 
-The risk-adverting dilemma strength, together with the gamble-intending dilemma strength $D_g = T - R$ composes the map of types of games pairwise social games represented in Fig.~\ref{fig:SocialGames}. These games are the harmony game, where $D_r,D_g < 0$, no dilemma is found and the logic option is to cooperate; the stag hunt game with, $D_r > 0, D_g < 0$ where the logic option is to do the same as your opponent; the chicken game with $D_r < 0, D_g > 0$, where the logic option is to do the opposite than your opponent; and finally the prisoner's dilemma with $D_r,D_g > 0$ where the logic option is to defect. However if both cooperated they would have better than both defecting but the temptation $T$ is higher than the reward $R$, thus promoting the tragedy of the commons and receiving their punishment $P$ \cite{TragedyCommons}.
+The risk-adverting dilemma strength, together with the gamble-intending dilemma strength $D_g = T - R$ composes the map of types of games pairwise social games represented in Fig.~\ref{fig:SocialGames}. These games are the harmony game, where $D_r,D_g < 0$, no dilemma is found and the logic option is to cooperate; the stag hunt game with, $D_r > 0, D_g < 0$ where the logic option is to do the same as your opponent; the chicken game with $D_r < 0, D_g > 0$, where the logic option is to do the opposite than your opponent; and finally the prisoner's dilemma with $D_r,D_g > 0$ where the logic option is to defect. However if both cooperated they would have better than both defecting but the temptation $T$ is higher than the reward $R$, thus promoting the tragedy of the commons and receiving their punishment $P$~\cite{TragedyCommons}.
 
-Each player is put in a square grid with periodic boundaries, and plays eight games with their Moore neighbors, Fig.\ref{fig:Moore2Neigh}. Then they sum the payoff gained in all those games and compare the result with their neighbors and copy the strategy of the one with greater total payoff in that round. This is done for all players simultaneously and repeated through time. 
+Each player is put in a square grid with periodic boundaries, and plays eight games with their Moore neighbors, Fig.~\ref{fig:Moore2Neigh}. Then they sum the payoff gained in all those games and compare the result with their neighbors and copy the strategy of the one with greater total payoff in that round. This is done for all players simultaneously and repeated through time. 
 
 
 \begin{figure}
@@ -123,7 +127,7 @@ Each player is put in a square grid with periodic boundaries, and plays eight ga
 
 
 
-We plot cooperators in blue and defectors in red in Fig.\ref{fig:PD_Sequencia}. These plots show spatio-temporal chaotic patterns that evolve quickly. In \cite{SpatialChaos} the authors claimed them to be fractal-like structures. However, as we can see on Fig.\ref{fig:GranPlot}, when we augment the population size $N$, the patterns do not scale, and instead the clusters all size similarly.
+We plot cooperators in blue and defectors in red in Fig.~\ref{fig:PD_Sequencia}. These plots show spatio-temporal chaotic patterns that evolve quickly. In~\cite{SpatialChaos} the authors claimed them to be fractal-like structures. However, as we can see on Fig.~\ref{fig:GranPlot}, when we augment the population size $N$, the patterns do not scale, and instead the clusters all size similarly.
 
 
 
@@ -157,7 +161,7 @@ We plot cooperators in blue and defectors in red in Fig.\ref{fig:PD_Sequencia}. 
 
 
 
-The authors of \cite{SpatialChaos} made an observation that the patterns seemed chaotic for these values of the temptation reward, $1.8 < T < 2$. We want a tool that quantifies the complexity of the pattern evolution that presents spatio-temporal chaos. We think that the algorithm we have developed, described in the following subsection, serves as an indicator for complex behavior and provides a value that quantifies how quickly the patterns evolve, which may be related to the Lyapunov time.
+The authors of~\cite{SpatialChaos} made an observation that the patterns seemed chaotic for these values of the temptation reward, $1.8 < T < 2$. We want a tool that quantifies the complexity of the pattern evolution that presents spatio-temporal chaos. We think that the algorithm we have developed, described in the following subsection, serves as an indicator for complex behavior and provides a value that quantifies how quickly the patterns evolve, which may be related to the Lyapunov time.
 
 
 
@@ -219,14 +223,14 @@ Then, if we normalize the Hamming distance from Fig.~\ref{fig:HammingTimePopulat
 
 
 
-We have fitted this curves to the Weibull "stretched exponential" function \cite{Weibull}
+We have fitted this curves to the Weibull "stretched exponential" function~\cite{Weibull}
 \begin{equation}
     F(t;k,a)=1-e^{-(t/a)^k},
     \label{WeibullDistr}
 \end{equation}
 where $a$ is the timescale of growth and $k$ tells how abrupt the growth is. We chose this function because it is the most simple sigmoid function that values zero at the origin and converge to one, having only two relevant parameters.
 
-The value of $a$ can be seen as something similar to the Lyapunov time, and as seen on Fig.~\ref{fig:aVSL_PD}, it is proportional to the grid size $L$, with a slope of $0.56 \pm 0.05$ and a neglible intercept. Note that the population size is $N = L^2$. The maximum slope is $0.5$, since at maximum velocity any change in the agent's strategy propagates to two agents away as seen on Fig.\ref{fig:Moore2Neigh}. The measured value of the slope is near the maximum which indicates a great propagation of the mismatches, and that may be related to complex behavior. As for the values of $k$, every curve is around $k = 2.5\pm0.4$.
+The value of $a$ can be seen as something similar to the Lyapunov time, and as seen on Fig.~\ref{fig:aVSL_PD}, it is proportional to the grid size $L$, with a slope of $0.56 \pm 0.05$ and a neglible intercept. Note that the population size is $N = L^2$. The maximum slope is $0.5$, since at maximum velocity any change in the agent's strategy propagates to two agents away as seen on Fig.~\ref{fig:Moore2Neigh}. The measured value of the slope is near the maximum which indicates a great propagation of the mismatches, and that may be related to complex behavior. As for the values of $k$, every curve is around $k = 2.5\pm0.4$.
 
 
 
@@ -258,7 +262,7 @@ Now that we have checked that our algorithm can asses the complexity in the PD, 
 
 \subsection{Model}
 
-This time, to make the model simpler we only allow the cooperate and defect strategy, and leave out the punish strategy. The rest of the model we leave the same. That is, agents play $5$ games along $4$ other agents among their second Von Neumann neighbors,Fig.~\ref{fig:VonNeumman2Neigh} and their payoff depends whether they are cooperators, $\Pi_C$, or defectors, $\Pi_D$ and the number of cooperators $N_C^g$ that there are in their group.
+This time, to make the model simpler we only allow the cooperate and defect strategy, and leave out the punish strategy. The rest of the model we leave the same. That is, agents play $5$ games along $4$ other agents among their second Von Neumann neighbors, Fig.~\ref{fig:VonNeumman2Neigh} and their payoff depends whether they are cooperators, $\Pi_C$, or defectors, $\Pi_D$ and the number of cooperators $N_C^g$ that there are in their group.
 
 \begin{equation}
     \begin{split}
@@ -294,7 +298,7 @@ As an example here we have the payoff of the white marked cooperator in the firs
 When we equal these two payoffs we get that the value of $r$ where we expect a shift is $r=25/7\approx3.57$, which is indeed where we find the shift. The next shifts can be calculated similarly with the rest of the configurations and give values of $25/6=4.1\hat6$, $25/5=5$ and $25/3=8.\hat3$.
 
 
-In the PGG cooperation is a Nash equilibrium for $r\geq5$. At the Nash equilibrium  the payoff cannot be increased when changing strategy given that the rest of agents don't change theirs. But we observe that for $5<r<8.\hat3$ cooperation is not the only strategy present. This is because the payoff of each agent is affected by the strategies of its neighbors. Therefore, a defector surrounded by cooperators has greater payoff than them, even though it would have greater payoff if it were a cooperator. This means that being at a Nash equilibrium does not eliminate all defectors. We observe a last shift at $r=8.\hat3$, beyond this last shift defection is not viable.  We don't show this shift in Fig.\ref{fig:PGG_Proportion} because it can hardly be appreciated at the current scale (from a cooperator proportion of $0.99$ to $1$). What's more, since the election of the agent that changes its strategy is at random, the computational times for all defectors to adopt the cooperation strategy are large.
+In the PGG cooperation is a Nash equilibrium for $r\geq5$. At the Nash equilibrium  the payoff cannot be increased when changing strategy given that the rest of agents don't change theirs. But we observe that for $5<r<8.\hat3$ cooperation is not the only strategy present. This is because the payoff of each agent is affected by the strategies of its neighbors. Therefore, a defector surrounded by cooperators has greater payoff than them, even though it would have greater payoff if it were a cooperator. This means that being at a Nash equilibrium does not eliminate all defectors. We observe a last shift at $r=8.\hat3$, beyond this last shift defection is not viable.  We don't show this shift in Fig.~\ref{fig:PGG_Proportion} because it can hardly be appreciated at the current scale (from a cooperator proportion of $0.99$ to $1$). What's more, since the election of the agent that changes its strategy is at random, the computational times for all defectors to adopt the cooperation strategy are large.
 
 
 
@@ -337,10 +341,10 @@ We can see how mismatches propagate in Fig.~\ref{fig:SequenciaHamming}. For each
 \end{figure}
 
 
-The result was, as seen in Fig.\ref{fig:NormalHammingTimePopulation_r} that the Normalized Hamming distance grew as a sigmoid like in the previous section for values of the parameter $r$ between $25/7\approx3.57$ and $8.\hat3$. These are all the values where there are present cooperators and defectors . We cannot say that this is an indicator of chaos this time, because probably, what the algorithm is assessing is the randomness in the election of agent to change its strategy. Nonetheless, when we fit the curves to the Weibull ``stretched exponential" function in Fig.\ref{fig:NormalHammingTimePopulation_2r}, we get lower values of $a$ for curves in the first regime, $25/7\leq r<25/6$. This means that the system is more susceptible to changes in the initial conditions. For values of $5>r>8.\hat3.$ we get a very large value of $a = 3685$.
+The result was, as seen in Fig.~\ref{fig:NormalHammingTimePopulation_r} that the Normalized Hamming distance grew as a sigmoid like in the previous section for values of the parameter $r$ between $25/7\approx3.57$ and $8.\hat3$. These are all the values where there are present cooperators and defectors . We cannot say that this is an indicator of chaos this time, because probably, what the algorithm is assessing is the randomness in the election of agent to change its strategy. Nonetheless, when we fit the curves to the Weibull ``stretched exponential" function in Fig.~\ref{fig:NormalHammingTimePopulation_2r}, we get lower values of $a$ for curves in the first regime, $25/7\leq r<25/6$. This means that the system is more susceptible to changes in the initial conditions. For values of $5>r>8.\hat3.$ we get a very large value of $a = 3685$.
 
 
-\section{Conclusions}
+\section{Discussion and conclusions}
 
 We have developed an algorithm to measure the divergence of two binary configurations of cooperators and defectors in the prisoner's dilemma and the public goods game using the Hamming distance. We observed that if the game has no random elements, the divergence can be linked to complex behavior.
 The Hamming distance grew as a sigmoid function in time for a system that was clear, had a complex behavior and was zero when not.
@@ -358,11 +362,6 @@ Even though our studied was focused on two particular cases, we are sure the alg
 
 \begin{thebibliography}{04}
 
-\bibitem{Alfaro2024}
-G. Alfaro and M. A. F. Sanjuán,
-Hamming distance as a measure of spatial chaos in evolutionary games,
-Phys. Rev. E \textbf{109}, 014203 (2024)
-\url{10.1103/PhysRevE.109.014203}
 
 
 \bibitem{SpatialChaos}

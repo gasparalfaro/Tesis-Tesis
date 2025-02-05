@@ -1,4 +1,4 @@
-\chapter{Two-player Yorke's game of survival in chaotic transients} %7P5
+\chapter{Two- Yorke's game of survival in chaotic transients} %7P5
 \label{chap:PartialControlGame}
 
 
@@ -21,18 +21,20 @@
 
 \end{quotation}
 
+%\bibitem{PartialControlGame}
+G. Alfaro, R. Capeáns, M. A. F. Sanjuán,
+Two-player Yorke's game of survival in chaotic transients,
+(2025)
+\url{https://doi.org/10.48550/arXiv.2501.12188}
 
 
+In the previous chapter we have developed a method of partial control that followed the line of work initiated in~\cite{Yorke} followed by papers on the issue~\cite{DynamicsPartialControl,PartialControlBeyond,PartialControlFunctions} among others. The problem introduced by Yorke was devised as a kind of game where one player is at a huge disadvantage but, nonetheless, can achieve its goal. From there on the studies derived in a control method that did not force a single trajectory as the solution, but provided a set of points, the \textit{safe sets}, where the controller was safe; hence the name \textit{partial control}.
 
-In the previous chapter we developed a method of partial control that followed the line of work initiated in \cite{Yorke} followed by papers on the issue \cite{DynamicsPartialControl,PartialControlBeyond,PartialControlFunctions} among others. The study led to the publication of \cite{PartialControlEscape}. 
+On the other hand, game theory provides powerful tools for analyzing strategic interactions across diverse fields, from social sciences to economics and physics~\cite{Social,EconomyGames,GamesComplex}. While classical game theory typically focuses on equilibrium states, many real-world situations involve chaotic systems, where extreme sensitivity to initial conditions and inherent unpredictability create fundamental challenges for strategic decision-making. The nonlinear nature of these systems makes traditional game-theoretic approaches insufficient, as small perturbations can lead to dramatically different outcomes. What's more, the intrinsic characteristics of a game are susceptible to change in real life, and these changes can result from the players' decisions~\cite{AkiyamaKaneko1,AkiyamaKaneko2}.
 
-The problem introduced in \cite{Yorke} was devised as a kind of game where one player is at a huge disadvantage but, nonetheless, can achieve its goal. From there on the studies derived in a control method that did not force a single trajectory as the solution, but provided a set of points, the \textit{safe sets}, where the controller was safe; hence the name \textit{partial control}.
+Game theory has also proven valuable in chaos control~\cite{GamesControl}, where control problems naturally emerge as competitive scenarios between opposing objectives. This framework reveals how controllers must optimize their strategies while dealing with three key challenges: (1) the unpredictable nature of chaotic dynamics, (2) the system constraints, and (3) the actions of other controllers who must carefully choose their actions to achieve their own goal. This interaction between different control agents adds a strategic dimension that goes beyond traditional chaos control methods.
 
-On the other hand, game theory provides powerful tools for analyzing strategic interactions across diverse fields, from social sciences to economics and physics \cite{Social,EconomyGames,GamesComplex}. While classical game theory typically focuses on equilibrium states, many real-world situations involve chaotic systems, where extreme sensitivity to initial conditions and inherent unpredictability create fundamental challenges for strategic decision-making. The nonlinear nature of these systems makes traditional game-theoretic approaches insufficient, as small perturbations can lead to dramatically different outcomes. What's more, the intrinsic characteristics of a game are susceptible to change in real life, and these changes can result from the players' decisions \cite{AkiyamaKaneko1,AkiyamaKaneko2}.
-
-Game theory has also proven valuable in chaos control \cite{GamesControl}, where control problems naturally emerge as competitive scenarios between opposing objectives. This framework reveals how controllers must optimize their strategies while dealing with three key challenges: (1) the unpredictable nature of chaotic dynamics, (2) the system constraints, and (3) the actions of other controllers who must carefully choose their actions to achieve their own goal. This interaction between different control agents adds a strategic dimension that goes beyond traditional chaos control methods.
-
-Since this thesis is oriented towards game dynamics, the opportunity to rejoin this two branches of the problem led to the publication of \cite{PartialControlGame}. In this paper we present a two-player game of control where each player has conflicting objectives. One player wants to control the trajectory of a given dynamical system towards one region and the opponent towards a different one. Through the analysis of the game with the partial control tools we achieve the solution of the game through all initial conditions. We will construct the \textit{winning sets} (what was previously called \textit{safe sets}), as the initial conditions that guarantee victory for each player.
+Since this thesis is oriented towards game dynamics, the opportunity to rejoin this two branches of the problem led to the publication of~\cite{PartialControlGame}. In this paper we present a two-player game of control where each player has conflicting objectives. One player wants to control the trajectory of a given dynamical system towards one region and the opponent towards a different one. Through the analysis of the game with the partial control tools we achieve the solution of the game through all initial conditions. We will construct the \textit{winning sets} (what was previously called \textit{safe sets}), as the initial conditions that guarantee victory for each player.
 
 To illustrate the game we studied a paradigmatic dynamical system, the logistic map ${f(x) = \mu x_n(1-x_n)}$. The system presents transient chaotic dynamics for $\mu>4$ where all orbits starting at the region $Q=[0,1]$ eventually leave the region in a finite time. When one player aims to stay at the region $Q$ indefinitely and the other aims to drive the trajectory off, the game gets very interesting. In one hand, the game is asymmetric since the player who wants to leave region $Q$ is in advantage. On the other hand, we found that there are initial conditions where the player that aims to conserve the trajectory in the transient region can do so even when their control is lesser than the opponent's control.
 
@@ -51,7 +53,7 @@ In many games the order of play is important. This game is no exception, here th
 
 
 
-Consider two individuals pulling an object. Player A aims to pull the object to their side, while Player B pulls it toward their own. In the absence of any other factors, the stronger player will prevail by exerting more force. However, the game becomes much more interesting when the movement of the object is influenced by a natural dynamic governed by a rule defined by a function $f$. In this case, the players must not only consider their opponent's force but also account for the inherent motion of the object. This becomes more challenging when the movement that describes $f$ is chaotic. In such scenarios, even slight variations in how the players pull can result in entirely different and unpredictable outcomes, as illustrated in Fig.~\ref{fig:drawing}.  
+Consider two individuals pulling an object. Player $A$ aims to pull the object to their side, while player $B$ pulls it toward their own. In the absence of any other factors, the stronger player will prevail by exerting more force. However, the game becomes much more interesting when the movement of the object is influenced by a natural dynamic governed by a rule defined by a function $f$. In this case, the players must not only consider their opponent's force but also account for the inherent motion of the object. This becomes more challenging when the movement that describes $f$ is chaotic. In such scenarios, even slight variations in how the players pull can result in entirely different and unpredictable outcomes, as illustrated in Fig.~\ref{fig:drawing}.  
 
 
 
@@ -67,7 +69,7 @@ where $u_n^A $ and $u_n^B $ represent the control actions of players $A$ and $B$
 
 Player $B$ wins if the trajectory remains inside $Q$ indefinitely, whereas player $A$ wins if the trajectory exits $Q$. Once the trajectory has left $Q$, player $B$ has no chance of returning it to the region.
 
-A crucial factor in solving this game is the order of play. To address this, we consider three distinct scenarios summarized in Table~\ref{tab:games}. In game $A^{-}B^{+}$, player B has the advantage of knowing the actions of player $A$ before making their move. This sequential structure allows player $B$ to respond optimally to the choices of their rival. In game $A^{+}B^{-}$, player $A$ has the advantage, with complete knowledge of moves by player $B$ before acting. Finally, in game $A^{-}B^{-}$, both players make their decisions simultaneously, without any knowledge of the opponent actions.  
+A crucial factor in solving this game is the order of play. To address this, we consider three distinct scenarios summarized in Table~\ref{tab:games}. In game $A^{-}B^{+}$, player $B$ has the advantage of knowing the actions of player $A$ before making their move. This sequential structure allows player $B$ to respond optimally to the choices of their rival. In game $A^{+}B^{-}$, player $A$ has the advantage, with complete knowledge of moves by player $B$ before acting. Finally, in game $A^{-}B^{-}$, both players make their decisions simultaneously, without any knowledge of the opponent actions.  
 
 
 
@@ -115,14 +117,14 @@ Game $A^{-}B^{-}$ & Simultaneous play & Both ignore the opponent's action  \\
 \begin{figure}[h!]
     \centering
    \includegraphics[trim={3.2cm 0cm 0cm 0cm}, clip,width=1.1\textwidth ]{Images/P5/sets_juego.png}
-    \caption{The logistic map and winning sets to control trajectories of the logistic map with $\mu = 4.5$ and control bounds $u^A_0 = 0.015$ for player $A$, and $u^B_0 = 0.040$ for player $B$. Each winning set at the bottom show the initial conditions that guarantee victory to each player. Each player has two winning sets whether they are informed ($+$) or ignorant ($-$) to their opponent's move. The winning sets of player $A$ are colored in green when they are informed and in yellow when they are ignorant. On the other hand, those of player $B$ are colored in blue when they are informed and purple when they are ignorant. For simplicity, we only represent the winning sets in the interval $Q$. (a) Ignorant player $A$ against informed player $B$ (b) Now the informed player is $A$ who plays against the ignorant player $B$ (c) Neither player knows each other actions. In this case, there are regions that do not belong to any player's winning set, meaning that both player could win when starting at those initial conditions, but the victory is uncertain because players cannot guarantee victory against any move from the opponent. These "no winning regions" represent the difference between the respective informed winning sets and the ignorant winning sets.}
+    \caption{The logistic map and winning sets to control trajectories of the logistic map with $\mu = 4.5$ and control bounds $u^A_0 = 0.015$ for player $A$, and $u^B_0 = 0.040$ for player $B$. Each winning set at the bottom show the initial conditions that guarantee victory to each player. Each player has two winning sets whether they are informed ($+$) or ignorant ($-$) to their opponent's move. The winning sets of player $A$ are colored in green when they are informed and in yellow when they are ignorant. On the other hand, those of player $B$ are colored in blue when they are informed and purple when they are ignorant. For simplicity, we only represent the winning sets in the interval $Q$. (a) Ignorant player $A$ against informed player $B$. (b) Now the informed player is $A$ who plays against the ignorant player $B$. (c) Neither player knows each other actions. In this case, there are regions that do not belong to any player's winning set, meaning that both player could win when starting at those initial conditions, but the victory is uncertain because players cannot guarantee victory against any move from the opponent. These ``no winning regions" represent the difference between the respective informed winning sets and the ignorant winning sets.}
     \label{fig::sets}
 \end{figure}
 
 
 
 
-Given the opposing objectives described in the previous section, we define a region $R$, containing $Q$, where the winning sets $W$ are determined for both players. These sets represent whether a given initial condition guarantees victory (value $1$) or not (value $0$). For Player $B$, the initial condition is $W^B(x) = 1$ for $x \in Q$ and $0$ otherwise. Conversely, for Player $A$, the initial condition is $W^A(x) = 0$ for $x \in Q$ and $1$ otherwise.  
+Given the opposing objectives described in the previous section, we define a region $R$, containing $Q$, where the winning sets $W$ are determined for both players. These sets represent whether a given initial condition guarantees victory (value $1$) or not (value $0$). For player $B$, the initial condition is $W^B(x) = 1$ for $x \in Q$ and $0$ otherwise. Conversely, for player $A$, the initial condition is $W^A(x) = 0$ for $x \in Q$ and $1$ otherwise.  
 
 The computation process for each winning set depends on whether the player is informed by knowing the opponent's move, or ignorant. This procedure is summarized in Table~\ref{tab:morphological_operations}. Each set can be computed independently, as outlined below:  
 
@@ -215,7 +217,7 @@ W^{B^+}_{\text{new}}=W^{B^+}
 
 \section{Game of survival in the logistic map}
 
-To demonstrate our method, we explore a game based on the logistic map, \linebreak ${f(x) = \mu x_n(1-x_n)}$ with $\mu=4.5$ and $Q=[0,1]$. This map provides an ideal scenario due to its transient chaotic behavior within $Q$: the trajectories exhibit chaotic dynamics before eventually leaving the region. This creates an asymmetric situation where Player $B$, aiming to keep the trajectory inside the region, must contend with both the natural behavior of the system and the opposing player’s objective of pushing the trajectory out. While this example is specific, our approach can be generalized to other maps $f$ and regions $Q$ in the phase space.
+To demonstrate our method, we explore a game based on the logistic map, \linebreak ${f(x) = \mu x_n(1-x_n)}$ with $\mu=4.5$ and $Q=[0,1]$. This map provides an ideal scenario due to its transient chaotic behavior within $Q$: the trajectories exhibit chaotic dynamics before eventually leaving the region. This creates an asymmetric situation where player $B$, aiming to keep the trajectory inside the region, must contend with both the natural behavior of the system and the opposing player’s objective of pushing the trajectory out. While this example is specific, our approach can be generalized to other maps $f$ and regions $Q$ in the phase space.
 
 In this setup, both players are allowed to apply control at each step to influence the trajectory. However, the control actions of both players are constrained by their respective limits, $u_0^A$ and $u_0^B$. The state of the system after each iteration is given by
 \begin{equation}
@@ -225,7 +227,7 @@ where $u^A$ and $u^B$ denote the control that the players exert.
 
 We present a specific example of the game with control bounds $u_0^A = 0.016$ and $u_0^B = 0.038$. In Fig.~\ref{fig:tray}, we illustrate how the winning sets are formed. As the process progresses, the winning sets evolve with each iteration: player $A$’s set grows, while player $B$’s set shrinks. Additionally, two controlled trajectories are shown. The first one, in Fig.~\ref{fig:tray}(b), starting in player $A$’s winning set, where the controller successfully pushes the trajectory out of region $Q$. For the second one, in Fig.~\ref{fig:tray}(c), the trajectory starts in player $B$’s winning set, so they can keep the trajectory within the region.
 
-Figure~\ref{fig::sets} displays the outcomes of three different examples of games, depending on whether each player has knowledge of the other’s actions. In Fig.~\ref{fig::sets}(a), player $A$ moves first, followed by player $B$, therefore player $A$ has advantage by knowing player $B$'s actions. Figure~\ref{fig::sets}(b) reverses the order, with Player $B$ moving first and Player $A$ second. Finally, Fig.~\ref{fig::sets}(c) shows the case where both players are unaware of each other’s moves, representing a simultaneous play situation.
+Figure~\ref{fig::sets} displays the outcomes of three different examples of games, depending on whether each player has knowledge of the other’s actions. In Fig.~\ref{fig::sets}(a), player $A$ moves first, followed by player $B$, therefore player $A$ has advantage by knowing player $B$'s actions. Figure~\ref{fig::sets}(b) reverses the order, with player $B$ moving first and player $A$ second. Finally, Fig.~\ref{fig::sets}(c) shows the case where both players are unaware of each other’s moves, representing a simultaneous play situation.
 
 This last game is noteworthy. In this case, regions in the state space appear that do not belong to any winning set. These areas arise because neither player can secure a win without considering the opponent’s strategy. This uncertainty stems from the fact that each player is unaware of the other’s choice when making their decision. As a result, the outcome depends on the specific combination of moves made by both players, and the players may not always respond optimally to the opponent's move.
 
@@ -338,11 +340,11 @@ If players could compete for the right to act as the informed player, it is reas
 
 
 
-\section{Conclusions}
+\section{Discussion and conclusions}
 
 We proposed a novel two-player game of survival in a transient chaotic region. In the game, two players are confronted against each other to control the trajectory of a chaotic dynamical system. The players had opposing goals, each one aiming to get the trajectory to different regions. Through the partial control method we got the set of initial points that guaranteed the victory for each player. Through partial control algorithms we were able to construct winning sets that provided the initial conditions where each player had victory assured. Then, the controlled trajectories are not unique, but at each iteration of the game, the system can be controlled to a range of possible points within the winning sets, giving more flexibility to the controllers.
 
-We applied the game to the logistic map. Here one player aims to stay at the transient chaotic region and the rival wants to drive the trajectory out of there. This system unveils an interesting aspect about the complexity of the dynamical system. Because even when the dynamical system plays against the conservative player and their opponent has greater control capabilities, the player can thrive and achieve their objective.
+As an example for our game, we analyzed the logistic map. Here one player aims to stay at the transient chaotic region and the rival wants to drive the trajectory out of there. This system unveils an interesting aspect about the complexity of the dynamical system. Because even when the dynamical system plays against the conservative player and their opponent has greater control capabilities, the player can thrive and achieve their objective.
 
 We also found that the information each player has plays a substantial role in the game. The player that plays first, and therefore knows the action of the rival, will undoubtedly be at an advantage. Therefore, this knowledge was crucial to victory at some cases, but at some other cases, surprisingly, the information was of little use to the informed player.
 
@@ -444,11 +446,7 @@ Annu. Rev. Control. Robotics Auton. Syst. \textbf{1}, 105--134
 (2018)
 \url{https://doi.org/10.1146/annurev-control-060117-105102}
 
-\bibitem{PartialControlGame}
-G. Alfaro, R. Capeáns, M. A. F. Sanjuán,
-Two-player Yorke's game of survival in chaotic transients,
-(2025)
-\url{https://doi.org/10.48550/arXiv.2501.12188}
+
 
 
 \end{thebibliography}
