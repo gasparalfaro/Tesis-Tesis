@@ -10,7 +10,7 @@
     
     \bigskip
     
-    -{\small  Laura Fernandez}
+    -{\small  Laura Fernández}
     \end{minipage}
     \end{flushright}
     
@@ -20,18 +20,76 @@
 
 
 
+\section{Introduction}
+
+Esta tesis trata sobre juegos evolutivos, complejidad y control del caos. Estos temas, que pueden parecer dispares, han sido interconectados en los diferentes capítulos presentes aquí. El hilo conductor entre las distintas disciplinas es que todos han sido estudiados mediante herramientas propias del análisis de los sistemas complejos y la dinámica no lineal. 
+
+La Teoría de Juegos Evolutiva (Evoluytionary Games Theory, EGT) es analizada profundamente en ramas de la física por su dinámica compleja. Al ser un estudio más adecuado para grandes poblaciones, los sistemas estudiados con estas técnicas suelen tener propiedades emergentes. Estas propiedades emergentes no pueden ser explicadas considerando únicamente a los individuos que forman el sistema, sino que hay que tratar con la población entera para que aparezcan y poder entenderlos. Como consecuencia, estos sistemas suelen tener propiedades no lineales muy interesantes para los físicos de sistemas complejos.
+
+Al principio de la tesis se ha estudiado el juego de los bienes públicos. En este juego social, los jugadores tratan de hacer grupos con los que invertir para aumentar sus recompensas. Cada individuo puede elegir cooperar con una unidad monetaria al bien público o abstenerse. Indiferentemente a si han cooperado o no todos los jugadores obtienen el resultado de la inversión, con su debido aumento gracias a las ganancias, al final de cada ronda. Según la estrategia que adapta cada individuo y la que adaptan sus vecinos, este obtiene un \textit{payoff}, es decir, un saldo que determina la aptitud o \textit{fitness} del individuo en el juego. Mediante un proceso evolutivo consistente en la imitación del individuo más apto, el sistema evoluciona según se iteran turnos del juego.
+
+Aparte de las dos estrategias ya mencionadas, cooperar o no hacerlo, se ha añadido una tercera estrategia. Existen individuos que, aparte de cooperar, pagan una tasa adicional para castigar a los individuos que no cooperan. Los impagadores que sean detectados por estos castigadores deberán pagar una multa, reduciendo así su \textit{payoff}.
+
+En la investigación del primer capítulo se ha analizado la variación en el juego de los bienes públicos al introducir componentes dependientes del tiempo. Primero se ha considerado una oscilación en el parámetro que controla la eficacia de las inversiones. Esta oscilación trata de imitar las fluctuaciones propias de los mercados o de la naturaleza. Se ha observado que esta oscilación afectaba negativamente a la cooperación entre individuos. 
+
+También se ha investigado el efecto de introducir un retardo a la hora de castigar a los impagadores. Este retardo causa que los impagadores aumenten, demostrando así que los castigos más eficaces son aquellos que son inmediatos.
+
+Tras haber resuelto esas cuestiones nos propusimos a analizar la complejidad del juego, además de otro juego social, el dilema del prisionero. Otros estudios demuestran que se producen comportamiento caóticos espacio-temporales considerando la dinámica de formación de patrones cuando se observa la disposición de cooperadores y no cooperadores en el espacio. 
+
+Con la ambición de cuantificar esta complejidad, hemos considerado la divergencia de la distancia de Hamming entre dos configuraciones inicialmente muy próximas. Esta distancia, usada comúnmente en ciencias de la computación, establece la diferencia en número de caracteres entre dos grupos del mismo tamaño. Observando su comportamiento hemos podido observar que la distancia crece cuando se trata con parámetros del sistema en el que existen comportamientos caóticos.
+
+En el caso en el que no se utilice ningún componente aleatorio, los juegos anteriormente estudiados se pueden considerar como autómatas celulares. Eso sí, el número de reglas que tendrían esos autómatas celulares sería muy grande. En concreto el autómata tendría $2^N$ reglas, siendo $N$ el número de vecinos que influyen en el \textit{payoff} de cada agente. Debido a esto, se ha visto conveniente analizar la complejidad de todos los autómatas celulares elementales. Además se ha elaborado una clasificación análoga a la de Wolfram para estos autómatas. Esta clasificación depende del comportamiento de la distancia de Hamming entre dos configuraciones muy próximas al principio.
+
+En otra línea diferente de la investigación se extendió el estudio del control parcial para controlar el escape de una trayectoria de su región caótica transitoria. El control parcial es un método de control en el que se evita ciertas zonas del espacio de fases de un sistema. De esta manera, por ejemplo, un sistema con dinámicas de caos transitorio, se puede conseguir que la trayectoria permanezca en la región caótica transitoria de manera indefinida. En uno de los estudios realizados en esta tesis se ha estudiado exáctamente lo contrario. Es decir, hemos tratado de sacar al sistema de esa región utilizando las mismas herramientas del control parcial.
+
+%TODO
+Se ha estudiado el método para arrancar las trayectorias de la región caótica transitoria de la manera más rápida posible (en el menor número de iteraciones posible) o de una manera controlada, controlando exactamente el número de iteraciones que ocurren desde que se ejerce control hasta que la trayectoria ya está fuera de la región transitoria. Cabe destacar que se pudo realizar este control con unas cotas menores que las del ruido presente en el sistema.
+
+Por último se diseñó un juego de supervivencia entre dos jugadores enfrentados entre sí en sistemas con caos transitorio. Cada jugador tiene un objetivo diferente, permanecer en diferentes zonas del espacio de fases. El juego se resolvió con la ayuda del control parcial, ilustrándolo con un ejemplo con el mapa logístico. Se obtuvieron las condiciones iniciales para las que cada jugador tiene asegurada la victoria.
 
 
-Esta tesis trata sobre juegos evolutivos, complejidad y control del caos. Estos temas, que pueden parecer dispares, han sido interconectados en los diferentes capítulos presentes aquí. 
 
-Al principio de la tesis estudié dos juegos sociales. El juego de los bienes públicos fue analizado al introducir componentes dependientes del tiempo, y se observó cómo afectaban negativamente a la cooperación entre individuos. Después se analizó la complejidad de este, el juego de los bienes públicos, y del dilema del prisionero. Ambos resultaron presentar complejidad tras el análisis de la divergencia entre configuraciones muy parecidas al inicio. La distancia de Hamming entre las configuraciones crecía rápidamente.
+\section{Metodología}
 
-Más tarde se analizaron de la misma manera todos los automatas celulares elementales y se elaboró una clasificación análoga a la de Wolfram dependiente del comportamiento de la distancia de Hamming. Se destaca el comportamiento caótico transitorio de la clase $4$, que se podría relacionar con el fenómeno de \textit{edge of chaos} (límite del caos).
+Para realizar esta tesis hemos empleado un análisis teórico y computacional. Con ayuda de métodos analíticos u simulaciones numéricas, resolvemos y corroboramos predicciones teóricas. A continuación describimos los métodos utilizados:
 
-En cuanto a control del caos se extendió el estudio del control parcial de manera que el controlador pudiera arrancar a las trajectorias que presentan caos transitorio de la región transitoria de la manera más rápida posible o de una manera contgrolada. Cabe destacar que se pudo realizar este control con unas cotas menores que las del ruido presente en el sistema.
-
-Por último se creo y resolvió un juego de supervivencia entre dos jugadores enfrentados entre sí en sistemas con caos transitorio con la ayuda del control parcial. Se obtuvieron las condiciones iniciales para las que cada jugador tiene asegurada la victoria. Se observó que estas condiciones son más amplias para aquellos jugadores que tienen información de los movimientos del oponente.
-
-Con todo esto se concluye que el estudio de la complejidad en juegos y el análisis de los sistemas con herramientas del campo de sistemas complejos ayudan a resolver problemas o a tener ventaja en determinados juegos.
+\begin{itemize}
 
 
+\item \textbf{Simulaciones Monte Carlo para modelos basados en agentes.} En los Capítulos~\ref{chap:TimeEffects} and~\ref{chap:HammingGames} hacemos simulaciones de individuos jugando a juegos sociales. Utilizamos una red cuadrada en la que cada agente está colocado. Según el método de Monte Carlo, elegimos a individuos al azar para que adopten la estrategia de un vecino aleatorio. Si el \textit{payoff} del vecino es mayor, es probable que adopte su estrategia. Las simulaciones fueron realizadas con código escrito por mi mismo en el lenguaje de programación Julia.
+
+\item En el Capítulo~\ref{chap:ForcingEscape} se realizó un \textit{diagramas de bifurcación} y se obtuvo el \textbf{máximo exponente de Lyapunov}, ambos mediante MATLAB
+
+\item En los Capítulos~\ref{chap:HammingGames} y~\ref{chap:HammingECA} se hizo un \textbf{análisis de la divergencia} de condiciones inicialmente próximas \textbf{mediante la distancia de Hamming}.
+
+\end{itemize}
+
+\section{Discusión y Resultados}
+
+En esta tesis hemos realizado aportaciones en los campos de dinámica evolutiva de juegos sociales con la que hemos ganado entendimiento en temas como la cooperación entre individuos. Al hacer oscilar un parámetro que controla la efectividad de inversiones económicas observamos lo siguiente. Cuando el parámetro aumenta hay un aumento de los cooperadores, pero cuando el parámetro disminuye, los cooperadores flaquean y el aumenta mucho más el número de impagadores. Este efecto no deja de tener sentido, ya que una pobre estabilidad en los rendimientos de una inversión la hace más arriesgada, y, por tanto, menos apetecible. Además se ha comprobado que un castigo tardío no es tan eficaz como un castigo más inmediato.
+
+También hemos hecho progresos relacionados con la cuantificación de la complejidad en sistemas que presentan caos espacio-temporal. Hemos sido capaces de analizar la complejidad en la dinámica de patrones de disposición de diferentes estrategias en dos juegos, el juego de los bienes públicos y el dilema del prisionero. Ambos resultaron presentar complejidad tras medir la divergencia entre configuraciones muy parecidas en el inicio. Se ha observado que la distancia de Hamming entre las dos configuraciones crece rápidamente para aquellos parámetros en el que se observa comportamiento caótico espacio-temporal.
+
+Además tras el estudio de la distancia de Hamming en autómatas celulares se obtuvo una clasificación análoga a la de Wolfram. Para la Clase-$1$ la distancia era nula y para la Clase-$2$ la distancia permanecía constante, lo cual muestra que ambas clases son sistemas no demasiado complejos. Esto se puede apreciar observando los simples patrones que forman los autómatas de estas clases. En cambio en la Clase-$3$ al mostrar la distancia de Hamming en función del tiempo, esta se comporta de manera caótica. Esto explica los patrones que parecen aleatorios que se observan al representar los estados de estos autómatas. La última clase, la Clase-$4$ también se comporta de manera caótica, pero al cabo de un tiempo alcanza un equilibrio., ya sea que toma un valor fijo o forma una oscilación periódica. Este comportamiento caótico transitorio de la clase $4$ se podría relacionar con el fenómeno de \textit{edge of chaos} (límite del caos), y se manifiesta en la combinación de zonas con cierto orden y otras zonas complejas al contemplar los estados del autómata.
+
+Finalmente se estudió, mediante control parcial, un juego entre dos controladores. Uno con el objetivo de permanecer en una región caótica transitoria y otro expulsarlo de allí. Se obtuvieron las condiciones iniciales en las que cada controlador consigue su objetivo. Se observó que estas condiciones son más amplias para aquellos jugadores que tienen información de los movimientos del oponente.
+
+Con las herramientas y descubrimientos realizados durante el transcurso de esta tesis doctoral, esperamos haber contribuido a las ramas de los juegos evolutivos, los autómatas celulares y el control del caos.
+
+\subsection{Conclusion}
+
+Las principales conclusiones del estudio realizado en la tesis doctoral son:
+
+\begin{itemize}
+
+\item La inestabilidad de las inversiones perjudica a la cooperación entre individuos para invertir conjuntamente, así como un castigo tardío para aquellos que no cooperan.
+
+\item Hemos obtenido una herramienta que detecta comportamientos caóticos espacio-temporales mediante el uso de la distancia de Hamming. Aunque el sistema esté en equilibrio globalmente, la dinámica local puede ser inestable, resultando en configuraciones completamente diferentes desde cambios mínimos.
+
+\item Clasificamos correctamente todos los autómatas celulares elementales mediante el uso de la misma herramienta y llegamos a la conclusión que la clase $4$ presenta caos transitorio.
+
+\item Conseguimos una herramienta útil en el análisis de teoría de juegos. El análisis mediante técnicas propias del control parcial ayuda a la toma de decisiones por parte de los jugadores, incluso cuando la información es escasa.
+
+
+
+\end{itemize}

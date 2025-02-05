@@ -17,43 +17,42 @@ problem, to be quite honest with you, is that you've never actually known what t
 \vspace{0.5cm}
 \end{quotation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Copiado de Julia
-This doctoral thesis is the result of $4$ years of work within the Research Group on Nonlinear Dynamics, Chaos and Complex Systems of the Rey Juan Carlos University.
 
-Beginning with an introductory chapter presenting the basic ideas, the results are afterwards organized in $5$ chapters which correspond to different scientific publications. At the beginning of this thesis, we studied the public goods game on a square lattice with imitation as the evolutionary drive where players chose three strategies: cooperate, defect, or punish the defectors. After some study on the result of time-dependent effects on the game, which we collect in Chapter~\ref{chap:TimeEffects}, we began to question how to know and measure whether the dynamics of the game were complex. In Chapter~\ref{chap:HammingGames} we answer this question and in Chapter~\ref{chap:HammingECA} we follow up the question to Evolutionary Cellular Automata. 
+This doctoral thesis is the result of four years of work within the Research Group on Nonlinear Dynamics, Chaos and Complex Systems of the Rey Juan Carlos University.
 
-As a result of the studies in the end of master dissertation, we published an article where we used partial control to force orbits escape from a transient chaotic region. This study is summarized in Chapter~\ref{chap:ForcingEscape}. At the last year of the doctorate studies we wanted to bridge both subjects of study with a final research. In Chapter~\ref{chap:PartialControlGame} we use partial control towards the advantage of players in a game. This closed the cycle of investigation that begun with the master's thesis and continued in the doctorate research. Next we give the structure of the thesis and a summary of each chapter.
+Beginning with an introductory chapter presenting the basic ideas, the results are afterwards organized in five chapters which correspond to different scientific publications. In the first chapter include the study on the public goods game with a square lattice and imitation as the evolutionary drive, where players chose three strategies: cooperate, defect, or punish the defectors. After an analysis of time-dependent effects on the game that we collect in Chapter~\ref{chap:TimeEffects}, we have questioned ourselves how to know and measure whether the dynamics of the game are complex. In Chapter~\ref{chap:HammingGames}, we have answered this question and in Chapter~\ref{chap:HammingECA}, we have followed up the question to Evolutionary Cellular Automata. 
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+At the beginning of the thesis we have published an article where we have used partial control to force orbits escape from a transient chaotic region. This investigation is summarized in Chapter~\ref{chap:ForcingEscape}. At the end of the doctorate studies we have wanted to bridge both subjects of study with a final research. In Chapter~\ref{chap:PartialControlGame} we have used partial control to build and resolve a competitive game between two players. Next we give the structure of the thesis and a summary of each chapter.
 
 
-\vspace{1cm}
+
+%\vspace{1cm}
+
+\clearpage
 
 {\bf  Chapter 1. Introduction}
+
+First, we give basics ideas of Game Theory, complex system, and control theory fields along the introduction of the investigations done in the doctoral thesis.
 
 \vspace{0.6cm}
 
 {\bf  Chapter 2. Methodology}
+
+Then we present the tools and methods used in the research. Most important have been the numerical simulations of agent based models or cellular automata. We also explain the methods to calculate Lyapunov exponents and bifurcation diagrams.
 
 \vspace{0.6cm}
 
 {\bf  Chapter 3. Time-dependent effects on the public goods game}  
 \vspace{0.6cm}
 
-Here we study two different time-depending effects. We analyze the effects of perturbations in the main parameter controlling the payoff of the players of the public goods game. We also studied a delay on the time it takes for the punish to affect defectors. The main result were that both the oscillation in the parameter and the delay in punishment hindered cooperation.
- 
-\vspace{0.6cm}
+Here, we study two different time-depending effects on the public goods game with punishment. We have analyzed the effects of perturbations in the main parameter controlling the payoff of the players of the public goods game. We also have also investigated the effect of introducing a delay on the time it takes for the punishment to affect defectors. The main result have been that both the oscillation in the parameter and the delay in punishment hindered cooperation.
 
 \vspace{0.6cm}
 
 {\bf  Chapter 4. Hamming distance as a measure of spatial chaos in evolutionary games}  
 \vspace{0.6cm}
 
-In this chapter we studied the complexity of two relevant social games. For this we measured the Hamming distance of two configurations varying in just one agent. We approached first the prisoner dilemma since a previous study by Martin Nowak and Robert May hinted at a complex behaviour in a specific parameter regime. We found that under this parameter regime, the distance diverges towards saturation, and is null for the rest of parameter values. This granted us confidence in the algorithm and used it on the public goods game, where we found that, when both cooperators and defectors are present, even when the dynamics do not seem that complex. Although the divergence starts earlier for the cases where the dynamics is more complex.
-
-
+In this chapter we analyzed the complexity of two relevant social games. With this aim we measured the Hamming distance of two configurations varying in just one agent. We have began with the prisoner's dilemma. After analyzing the game with our tool we have corroborated that the game present spatio-temporal chaos at some parameter regime as indicated by previous research by May and Nowak. Then we analyzed the public goods game with non-conclusive results due to the randomness of the evolutionary model in play.
 
 \vspace{0.6cm}
 
@@ -61,7 +60,7 @@ In this chapter we studied the complexity of two relevant social games. For this
 
 \vspace{0.6cm}
 
-Following the study of complexity on the previous games, we study here the complexity of Elementary Cellular Automata. We measure the Hamming distance from two configurations that differ only at one cell at the beginning and analyze the temporal behaviour of the distance. Depending on the distance periodicity or chaoticity, we classify each rule and find that the classification matches Wolfram's own classification.
+Following the analysis of complexity on the previous games, we examine here the complexity of Elementary Cellular Automata. We measure the Hamming distance from two configurations that differ only at one cell at the beginning and analyze the temporal behaviour of the distance. Depending on the distance periodicity or chaoticity, we classify each rule and find that the classification matches Wolfram's own classification.
 
 \vspace{0.6cm}
 
@@ -69,7 +68,7 @@ Following the study of complexity on the previous games, we study here the compl
 
 \vspace{0.6cm}
 
-Here we shift our attention to partial control. We develop here a method for controlling a orbit inside a chaotic transient to escape from it and go directly to one of its atractors. We develop two methods: one to escape the quickest way possibly and another to escape at an exact given number of iterations.
+Here, we shift our attention to partial control. We develop a method for controlling a trajectory inside a chaotic transient to escape from it and go directly to one of its atractors. We develop two methods: one to escape the quickest way possibly and another to escape at an exact given number of iterations.
 
 \vspace{0.6cm}
 
@@ -79,13 +78,22 @@ Here we shift our attention to partial control. We develop here a method for con
 
 \vspace{0.6cm}
 
-Using techniques from partial control we aim to design a game where two players compete in a region with transient chaos. By defining and computing the victory sets we get the set of initial conditions that grants the victory to either player. There are cases with regions where victory is not granted for any of them, so we design the best strategy for each player.
+Using techniques from partial control we aim to design a game where two players compete in a region with transient chaos. By defining and computing the winning sets we get the set of initial conditions that grants the victory to either player. We analyze the changes in the winning conditions depending on the information each player has about the actions of their opponent.
 
 
 \vspace{0.6cm}
 
-{\bf  Chapter 8. Conclusions}
+{\bf  Chapter 8. Discussion and Results}
 
 \vspace{0.6cm}
 
-Finally, the main conclusions of this thesis are summarized.
+The main results of the investigations are presented and discussed.
+
+
+\vspace{0.6cm}
+
+{\bf  Chapter 9. Conclusions}
+
+\vspace{0.6cm}
+
+Finally, the main conclusions are summarized.

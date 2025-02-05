@@ -1,4 +1,4 @@
-\chapter{Escaping from transient chaos with partial control} %5P1
+\chapter{Escaping from transient chaos with partial control} %6P1
 \label{chap:ForcingEscape}
 
 
@@ -22,15 +22,15 @@
 
 Partial control has been developed as a control method generally used in chaotic transients, where the controller does not fix a given orbit, but instead chooses a set of points to avoid. In this chapter we introduce this concept to further develop it in the two following chapters, where we use the partial control method to solve a game between two players. 
 
-The partial control method was firstly introduced to solve the Yorke's Game of Survival in \cite{Yorke'sGame} where a game is defined between a ``protagonist" and an ``antagonist". The goal of the protagonist was to survive in a chaotic transient region indefinitely. In the former paper's case, to keep the orbit in the region $[0,1]$ with the slope three tent map $f(x) = \mu(1-|x|)-1$. The antagonist role was interpreted by the effect of an additive noise, which bound was larger than the control bound of the protagonist.
+The partial control method was firstly introduced to solve the Yorke's Game of Survival in~\cite{Yorke'sGame} where a game is defined between a ``protagonist" and an ``antagonist". The goal of the protagonist was to survive in a chaotic transient region indefinitely. In the former paper's case, to keep the orbit in the region $[0,1]$ with the slope three tent map $f(x) = \mu(1-|x|)-1$. The antagonist role was interpreted by the effect of an additive noise, which bound was larger than the control bound of the protagonist.
 
 This map is well known and the iteration of the map in the sequence $x_{i+1} = f(x_i)$ for slopes greater than two, presents transient chaos. This is because the map is only positive for the region $[-1,1]$ and for those slopes, the orbits leave that region after falling near $0.5$ and escape towards $-\infty$. Through the iteration of the map all initial points eventually escape, since only the zero-measure Cantor ternary set remains an indefinite amount of time in the chaotic transient. The escape times depend on the initial conditions and present fractality. Therefore they are highly unpredictable in the disturbed case as can bee seen on Fig.~\ref{fig:EscapeTimes}. Orbits that start near the Cantor set take many iterations to escape without disturbance. Although in Fig.~\ref{fig:EscapeTimes} we used the logistic map, the graphic is similar for the tent map.
 
-Given that all points eventually escape and that the noise bound is greater it is unlikely that the protagonist could survive. However, with the partial control method, it is possible to find sets of points called the safe set for each combination of control bound and noise bound. Given a noise bound and a control bound there is a unique set that enables the protagonist to stay in the region if the initial conditions belongs to the set, for as long as control is active. The sets were firstly found by using the sculpting algorithm \cite{Sculpting} and later the safe functions were developed which enable to find multiple safe sets for different control bounds more efficiently \cite{SafeSets}.
+Given that all points eventually escape and that the noise bound is greater it is unlikely that the protagonist could survive. However, with the partial control method, it is possible to find sets of points called the safe set for each combination of control bound and noise bound. Given a noise bound and a control bound there is a unique set that enables the protagonist to stay in the region if the initial conditions belongs to the set, for as long as control is active. The sets were firstly found by using the sculpting algorithm~\cite{Sculpting} and later the safe functions were developed which enable to find multiple safe sets for different control bounds more efficiently~\cite{SafeSets}.
 
-But what drives the study presented in this chapter is not to maintain the orbits in the chaotic region, but to take out the unpredictable manner in which orbits escape from the region. We aim to control the orbits in order of being certain to know how the orbits will escape. We will get some functions similar to the safe functions that allows us either to escape from the chaotic transient region in the least iterations possible, or to set the exact number of iterations that passes before the orbits escape. We called these functions the escape functions, and the sets, the escape sets. The results of this study were published in \cite{Alfaro2021}
+But what drives the study presented in this chapter is not to maintain the orbits in the chaotic region, but to take out the unpredictable manner in which orbits escape from the region. We aim to control the orbits in order of being certain to know how the orbits will escape. We will get some functions similar to the safe functions that allows us either to escape from the chaotic transient region in the least iterations possible, or to set the exact number of iterations that passes before the orbits escape. We called these functions the escape functions, and the sets, the escape sets. The results of this study were published in~\cite{Alfaro2021}.
  
-\section{Escape from a region with partial control.}
+\section{Escape from a region with partial control}
 
 Given a map $f(x)$, with a bounded additive noise $\xi_n$ that affects the map at each iteration $n$, we eject a bounded additive control $u_n$, which, as we mentioned earlier, can be smaller than the noise bound. We define the iterated map that acts on $q\in Q$, $Q$ being a region in phase space as:
 
@@ -44,7 +44,7 @@ Given a map $f(x)$, with a bounded additive noise $\xi_n$ that affects the map a
 
 The goal is to find the correct sequence of controls ($u_1$, $u_2$,..., $u_m$) to ensure that at the $m^{th}$ iteration, with $m \leq N$, the point $q_{m+1}$ is outside of the region $Q$. $N$ is the maximum number of iterations it will take to achieve the goal, but in some cases, depending on the initial condition, the orbit can be expelled sooner. When setting a very small $N$, the control bound should be high, or otherwise achieving the goal may not be possible. On the other hand, by setting a large $N$ the control bound can be smaller and smaller.
 
-To apply this control technique one should firstly choose the region $Q$ from where the orbits must escape. Then one should compute $N$ quick escape functions $U_k$, $k = 1:N$, which depend on the value $\xi_0$. This functions tell how much control is needed to expel the orbit in $k$ iterations or less.
+To apply this control technique one should firstly choose the region $Q$ from where the orbits must escape. Then one should compute $N$ quick escape functions $U_k$, $k = 1:N$, which depend on the value $\xi_0$. These functions tell how much control is needed to expel the orbit in $k$ iterations or less.
 
 Then, by setting the control bound $u_0$ compute the escape sets $E_k$ for every escape function. Every point which belongs to this set can be thrown out from the region $Q$ in $k$ or fewer iterations. Each escape set contains all the points which have a value of $U_k$ lower than $u_0$. Since $E_N$ may not gather every point in the region $Q$, if the orbit starts in one of those point that are not gathered in $E_N$, the escape is not guaranteed to be made in $N$ iterations, and could take larger times.
 
@@ -63,7 +63,7 @@ To give an example on how to apply the algorithms, we have chosen the logistic f
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{Images/P1/EscapeTimes.eps}
-    \caption{Escape times from the chaotic transient of the logistic map with $\mu=4.7$ and a noisy disturbance bounded to $\xi_0 = 0.03$. Horizontal axis represents the starting points for the orbit and the vertical axis, the number of iterations of a random orbit before it escaped the chaotic transient region $Q = [0,1]$}
+    \caption{Escape times from the chaotic transient of the logistic map with $\mu=4.7$ and a noisy disturbance bounded to $\xi_0 = 0.03$. Horizontal axis represents the starting points for the orbit and the vertical axis, the number of iterations of a random orbit before it escaped the chaotic transient region $Q = [0,1]$.}
     \label{fig:EscapeTimes}
 \end{figure}
 
@@ -71,7 +71,7 @@ In the following subsections we present the algorithms to calculate the escape f
 
 \subsection{Escaping as quick as possible}
 
-We want to make orbits to escape in $N$ iterations or less. The larger the control bound is, the quicker some orbits will escape and the escape sets will be broader. This will be helpful if one wishes to avoid as much as possible chaotic orbits which can be dangerous in some situations. The authors of \cite{AvoidTransient1} state that ``transient chaos may be a dangerous and unwanted state of a vibro-impact system". 
+We want to make orbits to escape in $N$ iterations or less. The larger the control bound is, the quicker some orbits will escape and the escape sets will be broader. This will be helpful if one wishes to avoid as much as possible chaotic orbits which can be dangerous in some situations. The authors of~\cite{AvoidTransient1} state that ``transient chaos may be a dangerous and unwanted state of a vibro-impact system". 
 
 Since we are making numerical calculations, we must use a grid on region $Q$. We divide the region in $M$ equal parts, so that the region transforms in a collection of equidistant points $q[i]$, $i=1:M$. Also the value of the noise is discretized into $W$ values ranging from $-\xi_0$ to $\xi_0$. The map then becomes:
 
@@ -82,7 +82,7 @@ where $q[j]$ is the arrival point with $j=1:M$. Now we are ready to compute the 
 
 Firstly we compute the escape function $U_1$. This function tells us the control necessary for every point in the region $Q$ to escape in the next iteration. 
 \begin{equation}
-U_1(q[i]) = \max\limits_{s}(min(f(q[i]) + \xi[s] + \epsilon - 0, 1 + \epsilon - (f(q[i]) + \xi[s]))),
+U_1(q[i]) = \max\limits_{s}(\min(f(q[i]) + \xi[s] + \epsilon - 0, 1 + \epsilon - (f(q[i]) + \xi[s]))),
 \end{equation}
 where $0$ and $1$ are the limits of the region $Q$ and $\epsilon$ is a small number to ensure the escape and is convenient to be $1/M$.
 
@@ -139,7 +139,7 @@ U_{k+1}[i]=\max_s\Big(\min_j\big(\max(|u[i,s,j]|,U_k[j])\big)\Big)
 \begin{figure}
     \centering
     \includegraphics[width=0.4\textheight]{Images/P1/EscapeSetsExact.eps}
-    \caption{On top, logistic map $\mu x(1-x)$ with $\mu = 4.7$. On the bottom, escape functions (red) and escape sets (blue) for escaping in $N=3$ or less iterations as quick as possible. The functions were computed for a noise bound of $\xi_0 = 0.03$ and the sets for a control bound of $u_0 = 0.022$. The vertical axis shows the minimum control needed for orbits starting at each starting point to stay in the chaotic transient region $Q = [0,1]$ indefinitely. The blue lines mark the exact escape heights $E_k$, their heights are meaningless, the points highlighted can escape in exactly $k$ iterations with the given control bound. }
+    \caption{On top, logistic map $\mu x(1-x)$ with $\mu = 4.7$. On the bottom, escape functions (red) and escape sets (blue) for escaping in $N=3$ or less iterations as quick as possible. The functions were computed for a noise bound of $\xi_0 = 0.03$ and the sets for a control bound of $u_0 = 0.022$. The vertical axis shows the minimum control needed for orbits starting at each starting point to stay in the chaotic transient region $Q = [0,1]$ indefinitely. The blue lines mark the exact escape sets $E_k$, their heights are meaningless, the points in $E_k$ can escape in exactly $k$ iterations with the given control bound. }
     \label{fig:EscapeSetsExact}
 \end{figure}
 
@@ -154,11 +154,40 @@ Now, to escape in exactly $N$ iterations, we must simply take the first iterated
 
 
 \subsection{Shifting chaotic transients}
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{Images/P1/Alt_Bifurcation.eps}
+	\caption{Bifurcation diagram for the double parabola map choosing two different initial conditions. Te points in red correspond to starting the trajectories in $Q_l$ and when in blue, the trajectories started in $Q_r$. For $\mu>8$ a global atractor merges and both regions are accessible to the trajectories.} 
+	\label{fig:Alt_Bifurcation}
+\end{figure}
+
+%TODO quitar mu 10
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{Images/P1/Alt_Lyapunov.eps}
+	\caption{Evolution of the Lyapunov exponent versus $\mu$ for the double parabola map. For positive values of the exponent, the dynamics are chaotic.}
+	\label{Alt_Lyapunov}
+\end{figure}
+
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textheight]{Images/P1/Alt_tray_mu8.1.eps}
+    \caption{Controlled and uncontrolled orbits of the double parabola map for $\mu = 8.1$ in red. The typical orbit describes the motion of a chaotic system where the attractor has different regions. The orbits stay an indefinite amount on each side of the attractor shifting chaotically. This is typical of a multistable chaotic system in the moment when its different attractors have merged into a larger one. We were able to control the dynamics in the map so it keeps the chaotic behavior in each side of the attractor, but have controlled the frequency of the shifts. As we can see the controlled orbits spends $N^l = 20$ iterations at the left side and $N^r = 30$ at the right one. The control made at each iteration was at most the value of its bound $u_0 = 0.0145$ which is lower than the noise bound $\xi_0 = 0.015$}
+    \label{fig:TrajectoryDouble}
+\end{figure}
+
  
 
 Thanks to the previous control method we can accurately control the escape from a chaotic transient in an orderly manner. This can be helpful in a case where a rigorous control of time is needed. This next case goes forward in this direction, by setting the frequencies of time at which a controlled orbit shifts from one chaotic transient to another. With this control technique one can build a chaotic clock in which a desired chaotic system changes significantly at some desired rates and still maintaining its chaotic behavior. 
 
-This can be useful in multistable chaotic systems. In these kind of systems, varying a parameter one can merge various atractors into a larger one with different regions when their basin boundary collides. The orbit shifts chaotically from one region to the other continuously \cite{Multistable2}. One example of this motion is the Lorentz system \cite{Lorentz}, and others are given in \cite{Multistable2, Multistable3, Multistable4}.
+This can be useful in multistable chaotic systems. In these kind of systems, varying a parameter one can merge various atractors into a larger one with different regions when their basin boundary collides. The orbit shifts chaotically from one region to the other continuously~\cite{Multistable2}. One example of this motion is the Lorentz system~\cite{Lorentz}, and others are given in~\cite{Multistable2, Multistable3, Multistable4}.
 
 With the following control method, one could make this shifts to appear periodically as long as control is made while maintaining the chaotic motion through the rest of the orbit. The orbit will therefore be quasi-periodical.
 
@@ -172,26 +201,18 @@ f(x) = \left\{ \begin{array}{ll}
 \right.
 \end{equation}
 
-The bifurcation diagram and Lyapunov exponent for the iterated map $x_{n+1} = f(x_n)$ are shown in Figures \ref{fig:Bifurcation} and \ref{fig:Lya} respectively. It shows that there is a chaotic behavior for most values of $mu > $ and for values of $ < \mu < 8$ there are two separated atractors that merge at $\mu = 8$ into a larger one. Then, for values close to that, the orbit shifts chaotically between the left and right regions. 
 
-Figure~\ref{fig:TrajectoryDouble} shows this shifts in the uncontrolled trajectory at the top and how we have controlled them, resulting in a quasi-periodic orbit with periodic shifts between the two regions. Also, we can see how the magnitude of the control made at each iteration is lower than the noise bound.
+The bifurcation diagram and Lyapunov exponent for the iterated map $x_{n+1} = f(x_n)$ are shown in Figures \ref{fig:Alt_Bifurcation} and \ref{fig:Alt_Lyapunov} respectively. It shows that there is a chaotic behavior for most values of $\mu \geq 7.14$ and for values of $ 7.14 \leq \mu < 8$ there are two separated atractors that merge at $\mu = 8$ into a larger one. Then, for values close to that, the orbit shifts chaotically between the left and right regions. 
 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textheight]{Images/P1/Alt_tray_mu8.1.eps}
-    \caption{Controlled and uncontrolled orbits of the double parabola map for $\mu = 8.1$ in red. The typical orbit describes the motion of a chaotic system where the attractor has different regions. The orbits stay an indefinite amount on each side of the attractor shifting chaotically. This is typical of a multistable chaotic system in the moment when its different attractors have merged into a larger one. We were able to control the dynamics in the map so it keeps the chaotic behavior in each side of the attractor, but have controlled the frequency of the shifts. As we can see the controlled orbits spends $N^l = 20$ iterations at the left side and $N^r = 30$ at the right one. The control made at each iteration was at most the value of its bound $u_0 = 0.0145$ which is lower than the noise bound $\xi_0 = 0.015$}
-    \label{fig:TrajectoryDouble}
-\end{figure}
+Figure~\ref{fig:TrajectoryDouble} shows one typical orbit and the controlled one. The uncontrolled trajectory is characterized by chaotic shifts from left to right regions, while the controlled one results in a quasi-periodic orbit with periodic shifts between the two regions. Also, we can see that the magnitude of the control made at each iteration is no more than a certain bound, which is lower than the noise bound.
 
 
 
-This control has been calculated following the same approach as the previous cases. In this case through the shift functions and sets. These are similar than the escape sets and are calculated taking into account the control $u_{in}^l$ as the control needed to get an iterated point in region $Q^l$ to another desired point in the same region, calculated as:
+To control this orbits we have used the same approach as the previous cases. In this case through the shift functions and sets. which are similar than the escape sets. This time we have to take into account how to stay in a region and how to leave from it and go to the other. So, we need to calculate the control $u_{in}^{l,r}$ as the control needed to get an iterated point in region $Q^{l,r}$ to another desired point in the same region.
 \begin{equation*}
 u_{in}^{l,r}[i,s,j] =  q^{l,r}[j] - f(q^{l,r}[i]) - \xi[s].
 \end{equation*}
-
-Also important is the control $u_{out}^{l,r}$ needed to get one point from region $Q^{l,r}$ to the opposite region $Q^{r,l}$. This is:
+And to change regions, the control $u_{out}^{l,r}$ tells the distance between one point from region $Q^{l,r}$ to another from the opposite region $Q^{r,l}$.
 \begin{equation*}
 u_{out}^{l,r}[i,s,j] = q^{r,l}[j] - f(q^{l,r}[i]) - \xi[s].
 \end{equation*}
@@ -239,12 +260,12 @@ u_{out}^{l,r}[i,s,j] = q^{r,l}[j] - f(q^{l,r}[i]) - \xi[s].
 
 
 
-Taking as a seed $U^l_1 = 0$,  we can calculate the shift functions $U^{l,r}_k$ following Algorithm~\ref{alg:ShiftFunction}, which tell the control needed to be able to control the orbit $k$ iterations at the left or right region before shifting to the other region.  The shift sets $E^{l,r}_k$ will be the set of points that has a lower value of the function than their bound of control. They are ordered like the exact escape sets from previous section, the upper letter indicating if the escape set is from the left or right region $Q^{l,r}$, and their index $k$ indicating the number of iterations needed until the orbit will shift to the other region. 
+Taking as a seed $U^l_1 = 0$,  we can calculate the shift functions $U^{l,r}_k$ following Algorithm~\ref{alg:ShiftFunction}. This algorithm calculates the amount needed to control the orbit $k$ iterations at the left, or right, region before shifting to the other region. The shift sets $E^{l,r}_k$ will be the set of points that have a lower value of the function than their bound of control. The sets $E^{l,r}_k$ are ordered like the exact escape sets from previous section, with the index $k$ indicating the number of iterations needed until the orbit will shift to the other region. 
 
 An example is given in Fig.~\ref{fig:ShiftSets}. We calculated the shift sets in order for the orbit to remain $N^l = 3$ at the left side, and $N^r = 2$ at the right side. Following the example, if an orbit starts at a point in $E^l_3$ it will arrive at $E^l_2$ and then $E^l_1$ through control after which, it can be controlled to shift to $E^r_2$, then repeating the same process on the right side until the orbit can be shifted to the left. This process can be continued indefinitely. If one is fortunate and the orbit starts at a point with low value of the shift function, the control can be made lower than the noise.
 
 
-\section{Conclusions}
+\section{Discussion and conclusions}
 
 We have applied the partial control method with the goal of driving off trajectories from a chaotic transient region. We developed two methods of doing this. Firstly the controller may want to expel the trajectory as swift as possible. Alternatively, the control can be made in an orderly manner, choosing the exact number of iterations that the trajectory stays at the transient region from the beginning of control to the moment the trajectory leaves the region.
 
@@ -264,72 +285,72 @@ For all the cases we managed to achieve the goal at some set of initial conditio
 J. Aguirre, F. d’Ovidio, and M. A. F. Sanjuán
 Controlling chaotic transients: Yorke’s game of survival
 Phys. Rev. E \textbf{69}, 016203 
-(2004)
+(2004).
 \url{https://doi.org/10.1103/PhysRevE.69.016203}
 
 \bibitem{Sculpting}
-J. Sabuco, S. Zambrano, M. A.F. Sanjuán, and J. A. Yorke,
+J. Sabuco, S. Zambrano, M. A. F. Sanjuán, and J. A. Yorke,
 Finding safety in partially controllable chaotic systems.
 Commun Nonlinear Sci Numer Simulat \textbf{17}, 4274–4280 
-(2012)
+(2012).
 \url{https://doi.org/10.1016/j.cnsns.2012.02.033}
 
 \bibitem{SafeSets}
-R. Capeáns, J. Sabuco, M. A. F. Sanjuán
+R. Capeáns, J. Sabuco, M. A. F. Sanjuán,
 A new approach of the partial control method in chaotic
 systems.
-Nonlinear Dyn \textbf{98}, 873–887 
-(2019) 
+Nonlinear Dyn. \textbf{98}, 873–887 
+(2019). 
 \url{https://doi.org/10.1007/s11071-019-05215-y}
 
 \bibitem{Alfaro2021}
 G. Alfaro, R. Capeáns, and M. A. F. Sanjuán,
 Forcing the escape: Partial control of escaping orbits from a
 transient chaotic region,
-Nonlinear Dyn \textbf{104}, 1603--1612 (2021)
+Nonlinear Dyn. \textbf{104}, 1603--1612 (2021).
 \url{https://doi.org/10.1007/s11071-021-06331-4}
 
 \bibitem{AvoidTransient1}
 V.A. Bazhenov, O. S. Pogorelova, and T.G. Postnikova,
 Transient chaos in platform-vibrator with shock.
 Strength Mater. Theory Struct. \textbf{106}, 22-40 
-(2021)
+(2021).
 \url{https://doi.org/10.32347/2410-2547.2021.106.22-40}
 
 \bibitem{Multistable1}
 Y.~F. Jin,
 {\em Stochastic resonance in an under-damped bistable system driven by harmonic mixing signal}, 
-Chinese Phys B \textbf{27}, 050501 
-(2018)
+Chinese Phys. B \textbf{27}, 050501 
+(2018).
 \url{https://doi.org/10.1088/1674-1056/27/5/050501}
 
 \bibitem{Lorentz}
 E. N. Lorenz,
 Deterministic nonperiodic flow.
 J. Atmos. Sci. \textbf{20}, 130-141 
-(1963)
+(1963).
 \url{https://doi.org/10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2}
 
 
 \bibitem{Multistable2}
 E.~L. Rempel and A.~C.-L. Chian, 
 {\em Intermittency induced by attractor-merging crisis in the Kuramoto-Sivashinsky equation}, 
-Phys Rev E \textbf{71}, 016203 
-(2005)
+Phys. Rev. E \textbf{71}, 016203 
+(2005).
 \url{https://doi.org/10.1103/PhysRevE.71.016203}
 
 \bibitem{Multistable3}
 A.~L. Livorati, I.~L. Caldas, C.~P. Dettmann, and E.~D. Leonel,
 {\em Crises in a dissipative bouncing ball model},
-Phys Lett A \textbf{379}, 2830--2838 
-(2015)
+Phys. Lett. A \textbf{379}, 2830--2838 
+(2015).
 \url{https://doi.org/10.1016/j.physleta.2015.09.016}
 
 \bibitem{Multistable4}
 S.~Vaidyanathan, S.~T. Kingni, A.~Sambas, M.~A. Mohamed, and M.~Mamat,
 {\em A new chaotic jerk system with three nonlinearities and synchronization via adaptive backstepping control},
 Int. J. Eng. Technol. \textbf{7}, 1936--1943 
-(2018)
+(2018).
 \url{https://doi.org/10.14419/ijet.v7i3.15378
 }
 
