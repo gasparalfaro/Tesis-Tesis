@@ -21,9 +21,18 @@
 \end{quotation}
 
 
+\vspace{0.5cm}
+
+%\bibitem{Alfaro2022}
+G. Alfaro and M. A. F. Sanjuán,
+Time-dependent effects hinder cooperation on the public goods game,
+Chaos, Solitons Fractals \textbf{160}, 112206 (2022).
+\url{https://doi.org/10.48550/arXiv.2501.12188}
+
+\vspace{1cm}
 
 
-Understanding how individuals cooperate and form groups is fundamental to many fields, from biology to social sciences and economics \cite{CoopBio,CoopSocial,CoopEconomy}. When we study these interactions, we find that adding more people to a group the problem does not scale linearly, on the contrary it creates entirely new patterns of behavior that we couldn't predict by looking at individuals alone. These emerging patterns make the study of populations a fascinating example of complex systems dynamics, where simple rules can lead to intricate and surprising outcomes.
+Understanding how individuals cooperate and form groups is fundamental to many fields, from biology to social sciences and economics \cite{CoopBio,CoopSocial,CoopEconomy}. When we study these interactions, we find that when one adds more agents to a population, the problem does not scale linearly. On the contrary it creates entirely new patterns of behavior that we couldn't predict by looking at individuals alone. These emerging patterns make the study of populations a fascinating example of complex systems dynamics, where simple rules can lead to intricate and surprising outcomes.
 
 Social physics research has developed various tools to understand these patterns \cite{SocialPhy}, but one framework stands out as particularly powerful: Evolutionary Game Theory (EGT). This approach combines the mathematical precision of game theory with the dynamic nature of evolution, helping us understand how behaviors spread and change in populations over time.
 
@@ -31,17 +40,17 @@ One of the most intriguing questions EGT helps us explore is how altruism emerge
 
 In the public goods game (PGG) a community where each person can either contribute to shared resources, cooperate, or benefit without contributing, defect. Cooperators ($C$) contribute a unit amount to each of their groups, while defectors ($D$) contribute nothing. The collective contributions are then multiplied by an enhancement factor $r$ and then the sum is shared equally among all group members, regardless of their contributions. The enhancement factor $r$ accounts for the profit of a certain investment, including the benefits of working as a group with greater productivity than if individuals were working alone.
 
-This setup creates an interesting dilemma: while everyone benefits when many people cooperate, individuals can gain more by defecting and letting others do the work. Cooperation only flourishes when the enhancement factor $r$ approaches the group size \cite{r/G}. Otherwise, defectors eventually dominate the population, leading to the "tragedy of the commons", a situation where pursuing individual interests leads to collective failure.
+This setup creates an interesting dilemma: while everyone benefits when many people cooperate, individuals can gain more by defecting and letting others do the work. Cooperation only flourishes when the enhancement factor $r$ approaches the group size \cite{r/G}. Otherwise, defectors eventually dominate the population, leading to the ``tragedy of the commons", a situation where pursuing individual interests leads to collective failure.
 
 
-To encourage cooperation, societies often employ various mechanisms. These include allowing people to move between groups \cite{Migration}, maintaining reputations \cite{Reputation}, rewarding cooperators \cite{Reward}, or punishing those who don't contribute. Punishment can take different forms, from social exclusion \cite{SocialExclusion} to monetary fines \cite{Punish2}. Our work focuses on monetary punishment by introducing a third type of individual: punishers ($P$). These individuals not only contribute to the public good but also pay extra to penalize defectors. While punishers earn less than normal cooperators, since they bear the cost of punishment, their presence can make defection less attractive and thereby increase overall cooperation. However, maintaining cooperation requires a critical mass of punishers, as shown in \cite{SocialExclusion}.
+To encourage cooperation, societies often employ various mechanisms. These include allowing people to move between groups \cite{Migration}, maintaining reputations \cite{Reputation}, rewarding cooperators \cite{Reward}, or punishing those who do not contribute. Punishment can take different forms, from social exclusion \cite{SocialExclusion} to monetary fines \cite{Punish2}. Our work focuses on monetary punishment by introducing a third type of individual: punishers ($P$). These individuals not only contribute to the public good but also pay extra to penalize defectors. While punishers earn less than normal cooperators, since they bear the cost of punishment, their presence can make defection less attractive and thereby increase overall cooperation. However, maintaining cooperation requires a critical mass of punishers, as shown in \cite{SocialExclusion}.
 
 
-Previous studies have assumed that the rules of the game remain constant over time. However, real-world situations rarely work this way. While some researchers have explored how allowing people to choose their group members affects outcomes \cite{EdgeRule}, few have investigated what happens when the fundamental parameters of the system change over time. The enhancement factor $r$ is particularly likely to fluctuate in real situations as of changes in the productivity of the investments. To understand these effects, we study what happens when $r$ oscillates sinusoidally over time. We chose this dependence as a simple pattern that can help us understand more complex variations. 
+Previous research have assumed that the rules of the game remain constant over time. However, real-world situations rarely work this way. While some researchers have explored how allowing people to choose their group members affects outcomes \cite{EdgeRule}, few have investigated what happens when the fundamental parameters of the system change over time. The enhancement factor $r$ is particularly likely to fluctuate in real situations as of changes in the productivity of the investments. To understand these effects, we consider what happens when $r$ oscillates sinusoidally over time. We have chosen this dependence as a simple pattern that can help us understand more complex variations. 
 
-Moreover, real-world actions rarely have immediate consequences, yet most studies assume instant punishment. We explore this by introducing a time delay $\tau$ as the intercept between the instant when someone defects and when they receive punishment. The effect on delay was previously studied with human subjects \cite{Late}, but with a sample much smaller than in our simulations.
+Moreover, real-world actions rarely have immediate consequences, yet most studies assume instant punishment. We explore this by introducing a time delay $\tau$ as the intercept between the instant when someone defects and when they receive punishment. The effect on delay was previously studied with human subjects~\cite{Late}, but with a sample much smaller than in our simulations.
 
-Our research, collected here and in the article \cite{Alfaro2022} reveals two key findings. First, large amplitudes of oscillation in the enhancement factor make it harder for cooperation to persist. Second, delays in punishment also hinder cooperation. We also noticed that rapid fluctuations, similar to random noise, don't significantly affect outcomes.
+Our research reveals two key findings. First, large amplitudes of oscillation in the enhancement factor make it harder for cooperation to persist. Second, delays in punishment also hinder cooperation. We also noticed that rapid fluctuations, similar to random noise, do not significantly affect outcomes.
 
 
 
@@ -51,17 +60,17 @@ Our research, collected here and in the article \cite{Alfaro2022} reveals two ke
 
 
 
-We implemented the public goods game as a spatial model where individuals interact with their neighbors in a square grid. Each individual participates in five different groups, with each group containing exactly five members ($G=5$). When an individual participates in a game, they receive a payoff, $\Pi^g$, based on their strategy and the strategies of others in that particular group. Their accumulated payoff, $\Pi$ comes from adding up their earnings from all five games they participated in, $\Pi=\sum_g^G \Pi^g$. This payoff is a measure of the fitness of an individual in the system.
+We have implemented the public goods game as a spatial model where individuals interact with their neighbors in a square grid. Each individual participates in five different groups, with each group containing exactly five members ($G=5$). When an individual participates in a game, they receive a payoff, $\Pi^g$, based on their strategy and the strategies of others in that particular group. Their accumulated payoff, $\Pi$ comes from adding up their earnings from all five games they participated in, $\Pi=\sum_g^G \Pi^g$. This payoff is a measure of the fitness of an individual in the system.
 
-Our simulation grid has $L$ cells on each side. We typically use $L=300$ unless specified otherwise. This means we're modeling a total population of $N=L^2$ individuals, distributed among cooperators ($N_C$), defectors ($N_D$), and punishers ($N_P$), so that $N=N_C+N_D+N_P$.
+Our simulation grid has $L$ cells on each side. We typically use $L=300$ unless specified otherwise. This means we are modeling a total population of $N=L^2$ individuals, distributed among cooperators ($N_C$), defectors ($N_D$), and punishers ($N_P$), so that $N=N_C+N_D+N_P$.
 
-In nature and society, successful behaviors tend to spread, people often imitate strategies that seem to be working well for others. We model this through an imitation rule implemented in a Monte Carlo simulation. In each step, we randomly select an individual, $x$, and one of their neighbors $y$. After they've both played their games and received their payoffs, $x$ might adopt $y$'s strategy according to a probability that depends on the payoff of both. The probability follows the Fermi distribution:
+In nature and society, successful behaviors tend to spread, people often imitate strategies that seem to be working well for others. We model this through an imitation rule implemented in a Monte Carlo simulation. In each step, we randomly select an individual, $x$, and one of their neighbors $y$. After they have both played their games and received their payoffs, $x$ might adopt $y$'s strategy according to a probability that depends on the payoff of both. The probability follows the Fermi distribution:
 \begin{equation}
 W(s_x \rightarrow s_y)=\frac{1}{1+\exp[(\Pi_{x}-\Pi_{y})/K]},
 \end{equation}
 If $y$ is doing much better than $x$ ($\Pi_y >> \Pi_x$), the probability of $x$ adopting $y$'s strategy becomes very high. On the other hand, if $x$ is doing much better than $y$ ($\Pi_x >> \Pi_y$), $x$ will likely keep their current strategy. When both are doing similarly well, the change becomes more random.
 
-$K$ serves as a way to regulate this randomness that appears when adopting a strategy. Humans commit errors and are not purely driven by rationality. Therefore they do not always act to the best response. As $K \to 0$ the individuals always change the strategy if their payoff is smaller than the neighbor's. As $K \to \infty$ the probability of change is $1/2$, regardless of the payoff. As \cite{ValorK} suggests, we set $K=0.5$ as a fully representative value.
+$K$ serves as a way to regulate this randomness that appears when adopting a strategy. Humans commit errors and are not purely driven by rationality. Therefore they do not always act to the best response. As $K \to 0$ the individuals always change the strategy if their payoff is smaller than the neighbor's. As $K \to \infty$ the probability of change is $1/2$, regardless of the payoff. As~\cite{ValorK} suggests, we set $K=0.5$ as a fully representative value.
 
 We define one Monte Carlo Step (MCS) as $N$ iterations, meaning that on average, each individual has had one opportunity to update their strategy. This represents one generation in our evolutionary timeline. 
 
@@ -85,7 +94,7 @@ The starting configuration of individual's strategies can change the outcome of 
 
 
 
-Societies have long used monetary fines to discourage undesirable behavior and promote cooperation. Think of parking tickets, environmental penalties, or business regulations. All these represent ways that communities punish those who don't cooperate with social rules. In our model, we explore two distinct approaches to implementing such punishment: pool punishment and peer punishment. 
+Societies have long used monetary fines to discourage undesirable behavior and promote cooperation. Think of parking tickets, environmental penalties, or business regulations. All these represent ways that communities punish those who do not cooperate with social rules. In our model, we explore two distinct approaches to implementing such punishment: pool punishment and peer punishment. 
 In pool punishment, punishers contribute to a common fund. Each time punishers participate in the public goods game, they pay a small amount ($\gamma=0.0125$) into this communal punishment fund. When they encounters a defector, the defector must leave a fine ($\beta=0.125$). Importantly, this fine is applied only once per defector, regardless of how many punishers are in the group.
 
 Peer punishment works differently. Instead of contributing to a central fund, punishers directly confront defectors. Each punisher pays a personal cost (${\gamma=0.0125}$) to punish each defector they encounter, and each defector receives a separate fine ($\beta=0.125$) from each punisher. This can result in more severe punishment when multiple punishers are present.
@@ -120,7 +129,7 @@ For peer punishment, the equations change to reflect the multiple punishments po
 
 
 
-When we simulate these systems over $5000$ generations (Monte Carlo Steps), we observe how different strategies succeed under varying conditions in Figure \ref{densidad}. At low enhancement factors $r$, defection dominates because the benefits of cooperation aren't high enough to offset its costs. As $r$ increases, punishers begin to thrive because the greater benefits of cooperation make their enforcement role more valuable. At even higher r values, normal cooperators can sometimes outcompete punishers because the high returns make punishment less necessary.
+When we simulate these systems over $5000$ generations (Monte Carlo Steps), we observe how different strategies succeed under varying conditions in Fig.~\ref{densidad}. At low enhancement factors $r$, defection dominates because the benefits of cooperation are not high enough to offset its costs. As $r$ increases, punishers begin to thrive because the greater benefits of cooperation make their enforcement role more valuable. At even higher r values, normal cooperators can sometimes outcompete punishers because the high returns make punishment less necessary.
 
 The stochastic noise parameter K influences these patterns significantly. Higher noise levels make cooperation harder to maintain, shifting the transition points toward higher r values. This reflects how uncertainty or imperfect information can make maintaining cooperation more challenging.
 
@@ -161,13 +170,13 @@ We model these changing investment returns by making the enhancement factor r os
 
 The frequency $\omega$, measured in inverse Monte Carlo Steps (MCS$^{-1}$), lets us explore different types of real-world fluctuations. Low frequencies might represent long-term economic cycles, while high frequencies could model rapid fluctuations like daily market volatility or random noise in the system.
 
-When we examine how populations evolve under these oscillating conditions (shown in Figure \ref{oscila}), we discover that larger oscillations make it harder for cooperation to survive. When we increase the amplitude $r$, defectors gain an advantage, sometimes even taking over the entire population, as shown in Figure \ref{oscila}(c). This suggests that stability, in the sense of predictable returns on cooperation – plays a crucial role in maintaining cooperative behavior.
+When we examine in Fig.~\ref{oscila} how populations evolve under these oscillating conditions, we discover that larger oscillations make it harder for cooperation to survive. When we increase the amplitude $r$, defectors gain an advantage, sometimes even taking over the entire population, as shown in Fig.~\ref{oscila}(c). This suggests that stability, in the sense of predictable returns on cooperation – plays a crucial role in maintaining cooperative behavior.
 
-The frequency of oscillations also matters. When oscillations happen very quickly (Figure \ref{oscila}(d)), the population behaves almost as if there were no oscillations at all. This makes intuitive sense: if conditions change faster than people can adapt their strategies, they respond to the average conditions instead.
+The frequency of oscillations also matters. When oscillations happen very quickly (Fig.~\ref{oscila}(d)), the population behaves almost as if there were no oscillations at all. This makes intuitive sense: if conditions change faster than people can adapt their strategies, they respond to the average conditions instead.
 
 These findings hold true regardless of whether we use pool or peer punishment, and they persist across different levels of decision-making noise, $K$. The fundamental relationship between instability and reduced cooperation appears to be a robust feature of the system.
 
-To understand exactly when defection becomes dominant, we created Figure \ref{r1_w0}. This figure shows the critical amplitude $r_1$ that separates regions where punishers can survive from regions where defectors completely take over, plotted against the oscillation frequency $\omega$ for different values $r_0$. The resulting curve reveals several key insights:
+To understand exactly when defection becomes dominant, we created Fig.~\ref{r1_w0}. This figure shows the critical amplitude $r_1$ that separates regions where punishers can survive from regions where defectors completely take over, plotted against the oscillation frequency $\omega$ for different values $r_0$. The resulting curve reveals several key insights:
 
 First, the critical amplitude increases with frequency until reaching a plateau. This means that faster oscillations need larger amplitudes to disrupt cooperation completely. At low frequencies, even small oscillations can lead to defector dominance because there are long periods when $r$ dips low enough for defectors to multiply significantly. As frequency increases, the system has less time to respond to each low-$r$ period, requiring larger amplitudes to achieve the same effect.
 
@@ -210,17 +219,17 @@ To explore how such delays influence cooperation, we modified our model to inclu
 
 The added complexity of tracking delayed punishments significantly increased computational demands, so we reduced our population size to L=100 to keep simulation times manageable. Even with this smaller population, the results proved illuminating.
 
-Looking at Figure \ref{freq_retardo}, which shows the long-term frequency of each strategy with a delay of $\tau=5$ MCS, we see a dramatic shift from our previous results. Comparing this to Figure \ref{densidad}(c) (the no-delay case), we observe two significant changes: (1) Punishers have almost completely disappeared across most values of the enhancement factor $r$. (2) While normal cooperators appear at lower $r$ values than before, defectors maintain a much stronger presence.
+Looking at Fig.~\ref{freq_retardo}, which shows the long-term frequency of each strategy with a delay of $\tau=5$ MCS, we see a dramatic shift from our previous results. Comparing this to Fig.~\ref{densidad}(c) (the no-delay case), we observe two significant changes: (1) Punishers have almost completely disappeared across most values of the enhancement factor $r$. (2) While normal cooperators appear at lower $r$ values than before, defectors maintain a much stronger presence.
 
 This weakening of cooperation makes intuitive sense when we consider how people learn and adapt their behavior. Just as children need to connect punishment directly with their actions to understand consequences, our simulated individuals become less likely to change their behavior when punishment is delayed. The longer the gap between action and consequence, the weaker the learning effect becomes. A principle that holds true whether we use peer punishment or vary the noise in decision-making.
 
-To further understand these delay effects, we investigated whether they might interact with the oscillating returns we studied earlier. Figure \ref{tiempo_retardo_oscilacion} shows how populations evolve over time with both delay ($\tau=5$) and oscillating enhancement factors ($r_0=3.8$, $r_1=0.5$) at different frequencies. We were particularly interested in whether we might see resonance, a strengthening of effects, when the oscillation frequency matches the natural frequency created by the delay ($\omega=1/\tau=0.2$).
+To further understand these delay effects, we investigated whether they might interact with the oscillating returns we studied earlier. Fig.~\ref{tiempo_retardo_oscilacion} shows how populations evolve over time with both delay ($\tau=5$) and oscillating enhancement factors ($r_0=3.8$, $r_1=0.5$) at different frequencies. We were particularly interested in whether we might see resonance, a strengthening of effects, when the oscillation frequency matches the natural frequency created by the delay ($\omega=1/\tau=0.2$).
 
 Nonetheless we found no evidence of such resonance. The population dynamics looked similar across different frequencies, even near the theoretical resonance point as seen in Fig.~\ref{tiempo_retardo_oscilacion}(d). Even more unexpectedly, we didn't observe the periodic oscillations we might have expected given our sinusoidal variation in returns.
 
 What explains this lack of periodicity? Our first thought was that random noise in decision-making might be masking any periodic patterns. However, when we ran simulations in the noiseless regime ($K \to 0$), we still saw no periodic behavior. Then, another account for stocahasticity is the randomness of our Monte Carlo simulation. Specifically, in how we randomly choose which individuals get to update their strategies. This inherent randomness in the update process appears to overwhelm any periodic forcing from our oscillating enhancement factor. Another fact that restrains the observation of oscillation and resonance is the large value of $\omega$, as high-frequency oscillations do not provide with sufficient time for population to adapt. 
 
-This finding highlights an important principle: while both delayed punishment and oscillating returns can independently weaken cooperation, their combined effects don't produce simple, predictable patterns, at least for the parameters studied. A further study with increased range of parameters for larger $\tau$ and smaller $\omega$ values is necessary.
+This finding highlights an important principle: while both delayed punishment and oscillating returns can independently weaken cooperation, their combined effects do not produce simple, predictable patterns, at least for the parameters studied. A further study with increased range of parameters for larger $\tau$ and smaller $\omega$ values is necessary.
 
 
 
@@ -282,11 +291,7 @@ X. Sun, Y. Li, H. Kang, Y. Shen, J. Peng, H. Wang, and Q. Chen, Co-Evolution of 
 
 
 
-\bibitem{Alfaro2022}
-G. Alfaro and M. A. F. Sanjuán,
-Time-dependent effects hinder cooperation on the public goods game,
-Chaos, Solitons Fractals \textbf{160}, 112206 (2022).
-\url{https://doi.org/10.48550/arXiv.2501.12188}
+
 
 
 \bibitem{Migration} 

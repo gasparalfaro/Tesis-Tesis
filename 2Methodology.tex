@@ -30,7 +30,7 @@ For this doctoral thesis we employ a theoretical and computational approach, emp
 
 \section{Monte Carlo agent-based simulations}
 
-For Chapters~\ref{chap:TimeEffects} and~\ref{chap:HammingGames} we make agent-based simulations of individuals playing social games. Each agent has a strategy to play the game. Games are played between neighbors in a square grid and gaining different payoff, which represent the fitness of each player. After each game has been played and we have obtained the payoffs, through the Monte Carlo method~\cite{MonteCarlo}, random individuals are selected to update their strategy to that of a random neighbor. The likelihood of adopting the new strategy will depend on the difference of both agents' payoff. The games are iterated many times and we can see the dynamical changes of strategies by plotting each strategy in different colors. These simulations were produced using custom made code in the Julia programming language.
+For Chapters~\ref{chap:TimeEffects} and~\ref{chap:HammingGames} we make agent-based simulations of individuals playing social games. Each agent has a strategy to play the game. Games are played between neighbors in a square grid and gaining different payoff, which represent the fitness of each player. After each game has been played and we have obtained the payoffs, through the Monte Carlo method~\cite{MonteCarlo}, random individuals are selected to update their strategy to that of a random neighbor. The likelihood of adopting the new strategy will depend on the difference of both agents' payoff. The games are iterated many times and we can see the dynamical changes of strategies by plotting each strategy in different colors. These simulations were produced using custom made code in the \textit{Julia} programming language.
 
 \section{Numerical analysis tools}
 
@@ -42,17 +42,15 @@ A bifurcation diagram~\cite{Bifurcation} is a graphic that represents the differ
 
 To obtain the bifurcation diagram one must first let the dynamics get to a steady state where the transient dynamics is discarded. In the case of multistable systems, one must calculate the steady state for more than one initial condition, wich produces different steady states because they reach different atractors. By plotting the steady state of each initial condition separately or in a different color, we can analyze the differences. 
 
-A bifurcation diagram for a multistable system was plotted in Chapter~\ref{chap:ForcingEscape}. It was computed using MATLAB. 
+A bifurcation diagram for a multistable system was plotted in Chapter~\ref{chap:ForcingEscape}. It was computed using \textit{MATLAB}. 
 
 \subsection{Lyapunov exponents}
 
 To know when the dynamics of a system is chaotic, one can measure the local divergence of trajectories. One method to do this is to calculate the Lyapunov exponents~\cite{LyaExp}. There are as much Lyapunov exponents as the dimensionality of phase space. In chaotic systems at least one of the Lyapunov exponents is positive, so one could simply calculate the Maximum Lyapunov Exponent MLE to determine the complexity of the systems. For discrete time systems, the MLE can be obtained with the following formula:
-
 \begin{equation}
-\lambda(x_0) = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i=0}^{n-1}\log|\dfrac{df(x_i)}{dt}
+\lambda(x_0) = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i=0}^{n-1}\log|\dfrac{df(x_i)}{dt}.
 \end{equation}
-
-This formula was used in Chapter~\ref{chap:ForcingEscape} implemented using MATLAB.
+This formula was used in Chapter~\ref{chap:ForcingEscape} implemented using \textit{MATLAB}.
 
 \subsection{Hamming distance divergence measure}
 
