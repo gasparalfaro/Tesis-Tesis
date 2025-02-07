@@ -310,10 +310,6 @@ In the PGG cooperation is a Nash equilibrium for $r\geq5$. At the Nash equilibri
 \subsection{Hamming distance measure}
 
 
-To asses the complexity of our PGG we measured the Hamming distance of two initially close configurations differing of only one agent. Because the election of the agent that adopt a new strategy in the evolutionary model is chosen at random, we have to make sure every random interaction is chosen the same through both simulations.
-
-
-We can see how mismatches propagate in Fig.~\ref{fig:SequenciaHamming}. For each snapshot both configuration, the original and the copy with a different agent at the center, are plotted on the same space in two layers with one layer being slightly transparent. The defectors in one configuration are ploted red and in the other, green. This allows us to watch how the mismatches propagate. They do so radially and at constant velocity on average, but following the branches of defectors when watched closely.
 
 
 \begin{figure}
@@ -340,8 +336,17 @@ We can see how mismatches propagate in Fig.~\ref{fig:SequenciaHamming}. For each
 	\centering
 	\includegraphics[width=1\linewidth]{Images/P3/NormalHammingTimePopulation_2r.eps}
 	\caption{Normalized Hamming distance between the solutions for the public goods game versus time. Different colors represent two different $r$ values. They are normalized to the statistical Hamming distance, which depends on $r$, so the two curves are normalized to a different value. The Weibull ``stretched exponential" function $F(t;k,a)=1-e^{-(t/a)^k}$ is fitted to the curves and we observe different values of $a$, which can be seen as similar to the Lyapùnov time. The $r=4$ curves (blue and left ones), representing the regime $25/7\leq r<25/6$ has a lower value of $a$ than the curves with $r=4.65$ (orange and right ones). This indicates that, for $25/7\leq r<25/6$, the system is more sensitive to initial conditions.}
-	\label{fig:NormalHammingTimePopulation_r}
+	\label{fig:NormalHammingTimePopulation_2r}
 \end{figure}
+
+
+
+
+To asses the complexity of our PGG we measured the Hamming distance of two initially close configurations differing of only one agent. Because the election of the agent that adopt a new strategy in the evolutionary model is chosen at random, we have to make sure every random interaction is chosen the same through both simulations.
+
+
+We can see how mismatches propagate in Fig.~\ref{fig:PGG_SequenciaHamming}. For each snapshot both configuration, the original and the copy with a different agent at the center, are plotted on the same space in two layers with one layer being slightly transparent. The defectors in one configuration are ploted red and in the other, green. This allows us to watch how the mismatches propagate. They do so radially and at constant velocity on average, but following the branches of defectors when watched closely.
+
 
 
 The result was, as seen in Fig.~\ref{fig:NormalHammingTimePopulation_r} that the Normalized Hamming distance grew as a sigmoid like in the previous section for values of the parameter $r$ between $25/7\approx3.57$ and $8.\hat3$. These are all the values where there are present cooperators and defectors . We cannot say that this is an indicator of chaos this time, because probably, what the algorithm is assessing is the randomness in the election of agent to change its strategy. Nonetheless, when we fit the curves to the Weibull ``stretched exponential" function in Fig.~\ref{fig:NormalHammingTimePopulation_2r}, we get lower values of $a$ for curves in the first regime, $25/7\leq r<25/6$. This means that the system is more susceptible to changes in the initial conditions. For values of $5>r>8.\hat3.$ we get a very large value of $a = 3685$.

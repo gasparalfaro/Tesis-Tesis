@@ -170,19 +170,27 @@ Now, to escape in exactly $N$ iterations, we must simply take the first iterated
 
 
 \begin{figure}
+    \centering
+    \includegraphics[width=0.4\textheight]{Images/P1/Alt_sets.eps}
+    \caption{On top, the custom made double parabola map for $\mu = 10$. It present two differentiated zones at left and right of the middle point at $0.5$. At the bottom we present the shift functions as lines and sets as blocks. The shift fucntions $U^{l,r}_k$ tells how much control is needed at least to keep the orbit in the left or right region for $k$ iterations before shifting to the other region. In this case we have calculated the functions and sets in order to keep the orbit $N^l = 2$ iterations at the left and $N^r = 3$ iterations to the right.}
+    \label{fig:ShiftSets}
+\end{figure}
+
+
+
+\begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{Images/P1/Alt_Bifurcation.eps}
 	\caption{Bifurcation diagram for the double parabola map choosing two different initial conditions. Te points in red correspond to starting the trajectories in $Q_l$ and when in blue, the trajectories started in $Q_r$. For $\mu>8$ a global atractor merges and both regions are accessible to the trajectories.} 
 	\label{fig:Alt_Bifurcation}
 \end{figure}
 
-%TODO quitar mu 10
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{Images/P1/Alt_Lyapunov.eps}
 	\caption{Evolution of the Lyapunov exponent versus $\mu$ for the double parabola map. For positive values of the exponent, the dynamics are chaotic.}
-	\label{Alt_Lyapunov}
+	\label{fig:Alt_Lyapunov}
 \end{figure}
 
 
@@ -214,7 +222,7 @@ f(x) = \left\{ \begin{array}{ll}
 \end{equation}
 
 
-The bifurcation diagram and Lyapunov exponent for the iterated map $x_{n+1} = f(x_n)$ are shown in Figures \ref{fig:Alt_Bifurcation} and \ref{fig:Alt_Lyapunov} respectively. It shows that there is a chaotic behavior for most values of $\mu \geq 7.14$ and for values of $ 7.14 \leq \mu < 8$ there are two separated atractors that merge at $\mu = 8$ into a larger one. Then, for values close to that, the orbit shifts chaotically between the left and right regions. 
+The bifurcation diagram and Lyapunov exponent for the iterated map $x_{n+1} = f(x_n)$ are shown in Figures \ref{fig:Alt_Bifurcation} and \ref{fig:Alt_Bifurcation} respectively. It shows that there is a chaotic behavior for most values of $\mu \geq 7.14$ and for values of $ 7.14 \leq \mu < 8$ there are two separated atractors that merge at $\mu = 8$ into a larger one. Then, for values close to that, the orbit shifts chaotically between the left and right regions. 
 
 Figure~\ref{fig:TrajectoryDouble} shows one typical orbit and the controlled one. The uncontrolled trajectory is characterized by chaotic shifts from left to right regions, while the controlled one results in a quasi-periodic orbit with periodic shifts between the two regions. Also, we can see that the magnitude of the control made at each iteration is no more than a certain bound, which is lower than the noise bound.
 
@@ -261,12 +269,7 @@ u_{out}^{l,r}[i,s,j] = q^{r,l}[j] - f(q^{l,r}[i]) - \xi[s].
 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.4\textheight]{Images/P1/Alt_sets.eps}
-    \caption{On top, the custom made double parabola map for $\mu = 10$. It present two differentiated zones at left and right of the middle point at $0.5$. At the bottom we present the shift functions as lines and sets as blocks. The shift fucntions $U^{l,r}_k$ tells how much control is needed at least to keep the orbit in the left or right region for $k$ iterations before shifting to the other region. In this case we have calculated the functions and sets in order to keep the orbit $N^l = 2$ iterations at the left and $N^r = 3$ iterations to the right.}
-    \label{fig:ShiftSets}
-\end{figure}
+
 
 
 
