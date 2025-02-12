@@ -23,11 +23,11 @@
 
 This thesis explores three interconnected branches of game theory and complex systems: evolutionary game theory, complexity analysis, and strategic control. 
 
-Game theory studies how individuals make strategic decisions. This helps understand better behaviors present in diverse fields, from social sciences to economics and physics \cite{Social,EconomyGames,GamesComplex}. A powerful way to study these interactions is through evolutionary game theory, which utilizes dynamical evolving populations to model the behavior of real-world communities. 
+Game theory studies how individuals make strategic decisions. This helps understand better behaviors present in diverse fields, from social sciences to economics and physics \cite{cit:Social,cit:EconomyGames,cit:GamesComplex}. A powerful way to study these interactions is through evolutionary game theory, which utilizes dynamical evolving populations to model the behavior of real-world communities. 
 
 \section{Evolutionary Games and Cellular Automata}
 
-Through the inspection of evolutionary games, we focus on understanding how cooperation emerges and evolves in complex social systems. This remains one of the most fascinating challenges across multiple disciplines \cite{SocialPhy}. We begin by examining how cooperation can emerge in a social game when faced with temporal variations. 
+Through the inspection of evolutionary games, we focus on understanding how cooperation emerges and evolves in complex social systems. This remains one of the most fascinating challenges across multiple disciplines \cite{cit:SocialPhy}. We begin by examining how cooperation can emerge in a social game when faced with temporal variations. 
 
 \subsection{Time Dependent Effects on the Public Goods Game}
 
@@ -35,21 +35,23 @@ While previous research has typically assumed static conditions, we investigate 
 
 \subsection{Complexity in Spatial Evolutionary Games}
 
-This evolutionary models are thoroughly considered by physicists because of their complex dynamics \cite{GamesComplex}. Complex systems theory analyzes nonlinear and emergent processes. When studying big populations, the principal and more interesting aspect is that the increasing population manifests in processes that can not be explained by examining individuals alone. Much like one can not explain the sound of clapping hands when only one hand is clapping.
+This evolutionary models are thoroughly considered by physicists because of their complex dynamics \cite{cit:GamesComplex}. Complex systems theory analyzes nonlinear and emergent processes. When studying big populations, the principal and more interesting aspect is that the increasing population manifests in processes that can not be explained by examining individuals alone. Much like one can not explain the sound of clapping hands when only one hand is clapping.
 
-Research in \cite{SpatialChaos} suggests the complex formation of patterns in spatial games like the ones we have considered. Traditionally, one can quantify the complexity of a dynamical system by calculating the Lyapunov exponents. This could help us determine the complexity of the dynamic fluctuations of the strategy frequencies. This analysis would yield negative, or null values for the Lyapunov exponents since the system is at Nash equilibrium. But what we want to analyze is the complexity of this spatial patterns through the local interactions between agents in the evolutionary dynamical system, and this cannot be done through the analysis of the Lyapunov exponents or other similar complexity measures. 
+Research in \cite{cit:SpatialChaos} suggests the complex formation of patterns in spatial games like the ones we have considered. Traditionally, one can quantify the complexity of a dynamical system by calculating the Lyapunov exponents. This could help us determine the complexity of the dynamic fluctuations of the strategy frequencies. This analysis would yield negative, or null values for the Lyapunov exponents since the system is at Nash equilibrium. But what we want to analyze is the complexity of this spatial patterns through the local interactions between agents in the evolutionary dynamical system, and this cannot be done through the analysis of the Lyapunov exponents or other similar complexity measures. 
 
-However, an analysis of complexity similar to the one we intend was done in \cite{HammingChaos1,HammingChaos2} This study analyses the Hamming distance of configurations that differ initially by a small number of agents in a complex biological system and in rock-paper-scissors models. By applying the Hamming distance metric to both the prisoner's dilemma and public goods games, we can quantify and characterize the complexity of a system. This analysis reveals how minimal variations, through local interactions can lead to enormous global changes and helps identify parameter regions where complex dynamics emerge. Collecting the investigation in Chapter~\ref{chap:HammingGames}, we found out that the pattern formation discovered in \cite{SpatialChaos} is indeed chaotic. 
+However, an analysis of complexity similar to the one we intend was done in \cite{cit:HammingChaos1,cit:HammingChaos2} This study analyses the Hamming distance of configurations that differ initially by a small number of agents in a complex biological system and in rock-paper-scissors models. By applying the Hamming distance metric to both the prisoner's dilemma and public goods games, we can quantify and characterize the complexity of a system. This analysis reveals how minimal variations, through local interactions can lead to enormous global changes and helps identify parameter regions where complex dynamics emerge. Collecting the investigation in Chapter~\ref{chap:HammingGames}, we found out that the pattern formation discovered in \cite{cit:SpatialChaos} is indeed chaotic. 
 
 \subsection{Complexity in Cellular Automata}
 
-Then, we shift our attention to cellular automata, as a more simple case of an evolutionary game. Included in Chapter~\ref{chap:HammingECA}, our research provides another perspective on pattern formation. Through a systematic analysis of elementary cellular automata, we explore how simple local rules can generate complex global behaviors. Furthermore, we establish a new classification of the elementary cellular automata that helps better understand the fundamental classification of Wolfram for cellular automata \cite{WolframClass}.
+Then, we shift our attention to cellular automata, as a more simple case of an evolutionary game. Included in Chapter~\ref{chap:HammingECA}, our research provides another perspective on pattern formation. Through a systematic analysis of elementary cellular automata, we explore how simple local rules can generate complex global behaviors. Furthermore, we establish a new classification of the elementary cellular automata that helps better understand the fundamental classification of Wolfram for cellular automata \cite{cit:WolframClass}.
 
-The most important breakthrough in the research was the observation of transient chaotic dynamics present in Wolfram class $4$, underlying the phenomenon of the edge of chaos \cite{EdgeChaos}. 
-
-Finally, we extend the concept of partial control \cite{Yorke,DynamicsPartialControl,PartialControlBeyond,PartialControlFunctions} to competitive scenarios, developing a novel framework for analyzing strategic interactions in chaotic systems. 
+The most important breakthrough in the research was the observation of transient chaotic dynamics present in Wolfram class $4$, underlying the phenomenon of the edge of chaos \cite{cit:EdgeChaos}. 
 
 \section{Partial Control}
+
+
+Finally, we extend the concept of partial control \cite{cit:Yorke,cit:DynamicsPartialControl,cit:PartialControlBeyond,cit:PartialControlFunctions} to competitive scenarios, developing a novel framework for analyzing strategic interactions in chaotic systems. 
+
 
 Partial control is a method of chaos control. Instead of forcing a single controlled trajectory, the method tries to avoid some unwanted regions in the dynamics by strategically controlling the trajectory to a range of \textit{safe} points, traditionally called \textit{safe sets}.
 
@@ -84,29 +86,29 @@ Our findings contribute to a deeper understanding of how game theory, complexity
 \begin{thebibliography}{01}
 
 
-\bibitem{Social}
+\bibitem{cit:Social}
 P. Kollock, Social dilemmas: the anatomy of cooperation,
 Annu. Rev. Sociol. \textbf{24}, 183-214 (1998).
 \url{https://doi.org/10.1146/annurev.soc.24.1.183}
 
 
-\bibitem{EconomyGames}
+\bibitem{cit:EconomyGames}
 Y. Xiao, Y. Peng, Q. Lu, and X. Wua, Chaotic dynamics in nonlinear duopoly Stackelberg game with heterogeneous players,
 Physica A \textbf{492}, 1980--1987 (2018).
 \url{https://doi.org/10.1016/j.physa.2017.11.112}
 
-\bibitem{GamesComplex}
+\bibitem{cit:GamesComplex}
 W. Hu, G. Zang, H. Tian. and Z. Wang, Chaotic dynamics in asymmetric rock-paper-scissors games, IEEE Access \textbf{7}, 175614--175621 (2019).
 \url{https://doi.org/10.1109/ACCESS.2019.2956816}
 
-\bibitem{SocialPhy}
+\bibitem{cit:SocialPhy}
 \raggedright
 M. Jusup, P. Holme, K. Kanazawa,  M. Takayasu, B. Podobnik, L. Wang,  W. Luo, T. Klanjšček, J. Fan,  S. Boccaletti, and M. Perc,
 Social physics.
 Phys. Rep. \textbf{948}, 1--148 (2022). 
 \url{https://doi.org/10.1016/j.physrep.2021.10.005}
 
-\bibitem{SpatialChaos}
+\bibitem{cit:SpatialChaos}
 \raggedright
 M. A. Nowak and R. M. May,
 Evolutionary games and spatial chaos. 
@@ -115,14 +117,14 @@ Nature \textbf{359}, 826--829 (1992).
 
 
 
-\bibitem{HammingChaos1}
+\bibitem{cit:HammingChaos1}
 \raggedright
 D. Bazeia, M. B. P. N. Pereira, A. V. Brito, B. F. Oliveira, and J. G. G. S. Ramos,
 A novel procedure for the identification of chaos in complex biological systems.
 Sci. Rep. \textbf{7}, 44900 (2017).
 \url{https://doi.org/10.1038/srep44900}
 
-\bibitem{HammingChaos2}
+\bibitem{cit:HammingChaos2}
 \raggedright
 D. Bazeia, J. Menezes, B. F. De Oliveira, and J. G. G. S. Ramos,
 Hamming distance and mobility behavior in generalized rock-paper-scissors models.
@@ -130,46 +132,8 @@ EPL \textbf{119}, 58003 (2017).
 \url{https://doi.org/10.1209/0295-5075/119/58003}
 
 
-\bibitem{Yorke}
-J. Aguirre, F. d’Ovidio, and M. A. F. Sanjuán,
-Controlling chaotic transients: Yorke’s game of survival,
-Phys. Rev. E \textbf{69}, 016203
-(2004).
-\url{https://doi.org/10.1103/PhysRevE.69.016203}
 
-\bibitem{DynamicsPartialControl}
-Juan Sabuco, Miguel A. F. Sanjuán,  and James A. Yorke,
-Dynamics of partial control,
-Chaos \textbf{22}, 047507
-(2012).
-\url{https://doi.org/10.1063/1.4754874}
-
-\bibitem{PartialControlBeyond}
-R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
-Beyond partial control: controlling chaotic transients
-with the safety function.
-Nonlinear Dyn. 107:2903–2910
-(2022).
-\url{https://doi.org/10.1007/s11071-021-07071-1}
-
-\bibitem{PartialControlFunctions}
-R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
-A new approach of the partial control method in chaotic systems.
-Nonlinear Dyn. 98:873--887
-(2019).
-\url{https://doi.org/10.1007/s11071-019-05215-y}
-
-\bibitem{PartialControlEscape}
-G. Alfaro, R.~Cape{\'a}ns, and M.~A.~F. Sanju{\'a}n, 
-Forcing the escape: Partial control of escaping orbits from a
-transient chaotic region.
-Nonlinear Dyn. 104:1603–1612
-(2021). 
-\url{https://doi.org/10.1007/s11071-021-06331-4}
-
-
-
-\bibitem{WolframClass}
+\bibitem{cit:WolframClass}
 \raggedright
 S. Wolfram,
 Universality and complexity in cellular automata.
@@ -177,12 +141,50 @@ Physica D \textbf{10}, 1--35 (1984).
 \url{https://doi.org/10.1016/0167-2789(84)90245-8}
 
 
-\bibitem{EdgeChaos}
+\bibitem{cit:EdgeChaos}
 N. H. Packard,
 Adaptation toward the edge of chaos,
 Dynamic patterns in complex systems \textbf{212}, 293--301
 (1988).
 \url{https://doi.org/10.1142/9789814542043}
+
+
+
+
+
+\bibitem{cit:Yorke}
+J. Aguirre, F. d’Ovidio, and M. A. F. Sanjuán,
+Controlling chaotic transients: Yorke’s game of survival,
+Phys. Rev. E \textbf{69}, 016203
+(2004).
+\url{https://doi.org/10.1103/PhysRevE.69.016203}
+
+\bibitem{cit:DynamicsPartialControl}
+Juan Sabuco, Miguel A. F. Sanjuán,  and James A. Yorke,
+Dynamics of partial control,
+Chaos \textbf{22}, 047507
+(2012).
+\url{https://doi.org/10.1063/1.4754874}
+
+\bibitem{cit:PartialControlBeyond}
+R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
+Beyond partial control: controlling chaotic transients
+with the safety function.
+Nonlinear Dyn. 107:2903–2910
+(2022).
+\url{https://doi.org/10.1007/s11071-021-07071-1}
+
+\bibitem{cit:PartialControlFunctions}
+R.~Cape{\'a}ns, J.~Sabuco, and M.~A.~F. Sanju{\'a}n, 
+A new approach of the partial control method in chaotic systems.
+Nonlinear Dyn. 98:873--887
+(2019).
+\url{https://doi.org/10.1007/s11071-019-05215-y}
+
+
+
+
+
 
 
 

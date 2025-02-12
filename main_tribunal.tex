@@ -1,0 +1,348 @@
+%--------------------------------------------------------------FORMATO
+\documentclass[a4paper,12pt,nofootinbib]{newsiambook}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CON ESTO LAS REFERENCIAS SON HIPERVINCULOS
+
+\usepackage{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCIR PAQUETES
+
+\usepackage[toc,page]{appendix}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{comment}
+
+\usepackage{array} % para usar >{\raggedright}p{...}     % para una tabla
+\usepackage{ragged2e} 
+
+\usepackage{multicol} % para las firmas
+
+
+% TABLES
+\usepackage{adjustbox}    
+\usepackage{setspace}
+
+
+
+%%%%%%%%%%%%%%%% Lineas verticales algoritmo
+
+
+\newcommand{\algruledefaultfactor}{.75}
+\newcommand{\algstrut}[1][\algruledefaultfactor]{\vrule width 0pt
+depth .25\baselineskip height #1\baselineskip\relax}
+\newcommand*{\algrule}[1][\algorithmicindent]{\hspace*{0.5em}\vrule\algstrut
+\hspace*{\dimexpr#1+0.01em}}%aumenta disminuye distancia horizontal indexado for
+
+
+
+\makeatletter
+\newcount\ALG@printindent@tempcnta
+\def\ALG@printindent{%
+    \ifnum \theALG@nested>0% is there anything to print
+    \ifx\ALG@text\ALG@x@notext% is this an end group without any text?
+    % do nothing
+    \else
+    \unskip
+    % draw a rule for each indent level
+    \ALG@printindent@tempcnta=1
+    \loop
+    \algrule[\csname ALG@ind@\the\ALG@printindent@tempcnta\endcsname]%
+    \advance \ALG@printindent@tempcnta 1
+    \ifnum \ALG@printindent@tempcnta<\numexpr\theALG@nested+1\relax% can't do <=, so add one to RHS and use < instead
+    \repeat
+    \fi
+    \fi
+}%
+
+\patchcmd{\ALG@doentity}{\noindent\hskip\ALG@tlm}{\ALG@printindent}{}{\errmessage{failed to patch}}
+
+\AtBeginEnvironment{algorithmic}{\lineskip0pt}
+
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\newcommand*\Stateh{\State \algstrut[1]}
+% Añade este comando para los números de línea
+\newcommand{\LineNumber}[1]{\makebox[2em][r]{#1:}}
+
+
+%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PATH FOR THE IMAGES
+
+%\graphicspath{{Images/}{Images/P1}{Images/P2}{Images/P3}{Images/P4}{Images/P5}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ESTILO PROPIO DEL TEXTO
+
+\usepackage[a4paper, total={15cm, 22cm}]{geometry}
+
+
+\voffset=2cm
+
+\renewcommand{\labelenumi}{\roman{enumi}} % bulletpoints for enumerate
+
+\newcommand{\csch}{\makebox{csch}}
+\newcommand{\sech}{\makebox{sech}}
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+
+\newcommand{\letquote}{\sffamily \small \slshape}
+\newcommand{\dedica}{\sffamily \slshape}
+
+%\newdateformat{mydate}{\bf \Large \monthname[\THEMONTH], \THEYEAR}
+%\newdateformat{mydatebis}{\bf \large \monthname[\THEMONTH], \THEYEAR}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARACTERISTICAS DEL DOCUMENTO
+%\renewcommand{\baselinestretch}{1.1}                   % espaciado entre lineas
+%\language=1                                            
+%\baselineskip=18pt                                     % cortes
+%\oddsidemargin 1.8cm
+%\evensidemargin 0.5cm
+\fboxsep=0.3cm
+\fboxrule=2pt
+
+\thispagestyle{empty}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INICIO DEL DOCUMENTO
+\makeindex                                                       % indice
+
+
+
+%\addbibresource{ref_thesis.bib}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+
+
+
+%%%%%%%%% margin equal of odd and even
+
+%\setlength{\evensidemargin}{0cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\marginparwidth}{0cm}
+
+%%%%%%%%%
+
+
+\begin{center}
+
+\begin{figure}
+\centering
+%\includegraphics[width=7.6cm]{logoURJC}   
+\includegraphics[clip,width=7.6cm,trim=0cm 0cm 0cm 0cm]{Images/logoURJC.eps}                        %% logo
+\end{figure}
+
+%\vspace*{0.8cm}
+
+\vspace*{1.5cm}
+
+\begin{center}                                                    %% departamento
+{\Huge {\bf DOCTORAL THESIS}}
+\end{center}
+
+
+
+\vspace*{1.4cm}
+
+\begin{center}                                                     %% titulo
+	{\LARGE {\bf \textit{Game Theory, Complexity and Control}}}
+\end{center}
+
+\vspace*{1.2cm}
+
+
+
+
+
+
+
+\begin{center}
+ { \bf Author: \\
+ 	\vspace*{0.25cm}
+ \large \textit{Gaspar Alfaro García}}
+\end{center}
+
+\vspace*{1cm}
+
+\begin{center}
+	{ \bf Supervisors: \\
+		\vspace*{0.25cm}
+		\textit{Miguel \'Angel Fern\'andez Sanju\'an}\\
+		\vspace*{0.25cm} 
+		\textit{Rub\'en Cape\'ans Rivas}}
+\end{center}
+
+\vspace*{1cm}
+
+\begin{center}
+	{\bf Doctoral Program in Sciences\\
+		International Doctoral School}
+\end{center} 
+
+\vspace*{0.5cm}
+
+\begin{center}
+	{\bf \Large 2025}
+\end{center}                         %% fecha
+
+\end{center}
+
+\clearemptydoublepage \frontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EL CERTIFICADO
+%\thispagestyle{empty}
+%\include{certificado} \clearemptydoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEDICATORIA, AGRADECIMIENTOS Y PREFACIO
+\thispagestyle{empty}
+
+
+
+
+
+
+\clearemptydoublepage
+
+
+\noindent
+\textbf{Miguel Ángel Fernández Sanjuán}, Catedrático de Física de la Universidad Rey Juan Carlos. 
+
+\vspace*{0.5cm}
+
+\noindent
+\textbf{Rubén Capeáns Rivas}, Profesor Ayudante Doctor de Física la Universidad Rey Juan Carlos.
+
+
+\vspace*{1.5cm}
+
+\textbf{CERTIFICAN:}
+
+\vspace*{1.5cm}
+
+Que la presente memoria de tesis doctoral, titulada “Game Theory, Complexity and Control”, ha sido realizada bajo nuestra dirección por Gaspar Alfaro García para optar al grado de Doctor por la Universidad Rey Juan Carlos. 
+
+Y para que conste que la citada tesis reúne todos los requisitos necesarios para su defensa y aprobación, firmamos el presente certificado en Móstoles a doce de febrero de dos mil veinticinco.
+
+\vspace*{1cm}
+
+\raggedleft
+Móstoles, 12 de febrero de 2025
+
+\centering
+
+
+\vspace*{3.5cm}
+
+
+\begin{multicols}{2}
+Fdo. Miguel Ángel Fernández Sanjuán \\ Catedrático de Física \\ Universidad Rey Juan Carlos\\ 
+\columnbreak
+Fdo. Rubén Capeáns Rivas \\ Profesor Ayudante Doctor de Física \\ Universidad Rey Juan Carlos
+\end{multicols}
+
+
+
+\justifying
+
+\clearemptydoublepage
+
+\thispagestyle{empty}
+
+\begin{flushright}
+
+%\begin{quote}
+\begin{minipage}[t][5cm][b]{0,5\textwidth}
+
+{\dedica \large A mis padres, que me han soportado siempre. En los dos sentidos de la palabra.}
+
+%\end{quote}
+\end{minipage}
+\end{flushright}
+
+\clearemptydoublepage
+
+
+
+\include{agradecimientos} 
+
+
+\clearemptydoublepage
+
+
+
+\setcounter{chapter}{0}
+
+\include{0Preface}
+
+
+
+\clearemptydoublepage
+
+\tableofcontents \clearemptydoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUERPO PRINCIPAL
+
+
+
+
+%%
+\mainmatter
+
+
+
+\include{1Introduction}
+\clearemptydoublepage
+
+
+\include{2Methodology}
+\clearemptydoublepage
+
+
+\include{3P2}
+\clearemptydoublepage
+
+
+\include{4P3}
+\clearemptydoublepage
+
+
+\include{5P4}
+\clearemptydoublepage
+
+
+\include{6P1}
+\clearemptydoublepage
+
+
+\include{7P5}
+\clearemptydoublepage
+
+
+\include{8Discussion}
+\clearemptydoublepage
+
+
+\include{9Conclusion}
+\clearemptydoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CV Y RESUMEN %%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\include{curriculum}
+
+\include{10ResumenCast}
+\clearemptydoublepage
+
+
+\end{document}
