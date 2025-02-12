@@ -1,6 +1,7 @@
-\chapter{Resumen en castellano}
+\chapter*{Resumen de la tesis en castellano}
 
-
+\addcontentsline{toc}{chapter}{Resumen de la tesis en castellano}  
+\markboth{Resumen de la tesis en castellano}{}
 
 \begin{quotation}
 	\vspace{-3cm}
@@ -20,11 +21,11 @@
 
 
 
-\section{Introduction}
+\section{Introducción}
 
 Esta tesis trata sobre juegos evolutivos, complejidad y control del caos. Estos temas, que pueden parecer dispares, han sido interconectados en los diferentes capítulos presentes aquí. El hilo conductor entre las distintas disciplinas es que todos han sido estudiados mediante herramientas propias del análisis de los sistemas complejos y la dinámica no lineal. 
 
-La Teoría de Juegos Evolutiva (Evoluytionary Games Theory, EGT) es analizada profundamente en ramas de la física por su dinámica compleja. Al ser un estudio más adecuado para grandes poblaciones, los sistemas estudiados con estas técnicas suelen tener propiedades emergentes. Estas propiedades emergentes no pueden ser explicadas considerando únicamente a los individuos que forman el sistema, sino que hay que tratar con la población entera para que aparezcan y poder entenderlos. Como consecuencia, estos sistemas suelen tener propiedades no lineales muy interesantes para los físicos de sistemas complejos.
+La Teoría de Juegos Evolutiva (Evoluytionary Game Theory, EGT) es analizada profundamente en ramas de la física por su dinámica compleja. Al ser un estudio más adecuado para grandes poblaciones, los sistemas estudiados con estas técnicas suelen tener propiedades emergentes. Estas propiedades emergentes no pueden ser explicadas considerando únicamente a los individuos que forman el sistema, sino que hay que tratar con la población entera para que aparezcan y poder entenderlos. Como consecuencia, estos sistemas suelen tener propiedades no lineales muy interesantes para la física de sistemas complejos.
 
 Al principio de la tesis se ha estudiado el juego de los bienes públicos. En este juego social, los jugadores tratan de hacer grupos con los que invertir para aumentar sus recompensas. Cada individuo puede elegir cooperar con una unidad monetaria al bien público o abstenerse. Indiferentemente a si han cooperado o no, todos los jugadores se reparten el resultado de la inversión, con su debido aumento gracias a las ganancias, al final de cada ronda. Según la estrategia que adapta cada individuo y la que adaptan sus vecinos, este obtiene un \textit{payoff}, es decir, un saldo que determina la aptitud o \textit{fitness} del individuo en el juego. Mediante un proceso evolutivo consistente en la imitación del individuo más apto, el sistema evoluciona según se iteran turnos del juego.
 
@@ -34,17 +35,17 @@ En la investigación del primer capítulo se ha analizado la variación en el ju
 
 También se ha investigado el efecto de introducir un retardo a la hora de castigar a los impagadores. Este retardo causa que los impagadores aumenten, demostrando así que los castigos más eficaces son aquellos que son inmediatos.
 
-Tras haber resuelto estas cuestiones nos propusimos a analizar la complejidad del juego, además de otro juego social, el dilema del prisionero. Otros estudios demuestran que se producen comportamientos caóticos espacio-temporales considerando la dinámica de formación de patrones cuando se observa la disposición de cooperadores y no cooperadores en el espacio. 
+Tras haber resuelto estas cuestiones nos propusimos analizar la complejidad del juego, además de otro juego social, el dilema del prisionero. Otros estudios demuestran que se producen comportamientos caóticos espacio-temporales considerando la dinámica de formación de patrones cuando se observa la disposición de cooperadores y no cooperadores en el espacio. 
 
-Con la ambición de cuantificar esta complejidad, hemos considerado la divergencia de la distancia de Hamming entre dos configuraciones inicialmente muy próximas. Esta distancia, usada comúnmente en ciencias de la computación, establece la diferencia en número de caracteres entre dos grupos del mismo tamaño. Observando su comportamiento hemos podido observar que la distancia crece cuando se trata con parámetros del sistema en los que existen comportamientos caóticos.
+Con la ambición de cuantificar esta complejidad, hemos considerado la divergencia de la distancia de Hamming entre dos configuraciones inicialmente muy próximas. Esta distancia, usada comúnmente en ciencias de la computación, establece la diferencia en número de caracteres entre dos grupos del mismo tamaño. Observando su comportamiento hemos podido observar que la distancia crece cuando tratamos con parámetros del sistema en los que existen comportamientos caóticos.
 
 En el caso en el que no se utilice ningún componente aleatorio, los juegos anteriormente estudiados se pueden considerar como autómatas celulares. Eso sí, el número de reglas que tendrían estos autómatas celulares sería muy grande. En concreto el autómata tendría $2^N$ reglas, siendo $N$ el número de vecinos que influyen en el \textit{payoff} de cada agente. Debido a esto, se ha visto conveniente analizar la complejidad de todos los autómatas celulares elementales. Además se ha elaborado una clasificación análoga a la de Wolfram para estos autómatas. Esta clasificación depende del comportamiento de la distancia de Hamming entre dos configuraciones muy próximas al principio.
 
 En otra línea diferente de la investigación se extendió el estudio del control parcial para controlar el escape de una trayectoria de su región caótica transitoria. El control parcial es un método de control en el que se evita ciertas zonas del espacio de fases de un sistema. De esta manera, por ejemplo, en un sistema con dinámicas de caos transitorio, se puede conseguir que la trayectoria permanezca en la región caótica transitoria de manera indefinida. En uno de los estudios realizados en esta tesis se ha considerado exactamente lo contrario. Es decir, hemos tratado de sacar al sistema de esa región controladamente utilizando las mismas herramientas del control parcial.
 
-El sistema naturalmente escapa de la región, pero lo que hemos querido hacer es tratar de hacerlo de manera controlada. Para ello nos pusimos dos objetivos: hacer que la trayectoria escape lo más rápidamente posible, o que escape en un número de iteraciones a elegir por el controlador. 
+El sistema naturalmente escapa de la región, pero lo que hemos querido hacer es tratar de hacerlo de manera controlada. Para ello nos propusimos dos objetivos: hacer que la trayectoria escape lo más rápidamente posible, o que escape en un número de iteraciones a elegir por el controlador. 
 
-Tras conseguirlo con éxito nos propusimos un tercer objetivo más ambicioso: hacer que una trayectoria en un sistema multiestable pase de una región a otra de manera controlada. De esta forma, las trayectorias que, sin control transitan de manera caótica de una región a otra, permanecerán en cada región el tiempo que decidamos. 
+Tras conseguirlo con éxito nos fijamos un tercer objetivo más ambicioso: hacer que una trayectoria en un sistema multiestable pase de una región a otra de manera controlada. De esta forma, las trayectorias que, sin control transitan de manera caótica de una región a otra, permanecerán en cada región el tiempo que decidamos. 
 
 Por último se ha diseñado un juego de supervivencia entre dos jugadores enfrentados entre sí. Cada jugador tiene un objetivo distinto, permanecer en diferentes zonas del espacio de fases. Hemos ilustrado el juego con un ejemplo, el mapa logístico. Debido a la naturaleza transitoria de este sistema, este mapa se plantea muy interesante. Cuando establecemos que un jugador tiene como objetivo escapar de la región caótica transitoria y el oponente trata de permanecer en esa zona, el jugador que quiere escapar tiene ventaja. Las trayectorias naturalmente escaparán dándole la victoria. Gracias a las técnicas de control parcial, hemos obtenido las condiciones iniciales para las que cada jugador tiene asegurada la victoria, los sets de victoria, \textit{winning sets}. 
 
@@ -69,7 +70,7 @@ El diagrama de bifurcación y el máximo exponente de Lyapunov fueron computados
 También se ha aprovechado otra herramienta que permite cuantificar el comportamiento caótico. Este método ha sido escasamente utilizado en la literatura, pero se nos ofrece muy útil en nuestra investigación. Es un algoritmo que utiliza la distancia de Hamming para medir divergencias en los patrones de distribución de diferentes estrategias en juegos o estados de un autómata celular. Se examinaron dos configuraciones inicialmente muy próximas y medimos la separación a medida que el tiempo de la simulación iba aumentando. 
 
 
-\section{Discusión y Resultados}
+\section{Resultados y Discusión}
 
 En esta tesis hemos realizado aportaciones en los campos de dinámica evolutiva de juegos sociales con la que hemos ganado entendimiento en temas como la cooperación entre individuos. Al hacer oscilar un parámetro que controla la efectividad de inversiones económicas observamos lo siguiente. Cuando el parámetro aumenta hay un aumento de los cooperadores, pero cuando el parámetro disminuye, los cooperadores flaquean y aumenta mucho más el número de impagadores. Este efecto puede ser explicado facilmente, ya que una pobre estabilidad en los rendimientos de una inversión la hace más arriesgada, y, por tanto, menos apetecible. Además se ha comprobado que un castigo tardío no es tan eficaz como un castigo más inmediato.
 
@@ -85,7 +86,7 @@ En el caso de que un jugador conozco los movimientos del rival antes de ejercer 
 
 Un resultado sorprendente es el hecho de que el jugador que está en desventaja, debido a la dinámica natural del mapa con caos transitorio, pude conseguir su objetivo en algunos casos incluso con una cota de control menor que la del oponente.
 
-\subsection{Conclusion}
+\subsection{Conclusiones}
 
 Las principales conclusiones del estudio realizado en la tesis doctoral son:
 

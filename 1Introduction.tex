@@ -25,23 +25,50 @@ This thesis explores three interconnected branches of game theory and complex sy
 
 Game theory studies how individuals make strategic decisions. This helps understand better behaviors present in diverse fields, from social sciences to economics and physics \cite{Social,EconomyGames,GamesComplex}. A powerful way to study these interactions is through evolutionary game theory, which utilizes dynamical evolving populations to model the behavior of real-world communities. 
 
-Through the inspection of evolutionary games, we focus on understanding how cooperation emerges and evolves in complex social systems. This remains one of the most fascinating challenges across multiple disciplines \cite{SocialPhy}. We begin by examining how cooperation can emerge in a social game when faced with temporal variations.  While previous research has typically assumed static conditions, we investigate how the time dependence of the enhancement factors, representing the productivity of the returns of a economical activity, and delayed punishment affect the evolution of cooperative behavior. This approach provides novel insights into more realistic scenarios where the benefits of cooperation and the consequences of actions fluctuate over time collected in Chapter~\ref{chap:TimeEffects}. In particular, we obtain that a loss of stability in the productivity of returns diminishes cooperation between individuals, as so does delays in the punishment to defectors.
+\section{Evolutionary Games and Cellular Automata}
 
-This evolutionary models are thoroughly considered by physicists because of their complex dynamics \cite{GamesComplex}. Complex systems theory analyzes nonlinear and emergent process. When studying big populations, the principal and more interesting aspect is that the increasing population manifests in processes that can not be explained by examining individuals alone. Much like one can not explain the sound of clapping hands when only one hand is clapping.
+Through the inspection of evolutionary games, we focus on understanding how cooperation emerges and evolves in complex social systems. This remains one of the most fascinating challenges across multiple disciplines \cite{SocialPhy}. We begin by examining how cooperation can emerge in a social game when faced with temporal variations. 
 
-Research in \cite{SpatialChaos} suggest the complex formation of patterns in spatial games like the ones we have considered. Traditionally, one can quantify the complexity of a dynamical system by calculating the Lyapunov exponents. This could help us determine the complexity of the dynamic fluctuations of the strategy frequencies. This analysis would yield negative, or null values for the Lyapunov exponents since the system is at Nash equilibrium. But what we want to analyze is the complexity of this spatial patterns through the local interactions between agents in the evolutionary dynamical system, and this cannot be done through the analysis of the Lyapunov exponents or other similar complexity measures. 
+\subsection{Time Dependent Effects on the Public Goods Game}
+
+While previous research has typically assumed static conditions, we investigate how the time dependence of the enhancement factors, representing the productivity of the returns of a economical activity, and delayed punishment affect the evolution of cooperative behavior. This approach provides novel insights into more realistic scenarios where the benefits of cooperation and the consequences of actions fluctuate over time collected in Chapter~\ref{chap:TimeEffects}. In particular, we obtain that a loss of stability in the productivity of returns diminishes cooperation between individuals, as so does delays in the punishment to defectors.
+
+\subsection{Complexity in Spatial Evolutionary Games}
+
+This evolutionary models are thoroughly considered by physicists because of their complex dynamics \cite{GamesComplex}. Complex systems theory analyzes nonlinear and emergent processes. When studying big populations, the principal and more interesting aspect is that the increasing population manifests in processes that can not be explained by examining individuals alone. Much like one can not explain the sound of clapping hands when only one hand is clapping.
+
+Research in \cite{SpatialChaos} suggests the complex formation of patterns in spatial games like the ones we have considered. Traditionally, one can quantify the complexity of a dynamical system by calculating the Lyapunov exponents. This could help us determine the complexity of the dynamic fluctuations of the strategy frequencies. This analysis would yield negative, or null values for the Lyapunov exponents since the system is at Nash equilibrium. But what we want to analyze is the complexity of this spatial patterns through the local interactions between agents in the evolutionary dynamical system, and this cannot be done through the analysis of the Lyapunov exponents or other similar complexity measures. 
 
 However, an analysis of complexity similar to the one we intend was done in \cite{HammingChaos1,HammingChaos2} This study analyses the Hamming distance of configurations that differ initially by a small number of agents in a complex biological system and in rock-paper-scissors models. By applying the Hamming distance metric to both the prisoner's dilemma and public goods games, we can quantify and characterize the complexity of a system. This analysis reveals how minimal variations, through local interactions can lead to enormous global changes and helps identify parameter regions where complex dynamics emerge. Collecting the investigation in Chapter~\ref{chap:HammingGames}, we found out that the pattern formation discovered in \cite{SpatialChaos} is indeed chaotic. 
 
-Then, we shift our attention to cellular automata, as a more simple case of evolutionary game. Included in Chapter~\ref{chap:HammingECA}, our research provides another perspective on pattern formation. Through a systematic analysis of elementary cellular automata, we explore how simple local rules can generate complex global behaviors. Furthermore, we establish a new classification of the elementary cellular automata that helps understand better the fundamental classification of Wolfram for cellular automata \cite{WolframClass}.
+\subsection{Complexity in Cellular Automata}
 
-The most important breakthrough in the research was the observation of transient chaotic dynamics present in Wolfram class $4$, underlying the phenomenon of edge of chaos \cite{EdgeChaos}. 
+Then, we shift our attention to cellular automata, as a more simple case of an evolutionary game. Included in Chapter~\ref{chap:HammingECA}, our research provides another perspective on pattern formation. Through a systematic analysis of elementary cellular automata, we explore how simple local rules can generate complex global behaviors. Furthermore, we establish a new classification of the elementary cellular automata that helps better understand the fundamental classification of Wolfram for cellular automata \cite{WolframClass}.
+
+The most important breakthrough in the research was the observation of transient chaotic dynamics present in Wolfram class $4$, underlying the phenomenon of the edge of chaos \cite{EdgeChaos}. 
 
 Finally, we extend the concept of partial control \cite{Yorke,DynamicsPartialControl,PartialControlBeyond,PartialControlFunctions} to competitive scenarios, developing a novel framework for analyzing strategic interactions in chaotic systems. 
 
-Partial control is a method of chaos control. Instead of forcing a single controlled trajectory, the method tries to avoid some unwanted regions in the dynamics by strategically controlling the trajectory to a range of \textit{safe} points, traditionally called \textit{safe sets}. In the review of Chapter~\ref{chap:ForcingEscape} we extend the consideration of partial control to a case in which the controller aims to expell the trajectory as quickly as possible, or instead, in an orderly manner, from a chaotic region.
+\section{Partial Control}
 
-The investigation culminates in Chapter~\ref{chap:PartialControlGame} with a two-player game where participants compete for control over a chaotic trajectory, revealing how information asymmetry and timing of actions influence strategic outcomes. The study analyses the importance of player's information, which can alter the solution to the game.
+Partial control is a method of chaos control. Instead of forcing a single controlled trajectory, the method tries to avoid some unwanted regions in the dynamics by strategically controlling the trajectory to a range of \textit{safe} points, traditionally called \textit{safe sets}.
+
+\subsection{Escape from Transient Chaotic Region}
+
+In Chapter~\ref{chap:ForcingEscape}, we extend the consideration of partial control to a case in which the controller aims to expel the trajectory as quickly as possible, or instead, in an orderly manner, from a chaotic region. 
+
+We obtain the value of control needed to control trajectories starting from all possible initial conditions so the trajectory escapes as we intend. These values are obtained from the quick escape function when we want the trajectory to escape swiftly in no more iterations than the controller sets; or from the exact escape functions when the trajectories must escape at an exact number of iterations.
+
+These functions depend on the system's noise bound, and when setting the control to be lesser than this noise bound, we find that there are initial conditions that, surprisingly, can be controlled to achieve the goal. This is a key feature of the partial control method.
+
+\subsection{Two-Players survival game of control}
+
+The investigation culminates in Chapter~\ref{chap:PartialControlGame} with a two-player game where participants compete for control over a chaotic trajectory. The game, which may seem dependent of the player's choices is found to be solvable with the help of partial control. With these tools we identify the initial conditions that assure the victory for each player. 
+
+We illustrate our game with the logistic map, which provides us with a rich example of asymmetry in player's goals. The system's dynamics favor the player who intends on leaving the chaotic region, while the player who wants to stay there. Nonetheless, this undermined player can still win at some cases, even with lesser control bound than their opponent!
+
+Furthermore, the study analyses the importance of player's information, which can alter the solution to the game. 
+
 
 Our findings contribute to a deeper understanding of how game theory, complexity, and control interplay in social and dynamical systems, with potential applications ranging from social physics to game theory and chaos control.
 

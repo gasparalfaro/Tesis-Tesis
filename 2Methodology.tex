@@ -25,7 +25,7 @@
 
 
 
-For this doctoral thesis we employ a theoretical and computational approach, employing a combination of analytical methods and numerical simulations to corroborate theoretical predictions with observable phenomena. This simulations provided us with insights and a better understanding of the problems at hand. Following, we describe the methods applied.
+For this doctoral thesis, we employ a theoretical and computational approach, employing a combination of analytical methods and numerical simulations to corroborate theoretical predictions with observable phenomena. These simulations provided us with insights and a better understanding of the problems at hand. Following, we describe the methods applied.
 
 
 \section{Monte Carlo agent-based simulations}
@@ -38,7 +38,7 @@ This collects methods to analyze systems and data to characterize nonlinear syst
 
 \subsection{Bifurcation diagrams}
 
-A bifurcation diagram~\cite{Bifurcation} is a graphic that represents the different behavior in the systems dynamics according to the variation of a certain parameter. The graphic plots all the values of the steady state through time after relaxation versus each value of the parameter. The bifurcation diagram shows a single line when the system is in a fixed state. As the parameter changes, the line may bifurcate in two or more lines as the system's fixed state becomes a periodic state. For system that present nonlinear behavior, as the parameter reaches a critical value, the period increases by doubling, until the critical value is reached and a continuous set of points is represented in the bifurcation diagram for each parameter value. This indicates that the system has a chaotic atractor and the dynamics is chaotic.
+A bifurcation diagram~\cite{Bifurcation} is a graphic that represents the different dynamical behaviors in the systems dynamics according to the variation of a certain parameter. The graphic plots all the values of the steady state through time after relaxation versus each value of the parameter. The bifurcation diagram shows a single line when the system is in a fixed state. As the parameter changes, the line may bifurcate in two or more lines as the system's fixed state becomes a periodic state. For system that present nonlinear behavior, as the parameter reaches a critical value, the period increases by doubling, until the critical value is reached and a continuous set of points is represented in the bifurcation diagram for each parameter value. This indicates that the system has a chaotic atractor and the dynamics is chaotic.
 
 To obtain the bifurcation diagram one must first let the dynamics get to a steady state where the transient dynamics is discarded. In the case of multistable systems, one must calculate the steady state for more than one initial condition, wich produces different steady states because they reach different atractors. By plotting the steady state of each initial condition separately or in a different color, we can analyze the differences. 
 
@@ -46,7 +46,7 @@ A bifurcation diagram for a multistable system was plotted in Chapter~\ref{chap:
 
 \subsection{Lyapunov exponents}
 
-To know when the dynamics of a system is chaotic, one can measure the local divergence of trajectories. One method to do this is to calculate the Lyapunov exponents~\cite{LyaExp}. There are as much Lyapunov exponents as the dimensionality of phase space. In chaotic systems at least one of the Lyapunov exponents is positive, so one could simply calculate the Maximum Lyapunov Exponent MLE to determine the complexity of the systems. For discrete time systems, the MLE can be obtained with the following formula:
+To know when the dynamics of a system is chaotic, one can measure the local divergence of trajectories. One method to do this is to calculate the Lyapunov exponents~\cite{LyaExp}. There are as many Lyapunov exponents as the dimensionality of phase space. In chaotic systems at least one of the Lyapunov exponents is positive, so one could simply calculate the Maximum Lyapunov Exponent MLE to determine the complexity of the systems. For discrete time systems, the MLE can be obtained with the following formula:
 \begin{equation}
 \lambda(x_0) = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i=0}^{n-1}\log|\dfrac{df(x_i)}{dt}.
 \end{equation}

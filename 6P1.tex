@@ -21,20 +21,27 @@
 
 \vspace{0.5cm}
 
+
+\let\thefootnote\relax\footnotetext{
 %\bibitem{Alfaro2021}
 G. Alfaro, R. Capeáns, and M. A. F. Sanjuán,
 Forcing the escape: Partial control of escaping orbits from a
 transient chaotic region,
-Nonlinear Dyn. \textbf{104}, 1603--1612 (2021).
+Nonlinear Dyn. \textbf{104}, 1603--1612 (2021).\\
 \url{https://doi.org/10.1007/s11071-021-06331-4}
+}
+
+
 
 \vspace{1cm}
 
 
 
-Partial control has been developed as a control method generally used in chaotic transients, where the controller does not fix a given orbit, but instead chooses a set of points to avoid. In this chapter we introduce this concept to further develop it in the two following chapters, where we use the partial control method to solve a game between two players. 
+Partial control has been developed as a control method generally used in chaotic transients, where the controller does not fix a given orbit, but instead chooses a set of points to avoid. In this chapter, we introduce this concept to further develop it in the two following chapters, where we use the partial control method to solve a game between two players. 
 
-The partial control method was firstly introduced to solve the Yorke's Game of Survival in~\cite{Yorke'sGame} where a game is defined between a ``protagonist" and an ``antagonist". The goal of the protagonist was to survive in a chaotic transient region indefinitely. In the former paper's case, to keep the orbit in the region $[0,1]$ with the slope three tent map $f(x) = \mu(1-|x|)-1$. The antagonist role was interpreted by the effect of an additive noise, which bound was larger than the control bound of the protagonist.
+\section{Introduction}
+
+The partial control method was firstly introduced to solve the Yorke's Game of Survival in~\cite{Yorke'sGame} where a game is defined between a ``protagonist" and an ``antagonist". The goal of the protagonist was to survive in a chaotic transient region indefinitely. In the former paper's case, the region was $[0,1]$ with the slope three tent map $f(x) = \mu(1-|x|)-1$ as the dynamics of the system. The antagonist role was interpreted by the effect of an additive noise, which bound was larger than the control bound of the protagonist.
 
 This map is well known and the iteration of the map in the sequence $x_{i+1} = f(x_i)$ for slopes greater than two, presents transient chaos. This is because the map is only positive for the region $[-1,1]$ and for those slopes, the orbits leave that region after falling near $0.5$ and escape towards $-\infty$. Through the iteration of the map all initial points eventually escape, since only the zero-measure Cantor ternary set remains an indefinite amount of time in the chaotic transient. The escape times depend on the initial conditions and present fractality. Therefore they are highly unpredictable in the disturbed case as can bee seen on Fig.~\ref{fig:EscapeTimes}. Orbits that start near the Cantor set take many iterations to escape without disturbance. Although in Fig.~\ref{fig:EscapeTimes} we used the logistic map, the graphic is similar for the tent map.
 
@@ -67,8 +74,6 @@ We also developed a similar algorithm to make the escape from the region $Q$ in 
 Finally we presented a practical case in which we shift the trajectory from one chaotic region to another periodically, resulting in a quasiperiodic orbit.
 
 \section{Application of the method}
-
-%TODO trajectorias 
 
 To give an example on how to apply the algorithms, we have chosen the logistic function $f(x) = \mu x(1-x)$. For $\mu > 4$ there is a chaotic transient on the region $Q=[0,1]$. 
 
@@ -123,7 +128,7 @@ where $u[i,s,j]$ is the control to take the resulting point, after the applicati
 
 We give an example with $N=3$ in Fig.~\ref{fig:EscapeSetsQuick}. The escape sets in blue are the regions of the escape functions in red that have lower value than the control bound. Each index $k$ in $E_k$ tells in how many iterations is possible to escape. 
 
-Now in order to escape as quick as possible one needs to push the iterated point of the orbit towards the lowest indexed escape set reachable. 
+Now in order to escape as quick as possible, the controller must push the iterated point of the orbit towards the lowest indexed escape set reachable. 
 
 By increasing the number of iterations we allow for the orbit to escape $N$, the escape sets will become larger. For $N\to\infty$ the set becomes the entire region except the zero-measure Cantor ternary set. This will not be the case for the following case in which the orbit must escape at an exact number of iterations.
 
@@ -160,7 +165,7 @@ U_{k+1}[i]=\max_s\Big(\min_j\big(\max(|u[i,s,j]|,U_k[j])\big)\Big)
 
 Following this formula, we arrive to the exact escape functions and sets in Fig.~\ref{fig:EscapeSetsExact}. We can see that the sets are smaller, because the set $E_k$ doesn't contain the contents of $E_{k-1}$, unlike the previous case. Each exact escape set $E_k$ is the complementary of the $k-th$ approximate Cantor ternary set $C_k$, though a little bit decreased or increased depending on whether the noise is greater than the control or vice versa. 
 
-Now, to escape in exactly $N$ iterations, we must simply take the first iterated point towards $E_{N-1}$. This will be possible only if the initial point started in $E_N$. Afterwards we will push the iterated point one escape set further at a time until $E_1$ is reached. Then, after iterating the map the orbit will be out of the chaotic region or the border will be within reach.
+Now, to escape in exactly $N$ iterations, we must simply take the first iterated point towards $E_{N-1}$. This will be possible only if the initial point started in $E_N$. Afterwards we will push the iterated point one escape set further at a time until $E_1$ is reached. Then, after iterating the map the orbit will be out of the chaotic region or the border will be within reach of control.
 
 
 
@@ -224,7 +229,7 @@ f(x) = \left\{ \begin{array}{ll}
 
 The bifurcation diagram and Lyapunov exponent for the iterated map $x_{n+1} = f(x_n)$ are shown in Figures \ref{fig:Alt_Bifurcation} and \ref{fig:Alt_Bifurcation} respectively. It shows that there is a chaotic behavior for most values of $\mu \geq 7.14$ and for values of $ 7.14 \leq \mu < 8$ there are two separated atractors that merge at $\mu = 8$ into a larger one. Then, for values close to that, the orbit shifts chaotically between the left and right regions. 
 
-Figure~\ref{fig:TrajectoryDouble} shows one typical orbit and the controlled one. The uncontrolled trajectory is characterized by chaotic shifts from left to right regions, while the controlled one results in a quasi-periodic orbit with periodic shifts between the two regions. Also, we can see that the magnitude of the control made at each iteration is no more than a certain bound, which is lower than the noise bound.
+Figure~\ref{fig:TrajectoryDouble} shows one typical orbit and the controlled one. The uncontrolled trajectory is characterized by chaotic shifts from the left region to the right one, while the controlled trajectory results in a quasi-periodic signal with periodic shifts between the two regions. Also, we can see that the magnitude of the control made at each iteration is no more than a certain bound, which is lower than the noise bound.
 
 
 
@@ -240,7 +245,7 @@ u_{out}^{l,r}[i,s,j] = q^{r,l}[j] - f(q^{l,r}[i]) - \xi[s].
 
 
 \begin{algorithm}[h!]
-    \caption{\textbf{Iterative process to calculate the shift functions $U^{l,r}_{k}$ to stay in the left or right side of the double parabola map a number of iterations $N^l$ and $N^r$ respectively.} }
+    \caption{Iterative process to calculate the shift functions $U^{l,r}_{k}$ to stay in the left or right side of the double parabola map a number of iterations $N^l$ and $N^r$ respectively.} 
     \label{alg:ShiftFunction}
 \renewcommand{\thealgorithm}{}
 \floatname{algorithm}{}
