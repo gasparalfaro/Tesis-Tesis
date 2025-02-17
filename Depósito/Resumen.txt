@@ -1,0 +1,23 @@
+Esta tesis trata sobre juegos evolutivos, complejidad y control del caos. Estos temas, que pueden parecer dispares, han sido interconectados en la investigación. El hilo conductor entre las distintas disciplinas es que todos han sido estudiados mediante herramientas propias del análisis de los sistemas complejos y la dinámica no lineal. 
+
+Hemos estudiado juegos sociales y se ha analizado la complejidad de los patrones locales que muestran cuándo son simulados espacialmente.
+
+También hemos clasificado con la misma herramienta de análisis de complejidad los autómatas celulares elementales, consiguiendo una clasificación coherente con la de Wolfram.
+
+Finalmente hemos investigado la toma de decisiones estratégica de un juego novel de supervivencia con control parcial.
+
+
+
+
+
+
+
+
+
+In this tesis we have reviewed evolutionary game dynamics, complexity and control of chaos. These fields may appear not related at all, but we have connected them apporaching them in the context of complex systems and nonlinear dynamics.
+
+We have studied social games and we have analized the complexity of the local patterns they show when simulating them spatially.
+
+We have also classified with the same tool for the analysis of complexity all the elementary celular automata. Achieving a framework coherent with that of Wolfram.
+
+Finally we have investigated the strategic decision making in a novel game of survival with partial control.
