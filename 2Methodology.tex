@@ -48,7 +48,7 @@ A bifurcation diagram for a multistable system was plotted in Chapter~\ref{chap:
 
 To know when the dynamics of a system is chaotic, one can measure the local divergence of trajectories. One method to do this is to calculate the Lyapunov exponents~\cite{LyaExp}. There are as many Lyapunov exponents as the dimensionality of phase space. In chaotic systems at least one of the Lyapunov exponents is positive, so one could simply calculate the Maximum Lyapunov Exponent MLE to determine the complexity of the systems. For discrete time systems, the MLE can be obtained with the following formula:
 \begin{equation}
-\lambda(x_0) = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i=0}^{n-1}\log|\dfrac{df(x_i)}{dt}.
+\lambda(x_0) = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i=0}^{n-1}\log\left|\dfrac{df(x_i)}{dt}\right|
 \end{equation}
 This formula was used in Chapter~\ref{chap:ForcingEscape} implemented using \textit{MATLAB}.
 

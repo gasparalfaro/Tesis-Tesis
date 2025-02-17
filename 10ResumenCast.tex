@@ -61,9 +61,9 @@ Se han realizado simulaciones Monte Carlo para modelos basados en agentes. De es
 En un momento de la investigación hemos diseñado un mapa personalizado para aplicarle el método de control parcial. Para caracterizar la dinámica de este nuevo mapa se ha realizado un diagramas de bifurcación, que determina la estabilidad del mapa ante diferentes valores de los parámetros que determinan el sistema, en nuestro caso, un solo parámetro. 
 
 Además se obtuvo el máximo exponente de Lyapunov para el mapa. Este exponente cuantifica la naturaleza caótica de un sistema. Cuando el exponente toma valores positivos se considera que sus órbitas serán caóticas, y cuando el exponente es negativo o nulo, el sistema es estable, caracterizado por órbitas periódicas. El máximo exponente de Lyapunov se puede obtener con la siguiente fórmula cuando el sistema es discreto en el tiempo.
-\begin{equation}
-\lambda(x_0) = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i=0}^{n-1}\log|\dfrac{df(x_i)}{dt}.
-\end{equation}
+\begin{equation*}
+\lambda(x_0) = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i=0}^{n-1}\log\left|\dfrac{df(x_i)}{dt}\right|.
+\end{equation*}
 
 El diagrama de bifurcación y el máximo exponente de Lyapunov fueron computados con \textit{MATLAB}.
 
@@ -92,14 +92,14 @@ Las principales conclusiones del estudio realizado en la tesis doctoral son:
 
 \begin{itemize}
 
-\item En el estudio de los efectos dependientes del tiempo en el juego de los bienes públicos se determinó que la inestabilidad de las inversiones, caracterizada por una oscilación en el parámetro que multiplica las aportaciones de los individuos, perjudica a la cooperación entre estos para invertir conjuntamente. Además un castigo tardío a los impagadores favorece su crecimiento.
+\item En el estudio de los efectos dependientes del tiempo en el juego de los bienes públicos se determinó que la inestabilidad de las inversiones, caracterizada por una oscilación en el parámetro que multiplica las aportaciones de los individuos, perjudica a la cooperación entre estos para invertir conjuntamente. Además, un castigo tardío a los impagadores favorece su crecimiento.
 
 \item  Hemos obtenido una herramienta que cuantifica comportamientos caóticos espacio-temporales de juegos en los que los individuos se reparten de manera espacial. Aunque el sistema esté en equilibrio globalmente, es decir, la frecuencia de poblaciones no se altera significativamente con el tiempo, la dinámica local puede ser inestable. De esta manera cambios mínimos en las configuraciones iniciales de estrategias producen cambios completamente diferentes tras un tiempo característico del sistema, que hemos podido medir.
 
 \item Hemos clasificado correctamente todos los autómatas celulares elementales mediante el uso de la misma herramienta. Las Clases-$1$ y $2$ resultan presentar estabilidad mientras que las Clases-$3$ y $4$ presentan comportamiento caótico. En la Clase-$3$ los autómatas producen caos para siempre mientras que en la Clase-$4$ se ha observado caos transitorio.
 
 
-\item Hemos elaborado una nueva aplicación al control parcial para controlar el escape de trayectorias de una zona con caos transitorio. Se consiguen expulsar a las trayectorias de la manera más rápida posible o de una manera controlada, sabiendo el tiempo que va a pasar hasta que escape. Además se ha conseguido crear trayectorias que transitan de una zona a otra periódicamente en sistemas caóticos multiestables.
+\item Hemos elaborado una nueva aplicación al control parcial para controlar el escape de trayectorias de una zona con caos transitorio. Se consiguen expulsar a las trayectorias de la manera más rápida posible o de una manera controlada, sabiendo el tiempo que va a pasar hasta que escape. Además, se ha conseguido crear trayectorias que transitan de una zona a otra periódicamente en sistemas caóticos multiestables.
 
 
 \item  Usando técnicas de control parcial conseguimos resolver un juego novel de control y supervivencia entre dos jugadores. Se obtuvieron las regiones en las que cada jugador gana el juego dependiendo de la información que cada uno posee.
