@@ -1,0 +1,138 @@
+Buenos días, soy Gaspar Alfaro García y voy a presentar el trabajo recogido en la tesis doctoral (leer titulo). 
+
+
+Pass
+
+
+Mis tutores han sido Miguel Ángel Fernández Sanjuán y Ruben Capeáns Rivas.
+
+
+Pass
+
+
+Para empezar me gustaría presentar los temas que he tratado en esta tesis de manera breve.
+
+Press
+
+Al principio hablaré de cooperación en el juego de los bienes públicos y cómo es afectada al introducir dinámica dependiente del tiempo.
+
+Press
+
+Después hablaré sobre cómo hemos obtenido un algoritmo capaz de detectar comportamiento caótico en los patrones de juegos evolutivos espaciales- También hemos elaborado una clasificación de autómatas celulares elementales ordenándolos de menos a más complejos.
+
+Press
+
+Finalmente hablaré sobre control parcial en dos artículos que hemos publicado. Uno sobre cómo controlar órbitas para que escapen de una región de caos transitorio de manera controlada y otro sobre un juego entre dos personas que se oponen para controlar una trayectoria.
+
+
+
+
+Pass
+
+
+
+
+En el primer capítulo hablamos sobre efectos que afectan la coperación en el juego de los bienes públicos.
+
+
+Pass
+
+
+Este es un juego social que simulamos a través de un mecanismo evolutivo. Definimos una dinámica evolutiva que tiene en cuenta la aptitud de cada individuo en el sistema en función de una recompensa, el payoff pi. Esta a su vez depende de la estrategia propia del individuo y de la de sus vecinos.
+
+
+Pass
+
+
+El juego de los bienes públicos funciona de la siguiente manera. Hay cooperadores, en azul, e impagadores en rojo. 
+
+Press
+
+Los cooperadores contribuyen una unidad al bien público mientras que los impagadores no.
+
+Press
+
+De esta forma el bien común es la suma de cooperadores que haya en un grupo.
+
+Press
+
+Luego el bien público se multiplica por un parámetro r
+
+Press
+
+y se reparte entre todos los miembros del grupo por igual.
+
+
+Pass
+
+
+Se puede añadir una tercera estrategia al juego, los castigadores en verde.
+
+Press
+
+Estos también contribuyen al bien público
+
+Press x4
+
+pero pagan un coste gamma para imponer una multa beta a los defectores. La multa y el coste dependerá si se habla de castigo comunitario, pool punishment o personal, peer punishment.
+
+
+Pass
+
+
+
+Observamos que al hacer oscilar r, parámetro que controla la rentabilidad de las inversiones, se observa una oscilación de la frecuencia de poblaciones en el tiempo, pero que beneficia a los impagadores. Como se ve claramente aquí los picos son mayores para los impagadores. 
+
+Cuando la oscilación es suficientemente rápida, no se observa diferencia con el ruido aleatorio.
+
+
+Pass
+
+
+Otro efecto estudiado fue la introducción de un retardo tau de iteraciones que pasan desde que un castigador detecta a un impagador hasta que se le cobra la multa.
+
+
+
+
+Pass
+
+
+
+
+En el segundo artículo estudiamos la complejidad de los patrones caóticos que se forman espacialmente en el juego de los bienes públicos y el dilema del prisionero con la ayuda de la distancia de Hamming. Podemos observar como los patrones cambian rápidamente con el tiempo.
+
+
+Pass
+
+
+Primero de todo, permítanme explicar qué es la distancia de Hamming. Esta es la diferencia en número de caracteres distintos de dos objetos del mismo tamaño.Entre estas dos palabras la distancia de Hamming es uno. También podemos calcular la distancia entre dos configuraciones de, por ejemplo cooperadores y no cooperadores viendo el número de celdas de distinto color. En estas dos configuraciones, las celdas distintas las he resaltado en amarillos aquí y son diecisiete.
+
+
+Pass
+
+
+En esta animación lo que he hecho es colocar dos configuraciones inicialmente muy próximas una encima de la otra con transparencia. En una los impagadores están en rojo y en la otra están en verde- Al juntarlas, cuando coinciden, los impagadores se verán verdes, mientras que la diferencia inicial se expande con el tiempo a una velocidad radial más o menos constante.
+
+
+Pass
+
+
+Cómo recordaréis haber leído en el texto, La distancia de Hamming crece hasta un valor de saturación y ajustamos la curva de crecimiento según esta función sigmoidal. a es algo así como el punto medio del crecimiento en el eje horizontal, que crece linealmente con el tamaño de la cuadrícula L. k es un parámetro que controla lo abrupto que aumenta la distancia.
+
+Cabe destacar que la distancia de Hamming solo aumenta para el parámetro que se observan los patrones cambiantes que observaron May y Nowak en este artículo.
+
+
+Pass
+
+
+También hemos analizado la distancia de Hamming en el juego de los bienes públicos. En este caso se observó el crecimiento de la distancia para todos los casos en los que conviven cooperadores con impagadores, pero podemos notar que el crecimiento es mucho más lento para el caso en el que los impagadores están más esparcidos.
+
+
+
+
+Pass
+
+
+
+
+
