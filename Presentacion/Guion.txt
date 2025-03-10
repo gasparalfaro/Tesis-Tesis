@@ -77,7 +77,7 @@ Pass
 
 
 
-Observamos que al hacer oscilar r, parámetro que controla la rentabilidad de las inversiones, se observa una oscilación de la frecuencia de poblaciones en el tiempo. Esta oscilación beneficia a los defraudadores. Como se ve claramente aquí los picos son mayores para los defraudadores. 
+Observamos que al hacer oscilar r, parámetro que controla la rentabilidad de las inversiones, se observa una oscilación de la frecuencia de poblaciones en el tiempo. Esta oscilación beneficia a los defraudadores. Como se ve claramente aquí los picos son mayores para los defraudadores. Podemos afirmar que la inestabilidade en las inversiones decrimenta la cooperación.
 
 Cuando la oscilación es suficientemente rápida, el efecto es como el de un ruido aleatorio.
 
@@ -85,7 +85,7 @@ Cuando la oscilación es suficientemente rápida, el efecto es como el de un rui
 Pass
 
 
-Otro efecto estudiado fue la introducción de un retardo tau que pasa desde que un castigador detecta a un defraudador hasta que se le cobra la multa.
+Otro efecto estudiado fue la introducción de un retardo tau que pasa desde que un castigador detecta a un defraudador hasta que se le cobra la multa. Podemos observar un aumento de los defraudadores en contra de los cooperadores y los castigadores.
 
 
 
